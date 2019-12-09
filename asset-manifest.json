@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/codeverse/static/css/main.9f2da856.chunk.css",
-    "main.js": "/codeverse/static/js/main.f42ec67e.chunk.js",
-    "main.js.map": "/codeverse/static/js/main.f42ec67e.chunk.js.map",
+    "main.js": "/codeverse/static/js/main.db7a3fbf.chunk.js",
+    "main.js.map": "/codeverse/static/js/main.db7a3fbf.chunk.js.map",
     "runtime-main.js": "/codeverse/static/js/runtime-main.68d11c0a.js",
     "runtime-main.js.map": "/codeverse/static/js/runtime-main.68d11c0a.js.map",
-    "static/js/2.64e83c6f.chunk.js": "/codeverse/static/js/2.64e83c6f.chunk.js",
-    "static/js/2.64e83c6f.chunk.js.map": "/codeverse/static/js/2.64e83c6f.chunk.js.map",
+    "static/js/2.595c0bdd.chunk.js": "/codeverse/static/js/2.595c0bdd.chunk.js",
+    "static/js/2.595c0bdd.chunk.js.map": "/codeverse/static/js/2.595c0bdd.chunk.js.map",
     "index.html": "/codeverse/index.html",
-    "precache-manifest.baaa5c6a5648c1bf15853a689aceffb2.js": "/codeverse/precache-manifest.baaa5c6a5648c1bf15853a689aceffb2.js",
+    "precache-manifest.ef5e347067622d8709847a929aba0823.js": "/codeverse/precache-manifest.ef5e347067622d8709847a929aba0823.js",
     "service-worker.js": "/codeverse/service-worker.js",
     "static/css/main.9f2da856.chunk.css.map": "/codeverse/static/css/main.9f2da856.chunk.css.map",
     "static/media/main_bg.jpg": "/codeverse/static/media/main_bg.a351e03e.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.68d11c0a.js",
-    "static/js/2.64e83c6f.chunk.js",
+    "static/js/2.595c0bdd.chunk.js",
     "static/css/main.9f2da856.chunk.css",
-    "static/js/main.f42ec67e.chunk.js"
+    "static/js/main.db7a3fbf.chunk.js"
   ]
 }
