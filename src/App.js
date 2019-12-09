@@ -1,12 +1,8 @@
 import React from "react";
-import logo from "./img/logo.png";
+import MainTemplate from "./templates/MainTemplate";
 
-function App() {
-  return (
-    <div className="App">
-      <img className="logo" src={logo} alt="logo codeverse" />
-    </div>
-  );
-}
+const App = () => {
+  return <MainTemplate />;
+};
 
 export default App;
