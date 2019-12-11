@@ -13,12 +13,14 @@ const MainTemplate = () => {
       debounce(e => {
         if (e.deltaY > 0) {
           document.querySelector("header").classList.add("active");
+          document.querySelector(".bg-front").classList.add("active");
           document.querySelector("main").classList.add("active");
         } else {
           document.querySelector("header").classList.remove("active");
           document.querySelector("main").classList.remove("active");
+          document.querySelector(".bg-front").classList.remove("active");
         }
-      }, 350)
+      }, 50)
     );
   }, []);
   useEffect(
@@ -33,11 +35,13 @@ const MainTemplate = () => {
       if (touchStart > touchEnd) {
         document.querySelector("header").classList.add("active");
         document.querySelector("main").classList.add("active");
+        document.querySelector(".bg-front").classList.add("active");
       } else {
         document.querySelector("header").classList.remove("active");
         document.querySelector("main").classList.remove("active");
+        document.querySelector(".bg-front").classList.remove("active");
       }
-    }, 350),
+    }, 50),
     [touchEnd, touchStart]
   );
   return (

@@ -1,4 +1,14 @@
 body {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #040519;
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,9 +17,4 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  overflow: hidden;
 }
