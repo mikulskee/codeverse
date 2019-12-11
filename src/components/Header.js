@@ -3,17 +3,16 @@ import styled from "styled-components";
 import bgBack from "../img/bg_back.png";
 import bgFront from "../img/bg_front.png";
 import logo from "../img/logo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHandPointUp } from "@fortawesome/free-solid-svg-icons";
+import IconScrollSlide from "./IconScrollSlide";
 
 const Wrapper = styled.header`
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
   transform: translateY(0);
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
@@ -88,24 +87,6 @@ const MainDescription = styled.p`
   }
 `;
 
-const Icon = styled.div`
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #f2f2f2;
-  font-size: 30px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    transform: rotate(-115deg);
-  }
-`;
-
 const Header = () => {
   return (
     <Wrapper className={"header"}>
@@ -117,9 +98,7 @@ const Header = () => {
         i <span className={"design"}>design</span> and{" "}
         <span className={"develop"}>develop</span> websites
       </MainDescription>
-      <Icon>
-        <FontAwesomeIcon icon={faHandPointUp} />
-      </Icon>
+      <IconScrollSlide />
     </Wrapper>
   );
 };
