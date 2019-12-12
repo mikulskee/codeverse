@@ -3,29 +3,21 @@ export const mainInAnimation = () => {
   const main = document.querySelector("main");
   const tl = gsap.timeline({});
 
-  tl.to(
-    main,
-    {
-      duration: 0.5,
-      y: "0%",
-      ease: Power1.easeOut
-    },
-    "-=0.499999999999"
-  );
+  tl.to(main, {
+    duration: 0.5,
+    y: "0%",
+    ease: Power1.easeOut
+  });
 };
 export const mainOutAnimation = () => {
   const main = document.querySelector("main");
   const tl = gsap.timeline({});
 
-  tl.to(
-    main,
-    {
-      duration: 0.5,
-      y: "100%",
-      ease: Power1.easeOut
-    },
-    "-=0.499999999999"
-  );
+  tl.to(main, {
+    duration: 0.5,
+    y: "100%",
+    ease: Power1.easeOut
+  });
 };
 export const headerOutAnimation = () => {
   const header = document.querySelector("header");
