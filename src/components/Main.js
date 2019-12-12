@@ -22,9 +22,6 @@ const Wrapper = styled.main`
   h1 {
     color: #e7e7e7;
   }
-  &.active {
-    transform: translateY(0);
-  }
 `;
 const Main = () => {
   return (
