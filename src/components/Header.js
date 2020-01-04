@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import headerBg from "../img/header-bg.jpg";
 import logo from "../img/logo.png";
 import IconScrollSlide from "./IconScrollSlide";
+import { headerAnimation } from "../animations/headerAnimation";
 
 const Wrapper = styled.header`
   display: flex;
@@ -12,12 +13,21 @@ const Wrapper = styled.header`
   transform: translateY(0);
   height: 110vh;
   height: calc(var(--vh, 1vh) * 110);
-  width: 100%;
   opacity: 1;
-  background-image: url(${headerBg});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  overflow: hidden;
+
+  .pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scale(1.25);
+    background-image: url(${headerBg});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
   .bg-gradient {
     position: absolute;
@@ -59,7 +69,7 @@ const MainDescription = styled.p`
   font-size: 20px;
   width: 250px;
   line-height: 1.8;
-  transform: translateY(-80px);
+  transform: translateY(-50px);
 
   span {
     color: #68b5ef;
@@ -78,14 +88,21 @@ const MainDescription = styled.p`
 `;
 
 const Header = () => {
+  useEffect(() => {
+    headerAnimation();
+  });
   return (
     <Wrapper className={"header"}>
+      <div className="pattern" />
       <div className="bg-gradient" />
       <div className="bg-mask" />
       <img src={logo} alt="logo" />
       <MainDescription className="main-description">
         Hi, my name is <span>Mateusz Mikulski</span> <br />i design and develop
         websites
+        <br />
+        <br />
+        &#x270d; &#x1F933; &#x1F4bb; &#x1F320; &#x1F680;
       </MainDescription>
       <IconScrollSlide />
     </Wrapper>
