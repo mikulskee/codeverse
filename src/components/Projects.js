@@ -44,7 +44,7 @@ const Wrapper = styled.ul`
       h3 {
         position: absolute;
         top: 50%;
-        left: -50%;
+        left: -40%;
         transform: translateY(-50%);
         color: #f2f2f2;
         font-family: "Montserrat", sans-serif;
@@ -95,7 +95,7 @@ const Wrapper = styled.ul`
 
       h3 {
         left: auto;
-        right: -50%;
+        right: -40%;
       }
     }
   }
@@ -107,7 +107,7 @@ const projects = [
     title: "fifa draw app",
     img: fifaDraw,
     github: "https://github.com/mikulskee/fifa-draw",
-    live: "https://github.com/mikulskee/fifa-draw"
+    live: "https://mikulskee.github.io/fifa-draw/"
   },
   {
     key: "02",

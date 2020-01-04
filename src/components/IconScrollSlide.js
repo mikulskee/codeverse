@@ -6,7 +6,7 @@ import { gsap, Power1 } from "gsap/all";
 
 const Icon = styled.div`
   position: absolute;
-  bottom: 20px;
+  bottom: 15%;
   left: 50%;
   transform: translateX(calc(-50% + 20px));
   color: #f2f2f2;

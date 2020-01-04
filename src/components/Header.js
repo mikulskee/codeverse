@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import bgBack from "../img/bg_back.png";
-import bgFront from "../img/bg_front.png";
+import headerBg from "../img/header-bg.jpg";
 import logo from "../img/logo.png";
 import IconScrollSlide from "./IconScrollSlide";
 
@@ -11,27 +10,37 @@ const Wrapper = styled.header`
   justify-content: center;
   padding: 20px;
   transform: translateY(0);
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-  width: 100vw;
+  height: 110vh;
+  height: calc(var(--vh, 1vh) * 110);
+  width: 100%;
   opacity: 1;
-  background-image: url(${bgBack});
+  background-image: url(${headerBg});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 
-  .bg-front {
+  .bg-gradient {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateY(0);
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    width: 100vw;
-    background-image: url(${bgFront});
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    background: rgb(4, 5, 25);
+    background: linear-gradient(
+      180deg,
+      rgba(4, 5, 25, 0.7) 0%,
+      rgba(4, 5, 25, 0.4) 75%,
+      rgba(4, 5, 25, 1) 100%
+    );
+  }
+  .bg-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(4, 5, 25);
+    opacity: 0;
   }
 
   img {
@@ -71,9 +80,9 @@ const MainDescription = styled.p`
 const Header = () => {
   return (
     <Wrapper className={"header"}>
-      <div className={"bg-front"} src={bgFront} />
-      <div className={"bg-mask"} />
-      <img src={logo} alt="" />
+      <div className="bg-gradient" />
+      <div className="bg-mask" />
+      <img src={logo} alt="logo" />
       <MainDescription className="main-description">
         Hi, my name is <span>Mateusz Mikulski</span> <br />i design and develop
         websites

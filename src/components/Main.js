@@ -5,15 +5,10 @@ import starsPattern from "../img/stars-pattern.png";
 import Projects from "./Projects";
 
 const Wrapper = styled.main`
-  position: absolute;
-  top: 0;
-  left: 0;
   padding: 20px;
-
-  transform: translateY(100%);
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
-  width: 100vw;
+  width: 100%;
   background-color: #040519;
   transition: transform 0.6s ease-out;
   background-image: url(${starsPattern});
@@ -23,6 +18,14 @@ const Wrapper = styled.main`
 
   h1 {
     color: #e7e7e7;
+  }
+
+  .main-content {
+    margin-top: 150px;
+    padding: 20px;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
   }
 `;
 const Main = () => {

@@ -1,13 +1,3 @@
-body {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-  width: 100vw;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  background-color: #040519;
-}
-
 * {
   margin: 0;
   padding: 0;
