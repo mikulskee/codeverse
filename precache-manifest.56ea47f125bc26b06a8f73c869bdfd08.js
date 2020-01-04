@@ -1,31 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "663cd60d7396aeb18c4a1b213386f560",
+    "revision": "d56cf5fc339b21b56b024a5793608d63",
     "url": "/codeverse/index.html"
   },
   {
-    "revision": "ae2cdefec4a96c741484",
-    "url": "/codeverse/static/css/main.896f6006.chunk.css"
+    "revision": "27afe4e0a7472d0b4be4",
+    "url": "/codeverse/static/css/main.3dc8247c.chunk.css"
   },
   {
-    "revision": "cc750b8cd2bba1b41ea0",
-    "url": "/codeverse/static/js/2.76cdbe01.chunk.js"
+    "revision": "04f3727b5a5981b3b930",
+    "url": "/codeverse/static/js/2.3a4b55cd.chunk.js"
   },
   {
-    "revision": "ae2cdefec4a96c741484",
-    "url": "/codeverse/static/js/main.1ab3897c.chunk.js"
+    "revision": "27afe4e0a7472d0b4be4",
+    "url": "/codeverse/static/js/main.aa562638.chunk.js"
   },
   {
     "revision": "756f4cf751f1532b79c7",
     "url": "/codeverse/static/js/runtime-main.68d11c0a.js"
-  },
-  {
-    "revision": "0a2a8ee1df969e26bdc0b162784f4452",
-    "url": "/codeverse/static/media/bg_back.0a2a8ee1.png"
-  },
-  {
-    "revision": "d0b398e52cfb13f3eff1bce2ae89cc3b",
-    "url": "/codeverse/static/media/bg_front.d0b398e5.png"
   },
   {
     "revision": "9a052dcf0e2a14c8eff0447b6afa720b",
