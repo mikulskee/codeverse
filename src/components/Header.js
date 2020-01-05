@@ -3,20 +3,19 @@ import styled from "styled-components";
 import headerBg from "../img/header-bg.jpg";
 import logo from "../img/logo.png";
 import IconScrollSlide from "./IconScrollSlide";
-import { headerAnimation } from "../animations/headerAnimation";
+import { headerAnimation } from "../animations/patternsAnimation";
 
 const Wrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  transform: translateY(0);
+  transform: translate(0);
   height: 110vh;
   height: calc(var(--vh, 1vh) * 110);
-  opacity: 1;
   overflow: hidden;
 
-  .pattern {
+  .header-pattern {
     position: absolute;
     top: 0;
     left: 0;
@@ -42,15 +41,6 @@ const Wrapper = styled.header`
       rgba(4, 5, 25, 0.4) 75%,
       rgba(4, 5, 25, 1) 100%
     );
-  }
-  .bg-mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgb(4, 5, 25);
-    opacity: 0;
   }
 
   img {
@@ -93,16 +83,15 @@ const Header = () => {
   });
   return (
     <Wrapper className={"header"}>
-      <div className="pattern" />
+      <div className="header-pattern" />
       <div className="bg-gradient" />
-      <div className="bg-mask" />
       <img src={logo} alt="logo" />
       <MainDescription className="main-description">
         Hi, my name is <span>Mateusz Mikulski</span> <br />i design and develop
         websites
         <br />
         <br />
-        &#x270d; &#x1F933; &#x1F4bb; &#x1F320; &#x1F680;
+        &#x270d; &#x1F933; &#x1F4bb; &#x1F320; &#x1F680; &#x1F4AB;
       </MainDescription>
       <IconScrollSlide />
     </Wrapper>

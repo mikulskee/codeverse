@@ -1,5 +1,6 @@
 import React from "react";
 import { gsap, Power1 } from "gsap/all";
+import { SectionTitle } from "./SectionTitle";
 import styled from "styled-components";
 import fifaDraw from "../img/project1.png";
 import hairstyleWebsite from "../img/project2.png";
@@ -7,11 +8,23 @@ import changingRoom from "../img/project3.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
+import starsPattern from "../img/stars-pattern.png";
 
-const Wrapper = styled.ul`
+const Wrapper = styled.section`
+  background-image: url(${starsPattern});
+  background-repeat: no-repeat;
+  background-size: 95%;
+  background-position: 644% 40%;
+  padding: 20px;
+  h2.section-title {
+    color: #e7e7e7;
+  }
+`;
+
+const ProjectsList = styled.ul`
   list-style: none;
   height: 80%;
-  margin-top: 50px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,6 +34,7 @@ const Wrapper = styled.ul`
     justify-content: flex-end;
     align-items: center;
     pointer-events: none;
+    margin: 35px 0;
 
     div {
       position: relative;
@@ -170,7 +184,14 @@ const Projects = () => {
     </li>
   ));
 
-  return <Wrapper>{newProjects}</Wrapper>;
+  return (
+    <Wrapper className="projects">
+      <SectionTitle className={"section-title"}>
+        <span>{"{  "}</span>Projects<span>{"  }"}</span>
+      </SectionTitle>
+      <ProjectsList>{newProjects}</ProjectsList>
+    </Wrapper>
+  );
 };
 
 export default Projects;

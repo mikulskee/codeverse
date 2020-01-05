@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SectionTitle = styled.h1`
+export const SectionTitle = styled.h2`
   color: #f2f2f2;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
