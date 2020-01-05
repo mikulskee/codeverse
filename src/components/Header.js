@@ -3,7 +3,10 @@ import styled from "styled-components";
 import headerBg from "../img/header-bg.jpg";
 import logo from "../img/logo.png";
 import IconScrollSlide from "./IconScrollSlide";
-import { headerAnimation } from "../animations/patternsAnimation";
+import {
+  headerAnimation,
+  mandoAnimation
+} from "../animations/patternsAnimation";
 
 const Wrapper = styled.header`
   display: flex;
@@ -77,10 +80,28 @@ const MainDescription = styled.p`
   } */
 `;
 
+const MandoQuote = styled.p`
+  position: absolute;
+  color: #d0d0d0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  bottom: 10%;
+  span {
+    font-size: 12px;
+  }
+`;
+
 const Header = () => {
   useEffect(() => {
     headerAnimation();
   });
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        mandoAnimation();
+      }
+    });
+  }, []);
   return (
     <Wrapper className={"header"}>
       <div className="header-pattern" />
@@ -94,6 +115,12 @@ const Header = () => {
         &#x270d; &#x1F933; &#x1F4bb; &#x1F320; &#x1F680; &#x1F4AB;
       </MainDescription>
       <IconScrollSlide />
+      <MandoQuote className="mando-quote">
+        this is the way...{" "}
+        <span role="img" aria-label="robot">
+          &#x1F916;
+        </span>
+      </MandoQuote>
     </Wrapper>
   );
 };

@@ -16,6 +16,7 @@ const Icon = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+  opacity: 0;
 
   svg {
     transform: translateY(0) rotate(-115deg);
@@ -42,7 +43,7 @@ const Animation = () => {
 
   const tl = gsap.timeline({ repeat: -1 });
 
-  tl.from(container, { duration: 0.4, opacity: 0, delay: 1.5 })
+  tl.to(container, { duration: 0.4, opacity: 1, delay: 1.5 })
     .to(hand, {
       duration: 1.5,
       y: -30,
@@ -52,9 +53,25 @@ const Animation = () => {
     .to(container, { duration: 0.25, opacity: 0 });
 };
 
+const KillAnimation = () => {
+  const hand = document.querySelector(".hand-icon");
+  const line = document.querySelector(".line-icon");
+  const container = document.querySelector(".icon-container");
+  const tl = gsap.timeline();
+
+  tl.to(container, { duration: 0.35, opacity: 0 })
+    .to(hand, { duration: 0.35, opacity: 0 }, "-=0.35")
+    .to(line, { duration: 0.35, opacity: 0 }, "-=0.35");
+};
+
 const IconScrollSlide = () => {
   useEffect(() => {
     Animation();
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        KillAnimation();
+      }
+    });
   }, []);
 
   return (

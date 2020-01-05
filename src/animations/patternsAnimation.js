@@ -61,3 +61,11 @@ export const spaceship = () => {
     )
     .to(rougeTwo, { duration: 8, opacity: 0 }, "-=4");
 };
+
+export const mandoAnimation = () => {
+  const mando = document.querySelector(".mando-quote");
+
+  const tl = gsap.timeline();
+
+  tl.to(mando, { duration: 0.35, opacity: 0 });
+};
