@@ -1,27 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c80e60348f66f58c539981d1a43eeab4",
+    "revision": "a895e709f5c1565d7e3bdd0b6388d8ab",
     "url": "/codeverse/index.html"
   },
   {
-    "revision": "22cefc45fded2d909238",
+    "revision": "caa53102a12e278b121b",
     "url": "/codeverse/static/css/main.e3e92313.chunk.css"
   },
   {
-    "revision": "0f4a3a67bb413673cd3d",
-    "url": "/codeverse/static/js/2.51153fc1.chunk.js"
+    "revision": "8e8f9b4c7291e799bfd9",
+    "url": "/codeverse/static/js/2.395bc032.chunk.js"
   },
   {
-    "revision": "22cefc45fded2d909238",
-    "url": "/codeverse/static/js/main.57e26282.chunk.js"
+    "revision": "caa53102a12e278b121b",
+    "url": "/codeverse/static/js/main.2cc9d127.chunk.js"
   },
   {
     "revision": "756f4cf751f1532b79c7",
     "url": "/codeverse/static/js/runtime-main.68d11c0a.js"
-  },
-  {
-    "revision": "8698d02474116486a2b852190b7d3ab0",
-    "url": "/codeverse/static/media/about-bg.8698d024.jpg"
   },
   {
     "revision": "9a052dcf0e2a14c8eff0447b6afa720b",
@@ -42,5 +38,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "25abae1b278bbce854c13bb1f0a86ef0",
     "url": "/codeverse/static/media/project3.25abae1b.png"
+  },
+  {
+    "revision": "8698d02474116486a2b852190b7d3ab0",
+    "url": "/codeverse/static/media/skills-bg.8698d024.jpg"
   }
 ]);
