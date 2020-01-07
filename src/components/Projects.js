@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { gsap, Power1 } from "gsap/all";
 import { SectionTitle } from "./SectionTitle";
 import styled from "styled-components";
@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 import starsPattern from "../img/stars-pattern.png";
+import { projectsSectionContentAnimation } from "../animations/contentAnimations";
 
 const Wrapper = styled.section`
   background-image: url(${starsPattern});
@@ -16,8 +17,9 @@ const Wrapper = styled.section`
   background-size: 95%;
   background-position: 644% 40%;
   padding: 20px;
-  h2.section-title {
+  h2.projects-section-title {
     color: #e7e7e7;
+    visibility: hidden;
   }
 `;
 
@@ -39,6 +41,7 @@ const ProjectsList = styled.ul`
     div {
       position: relative;
       pointer-events: auto !important;
+      visibility: hidden;
 
       ::before {
         content: "";
@@ -66,6 +69,7 @@ const ProjectsList = styled.ul`
         font-size: 14px;
         font-style: italic;
         pointer-events: none;
+        visibility: hidden;
       }
 
       img {
@@ -141,7 +145,7 @@ const projects = [
 
 const Projects = () => {
   const handleClick = e => {
-    const tl = gsap.timeline({});
+    const tl = gsap.timeline();
 
     const links = e.target.nextSibling;
 
@@ -167,7 +171,7 @@ const Projects = () => {
   const newProjects = projects.map(item => (
     <li key={item.key}>
       <div onClick={handleClick} className={`project ${item.key}`}>
-        <h3>{`${item.key}. ${item.title}`}</h3>
+        <h3 className="project-title">{`${item.key}. ${item.title}`}</h3>
         <img src={item.img} alt={item.title} />
       </div>
       <div className={`project links ${item.key}`}>
@@ -184,9 +188,26 @@ const Projects = () => {
     </li>
   ));
 
+  useEffect(() => {
+    const projectsSectionTitle = document.querySelector(
+      ".projects-section-title"
+    );
+
+    const timeline = projectsSectionContentAnimation();
+
+    window.addEventListener("scroll", () => {
+      const height = window.innerHeight;
+      const bottom = projectsSectionTitle.getBoundingClientRect().bottom;
+
+      if (height >= bottom) {
+        timeline.play();
+        console.log("działa");
+      }
+    });
+  });
   return (
     <Wrapper className="projects">
-      <SectionTitle className={"section-title"}>
+      <SectionTitle className={"projects-section-title"}>
         <span>{"{  "}</span>projects<span>{"  }"}</span>
       </SectionTitle>
       <ProjectsList>{newProjects}</ProjectsList>

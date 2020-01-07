@@ -71,7 +71,7 @@ export const spaceship2 = () => {
     .from(
       rougeThree,
       {
-        duraion: 6,
+        duration: 0.6,
         x: -300,
         y: -80,
         ease: Power0.easeNone
@@ -83,7 +83,7 @@ export const spaceship2 = () => {
     .from(
       rougeFour,
       {
-        duraion: 5,
+        duration: 0.5,
         x: 300,
         y: 45,
         ease: Power0.easeNone
