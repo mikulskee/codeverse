@@ -15,12 +15,12 @@ export const headerAnimation = () => {
     yoyoEase: true
   });
 };
-export const aboutAnimation = () => {
-  const pattern = document.querySelector(".about-pattern");
+export const skillsAnimation = () => {
+  const pattern = document.querySelector(".skills-pattern");
   const tl = gsap.timeline();
 
   tl.to(pattern, {
-    duration: 10,
+    duration: 8,
     x: 5,
     y: -20,
     rotate: 2,
@@ -37,29 +37,60 @@ export const spaceship = () => {
 
   const tl = gsap.timeline({ repeat: -1 });
 
-  tl.from(rougeOne, { duration: 8, opacity: 0 })
+  tl.from(rougeOne, { duration: 0.2, opacity: 0 })
     .from(
       rougeOne,
       {
-        duration: 20,
-        x: 80,
+        duration: 0.5,
+        x: 300,
+        y: -10,
         ease: Power0.easeNone
       },
-      "-=8"
+      "-=0.2"
     )
-    .to(rougeOne, { duration: 8, opacity: 0 }, "-=4")
-    .from(rougeTwo, { duration: 8, opacity: 0 }, "-=3")
+    .to(rougeOne, { duration: 0.2, opacity: 0 }, "-=0.2")
+    .from(rougeTwo, { duration: 0.2, opacity: 0, delay: 6 })
     .from(
       rougeTwo,
       {
-        duration: 20,
-        x: -60,
-        y: 80,
+        duration: 1,
+        x: -200,
+        y: 243,
         ease: Power0.easeNone
       },
-      "-=8"
+      "-=0.2"
     )
-    .to(rougeTwo, { duration: 8, opacity: 0 }, "-=4");
+    .to(rougeTwo, { duration: 0.3, opacity: 0 }, "-=0.3");
+};
+export const spaceship2 = () => {
+  const rougeThree = document.querySelector(".spaceship-3");
+  const rougeFour = document.querySelector(".spaceship-4");
+
+  const tl = gsap.timeline({ repeat: -1 });
+  tl.from(rougeThree, { duration: 0.1, opacity: 0, delay: 4 })
+    .from(
+      rougeThree,
+      {
+        duraion: 6,
+        x: -300,
+        y: -80,
+        ease: Power0.easeNone
+      },
+      "-=0.1"
+    )
+    .to(rougeThree, { duration: 0.1, opacity: 0 }, "-=0.1")
+    .from(rougeFour, { duration: 0.1, opacity: 0, delay: 7 })
+    .from(
+      rougeFour,
+      {
+        duraion: 5,
+        x: 300,
+        y: 45,
+        ease: Power0.easeNone
+      },
+      "-=0.1"
+    )
+    .to(rougeFour, { duration: 0.1, opacity: 0 }, "-=0.1");
 };
 
 export const mandoAnimation = () => {

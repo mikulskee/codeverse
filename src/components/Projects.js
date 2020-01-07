@@ -187,7 +187,7 @@ const Projects = () => {
   return (
     <Wrapper className="projects">
       <SectionTitle className={"section-title"}>
-        <span>{"{  "}</span>Projects<span>{"  }"}</span>
+        <span>{"{  "}</span>projects<span>{"  }"}</span>
       </SectionTitle>
       <ProjectsList>{newProjects}</ProjectsList>
     </Wrapper>
