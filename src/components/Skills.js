@@ -8,6 +8,7 @@ import {
   spaceship2
 } from "../animations/patternsAnimation";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
+import { skillsSectionContentAnimation } from "../animations/contentAnimations";
 
 const Wrapper = styled.section`
   overflow: hidden;
@@ -110,7 +111,7 @@ const SkillsDescription = styled.ul`
   li {
     position: relative;
 
-    &::after {
+    div.border-line {
       content: "";
       position: absolute;
       height: 2px;
@@ -121,15 +122,18 @@ const SkillsDescription = styled.ul`
       opacity: 0.6;
       background: linear-gradient(-45deg, #fff, rgba(0, 0, 255, 0));
       filter: drop-shadow(0 0 6px #699bff);
+      transform: translateX(-100px);
+      opacity: 0;
     }
   }
 
   li:nth-child(even) {
     align-self: flex-end;
     text-align: right;
-    &::after {
+    div.border-line {
       background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #fff);
       filter: drop-shadow(0 0 6px #699bff);
+      transform: translateX(100px);
     }
   }
 
@@ -187,7 +191,8 @@ const Skills = () => {
 
   useEffect(() => {
     const title = document.querySelector(".skills-section-title");
-    // const timeline = someContentAnimation();
+
+    const timeline = skillsSectionContentAnimation();
 
     let executed = false;
 
@@ -197,7 +202,7 @@ const Skills = () => {
 
       if (!executed && height >= bottom) {
         executed = true;
-        // timeline.play();
+        timeline.play();
         sectionTitleAnimation(title);
       } else return;
     });
@@ -216,61 +221,67 @@ const Skills = () => {
         </SectionTitle>
         <SkillsDescription>
           <li>
-            <p className="react">
+            <p className="react skill">
               main technology - <strong>React</strong>{" "}
               <span role="img" aria-label="atom">
                 &#x269B;
               </span>
               <br /> (including hooks){" "}
             </p>
+            <div className="border-line" />
           </li>
           <li>
-            <p className="styled-components">
+            <p className="styled-components skill">
               writing styles in <br />
               <strong>styled-components</strong>{" "}
               <span role="img" aria-label="nail polish">
                 &#x1F485;
               </span>
             </p>
+            <div className="border-line" />
           </li>
 
           <li>
-            <p className="gsap">
+            <p className="gsap skill">
               animations in <br />
               <strong>gsap </strong>
               <span role="img" aria-label="nail polish">
                 &#x1F939;
               </span>
             </p>
+            <div className="border-line" />
           </li>
           <li>
-            <p className="redux">
+            <p className="redux skill">
               basics of <strong>Redux </strong>
               <span role="img" aria-label="nail polish">
                 &#x1F44A;
               </span>
             </p>
+            <div className="border-line" />
           </li>
           <li>
-            <p className="hooks">
+            <p className="hooks skill">
               prefer keeping state with help of <br />
               <strong>createContext</strong> and <strong>useState </strong>
               <span role="img" aria-label="nail polish">
                 &#x1F91D;
               </span>
             </p>
+            <div className="border-line" />
           </li>
           <li>
-            <p className="html">
+            <p className="html skill">
               writing semantic <br />
               <strong>html </strong>
               <span role="img" aria-label="keyboard">
                 &#x2328;
               </span>
             </p>
+            <div className="border-line" />
           </li>
           <li>
-            <p className="rwd">
+            <p className="rwd skill">
               <strong>R</strong>esponsive{" "}
               <span role="img" aria-label="desktop computer">
                 &#x1F5A5;
@@ -287,24 +298,27 @@ const Skills = () => {
                 &#x1F4F1;
               </span>
             </p>
+            <div className="border-line" />
           </li>
           <li>
-            <p className="react-native">
+            <p className="react-native skill">
               basics of <br />
               <strong>react native </strong>
               <span role="img" aria-label="selfie">
                 &#x1F933;
               </span>
             </p>
+            <div className="border-line" />
           </li>
           <li>
-            <p className="git">
+            <p className="git skill">
               tracking changes in code with
               <br /> <strong>GIT </strong>
               <span role="img" aria-label="card file box">
                 &#x1F5C3;
               </span>
             </p>
+            <div className="border-line" />
           </li>
         </SkillsDescription>
       </Content>
