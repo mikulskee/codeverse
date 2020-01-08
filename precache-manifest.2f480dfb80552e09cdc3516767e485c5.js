@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a895e709f5c1565d7e3bdd0b6388d8ab",
+    "revision": "dd98c44e5bf3e42f0d46e5d96a21bcdd",
     "url": "/codeverse/index.html"
   },
   {
-    "revision": "caa53102a12e278b121b",
+    "revision": "a5929f743ec0a6f3dfb1",
     "url": "/codeverse/static/css/main.e3e92313.chunk.css"
   },
   {
@@ -12,16 +12,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/js/2.395bc032.chunk.js"
   },
   {
-    "revision": "caa53102a12e278b121b",
-    "url": "/codeverse/static/js/main.2cc9d127.chunk.js"
+    "revision": "a5929f743ec0a6f3dfb1",
+    "url": "/codeverse/static/js/main.693c23f9.chunk.js"
   },
   {
     "revision": "756f4cf751f1532b79c7",
     "url": "/codeverse/static/js/runtime-main.68d11c0a.js"
   },
   {
-    "revision": "9a052dcf0e2a14c8eff0447b6afa720b",
-    "url": "/codeverse/static/media/header-bg.9a052dcf.jpg"
+    "revision": "0e1ab5a09f91366293cdd9d60eb6aab7",
+    "url": "/codeverse/static/media/header-bg.0e1ab5a0.jpg"
   },
   {
     "revision": "b7378ea3d0f7aa00eea2cb5f99b8a326",
@@ -40,7 +40,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/media/project3.25abae1b.png"
   },
   {
-    "revision": "8698d02474116486a2b852190b7d3ab0",
-    "url": "/codeverse/static/media/skills-bg.8698d024.jpg"
+    "revision": "20b718348cfb95c14612594e3248fdd1",
+    "url": "/codeverse/static/media/skills-bg.20b71834.jpg"
   }
 ]);
