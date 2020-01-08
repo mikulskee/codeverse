@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Main from "../components/Main";
+import { ParallaxProvider } from "react-scroll-parallax";
 // import debounce from "lodash.debounce";
 // import {
 //   headerOutAnimation,
@@ -43,8 +44,10 @@ const MainTemplate = () => {
   // });
   return (
     <>
-      <Header />
-      <Main />
+      <ParallaxProvider>
+        <Header />
+        <Main />
+      </ParallaxProvider>
     </>
   );
 };

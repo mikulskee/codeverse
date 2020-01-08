@@ -11,6 +11,7 @@ import { faCode } from "@fortawesome/free-solid-svg-icons";
 import starsPattern from "../img/stars-pattern.png";
 import { projectsSectionContentAnimation } from "../animations/contentAnimations";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
+import { Parallax } from "react-scroll-parallax";
 
 const Wrapper = styled.section`
   background-image: url(${starsPattern});
@@ -95,7 +96,7 @@ const ProjectsList = styled.ul`
     }
   }
 
-  li:nth-child(even) {
+  div.parallax-outer:nth-child(even) li {
     justify-content: flex-start;
 
     div {
@@ -166,23 +167,25 @@ const Projects = () => {
   };
 
   const newProjects = projects.map(item => (
-    <li key={item.key}>
-      <div onClick={handleClick} className={`project ${item.key}`}>
-        <h3 className="project-title">{`${item.key}. ${item.title}`}</h3>
-        <img src={item.img} alt={item.title} />
-      </div>
-      <div className={`project links ${item.key}`}>
-        <img src={item.img} alt={item.title} />
-        <a href={item.github}>
-          {" "}
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
-        <a href={item.live}>
-          {" "}
-          <FontAwesomeIcon icon={faCode} />
-        </a>
-      </div>
-    </li>
+    <Parallax className="parallax" y={[15, -15]} key={item.key}>
+      <li>
+        <div onClick={handleClick} className={`project ${item.key}`}>
+          <h3 className="project-title">{`${item.key}. ${item.title}`}</h3>
+          <img src={item.img} alt={item.title} />
+        </div>
+        <div className={`project links ${item.key}`}>
+          <img src={item.img} alt={item.title} />
+          <a href={item.github}>
+            {" "}
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+          <a href={item.live}>
+            {" "}
+            <FontAwesomeIcon icon={faCode} />
+          </a>
+        </div>
+      </li>
+    </Parallax>
   ));
 
   useEffect(() => {
@@ -205,9 +208,11 @@ const Projects = () => {
 
   return (
     <Wrapper className="projects">
-      <SectionTitle className={"projects-section-title section-title"}>
-        projects
-      </SectionTitle>
+      <Parallax className="parallax" y={[100, -200]}>
+        <SectionTitle className={"projects-section-title section-title"}>
+          projects
+        </SectionTitle>
+      </Parallax>
       <ProjectsList>{newProjects}</ProjectsList>
     </Wrapper>
   );

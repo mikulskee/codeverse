@@ -7,7 +7,7 @@ import {
   headerAnimation,
   mandoAnimation
 } from "../animations/patternsAnimation";
-import { ParallaxProvider, Parallax } from "react-scroll-parallax";
+import { Parallax } from "react-scroll-parallax";
 
 const Wrapper = styled.header`
   display: flex;
@@ -64,7 +64,7 @@ const MainDescription = styled.p`
   width: 250px;
   line-height: 1.8;
   transform: translateY(-50px);
-  margin-top: 30px;
+  margin-top: 50px;
 
   span {
     color: #68b5ef;
@@ -119,33 +119,31 @@ const Header = () => {
     });
   }, []);
   return (
-    <ParallaxProvider>
-      <Wrapper className={"header"}>
-        <StyledParallax y={[15, 0]}>
-          <div className="header-pattern" />
-        </StyledParallax>
-        <div className="bg-gradient" />
-        <StyledParallax y={[5, -5]}>
-          <img src={logo} alt="logo" />
-        </StyledParallax>
-        <Parallax className="parallax" y={[25, -25]}>
-          <MainDescription className="main-description">
-            Hi, my name is <span>Mateusz Mikulski</span> <br />i design and
-            develop websites
-            <br />
-            <br />
-            &#x270d; &#x1F933; &#x1F4bb; &#x1F320; &#x1F680; &#x1F4AB;
-          </MainDescription>
-        </Parallax>
-        <IconScrollSlide />
-        <MandoQuote className="mando-quote">
-          this is the way...{" "}
-          <span role="img" aria-label="robot">
-            &#x1F916;
-          </span>
-        </MandoQuote>
-      </Wrapper>
-    </ParallaxProvider>
+    <Wrapper className={"header"}>
+      <StyledParallax y={[15, 0]}>
+        <div className="header-pattern" />
+      </StyledParallax>
+      <div className="bg-gradient" />
+      <StyledParallax y={[15, -15]}>
+        <img src={logo} alt="logo" />
+      </StyledParallax>
+      <Parallax className="parallax" y={[45, -45]}>
+        <MainDescription className="main-description">
+          Hi, my name is <span>Mateusz Mikulski</span> <br />i design and
+          develop websites
+          <br />
+          <br />
+          &#x270d; &#x1F933; &#x1F4bb; &#x1F320; &#x1F680; &#x1F4AB;
+        </MainDescription>
+      </Parallax>
+      <IconScrollSlide />
+      <MandoQuote className="mando-quote">
+        this is the way...{" "}
+        <span role="img" aria-label="robot">
+          &#x1F916;
+        </span>
+      </MandoQuote>
+    </Wrapper>
   );
 };
 
