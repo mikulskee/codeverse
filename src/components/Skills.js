@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { SectionTitle } from "./SectionTitle";
+import SectionTitle from "./SectionTitle";
 import skillsBg from "../img/skills-bg.jpg";
 import {
   skillsAnimation,
   spaceship,
   spaceship2
 } from "../animations/patternsAnimation";
+import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
 
 const Wrapper = styled.section`
   overflow: hidden;
@@ -183,6 +184,24 @@ const Skills = () => {
     spaceship();
     spaceship2();
   });
+
+  useEffect(() => {
+    const title = document.querySelector(".skills-section-title");
+    // const timeline = someContentAnimation();
+
+    let executed = false;
+
+    window.addEventListener("scroll", () => {
+      const height = window.innerHeight;
+      const bottom = title.getBoundingClientRect().bottom;
+
+      if (!executed && height >= bottom) {
+        executed = true;
+        // timeline.play();
+        sectionTitleAnimation(title);
+      } else return;
+    });
+  });
   return (
     <Wrapper className="skills">
       <SkillsPattern className="skills-pattern" />
@@ -192,8 +211,8 @@ const Skills = () => {
       <Spaceship className="spaceship-3" />
       <Spaceship className="spaceship-4" />
       <Content>
-        <SectionTitle className={"section-title"}>
-          <span>{"{  "}</span>skills<span>{"  }"}</span>
+        <SectionTitle className={"skills-section-title section-title"}>
+          skills
         </SectionTitle>
         <SkillsDescription>
           <li>

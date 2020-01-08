@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { gsap, Power1 } from "gsap/all";
-import { SectionTitle } from "./SectionTitle";
+import SectionTitle from "./SectionTitle";
 import styled from "styled-components";
 import fifaDraw from "../img/project1.png";
 import hairstyleWebsite from "../img/project2.png";
@@ -10,6 +10,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 import starsPattern from "../img/stars-pattern.png";
 import { projectsSectionContentAnimation } from "../animations/contentAnimations";
+import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
 
 const Wrapper = styled.section`
   background-image: url(${starsPattern});
@@ -17,10 +18,6 @@ const Wrapper = styled.section`
   background-size: 95%;
   background-position: 644% 40%;
   padding: 20px;
-  h2.projects-section-title {
-    color: #e7e7e7;
-    visibility: hidden;
-  }
 `;
 
 const ProjectsList = styled.ul`
@@ -189,26 +186,27 @@ const Projects = () => {
   ));
 
   useEffect(() => {
-    const projectsSectionTitle = document.querySelector(
-      ".projects-section-title"
-    );
-
+    const title = document.querySelector(".projects-section-title");
     const timeline = projectsSectionContentAnimation();
+
+    let executed = false;
 
     window.addEventListener("scroll", () => {
       const height = window.innerHeight;
-      const bottom = projectsSectionTitle.getBoundingClientRect().bottom;
+      const bottom = title.getBoundingClientRect().bottom;
 
-      if (height >= bottom) {
+      if (!executed && height >= bottom) {
+        executed = true;
         timeline.play();
-        console.log("działa");
-      }
+        sectionTitleAnimation(title);
+      } else return;
     });
   });
+
   return (
     <Wrapper className="projects">
-      <SectionTitle className={"projects-section-title"}>
-        <span>{"{  "}</span>projects<span>{"  }"}</span>
+      <SectionTitle className={"projects-section-title section-title"}>
+        projects
       </SectionTitle>
       <ProjectsList>{newProjects}</ProjectsList>
     </Wrapper>
