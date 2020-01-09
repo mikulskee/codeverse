@@ -25,7 +25,7 @@ const Wrapper = styled.header`
     left: 0;
     height: 100%;
     width: 100%;
-    transform: scale(1.25);
+    transform: scale(1.1);
     background-image: url(${headerBg});
     background-position: center;
     background-size: cover;
@@ -120,7 +120,7 @@ const Header = () => {
   }, []);
   return (
     <Wrapper className={"header"}>
-      <StyledParallax y={[15, 0]}>
+      <StyledParallax y={[-25, 10]}>
         <div className="header-pattern" />
       </StyledParallax>
       <div className="bg-gradient" />
