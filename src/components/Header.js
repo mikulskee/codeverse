@@ -3,11 +3,7 @@ import styled from "styled-components";
 import headerBg from "../img/header-bg.jpg";
 import logo from "../img/logo.png";
 import IconScrollSlide from "./IconScrollSlide";
-import {
-  headerAnimation,
-  mandoAnimation
-} from "../animations/patternsAnimation";
-import { Parallax } from "react-scroll-parallax";
+import { mandoAnimation } from "../animations/patternsAnimation";
 
 const Wrapper = styled.header`
   display: flex;
@@ -18,19 +14,10 @@ const Wrapper = styled.header`
   height: 110vh;
   height: calc(var(--vh, 1vh) * 110);
   overflow: hidden;
-
-  .header-pattern {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    transform: scale(1.1);
-    background-image: url(${headerBg});
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+  background-image: url(${headerBg});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   .bg-gradient {
     position: absolute;
@@ -47,7 +34,7 @@ const Wrapper = styled.header`
     );
   }
 
-  img {
+  img.logo {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -56,6 +43,7 @@ const Wrapper = styled.header`
 `;
 
 const MainDescription = styled.p`
+  position: absolute;
   display: block;
   color: #f2f2f2;
   font-family: "Montserrat", sans-serif;
@@ -93,24 +81,7 @@ const MandoQuote = styled.p`
   }
 `;
 
-const StyledParallax = styled(Parallax)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  .parallax-inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-`;
 const Header = () => {
-  useEffect(() => {
-    headerAnimation();
-  });
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 20) {
@@ -120,22 +91,16 @@ const Header = () => {
   }, []);
   return (
     <Wrapper className={"header"}>
-      <StyledParallax y={[-25, 10]}>
-        <div className="header-pattern" />
-      </StyledParallax>
       <div className="bg-gradient" />
-      <StyledParallax y={[15, -15]}>
-        <img src={logo} alt="logo" />
-      </StyledParallax>
-      <Parallax className="parallax" y={[45, -45]}>
-        <MainDescription className="main-description">
-          Hi, my name is <span>Mateusz Mikulski</span> <br />i design and
-          develop websites
-          <br />
-          <br />
-          &#x270d; &#x1F933; &#x1F4bb; &#x1F320; &#x1F680; &#x1F4AB;
-        </MainDescription>
-      </Parallax>
+      <img className="logo" src={logo} alt="logo" />
+      <MainDescription className="main-description">
+        Hi, my name is <span>Mateusz Mikulski</span> <br />i design and develop
+        websites
+        <br />
+        <br />
+        &#x270d; &#x1F933; &#x1F4bb; &#x1F320; &#x1F680; &#x1F4AB;
+      </MainDescription>
+
       <IconScrollSlide />
       <MandoQuote className="mando-quote">
         this is the way...{" "}

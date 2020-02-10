@@ -11,7 +11,6 @@ import { faCode } from "@fortawesome/free-solid-svg-icons";
 import starsPattern from "../img/stars-pattern.png";
 import { projectsSectionContentAnimation } from "../animations/contentAnimations";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
-import { Parallax } from "react-scroll-parallax";
 
 const Wrapper = styled.section`
   background-image: url(${starsPattern});
@@ -96,7 +95,7 @@ const ProjectsList = styled.ul`
     }
   }
 
-  div.parallax-outer:nth-child(even) li {
+  li:nth-child(even) {
     justify-content: flex-start;
 
     div {
@@ -143,23 +142,25 @@ const projects = [
 
 const Projects = () => {
   const handleClick = e => {
+    console.log(e.target);
     const tl = gsap.timeline();
+    const description = e.target;
 
     const links = e.target.nextSibling;
 
     tl.set(links, { rotationX: -90 })
-      .to(e.target, {
+      .to(description, {
         duration: 0.1,
         rotationX: 90,
         ease: Power1.easeOut
       })
-      .set(e.target, { display: "none" })
+      .set(description, { display: "none" })
       .set(links, { display: "block" })
       .to(links, { duration: 0.1, rotationX: 0 })
       .to(links, { duration: 0.1, rotationX: -90, delay: 2.5 })
       .set(links, { display: "none" })
-      .set(e.target, { display: "block" })
-      .to(e.target, {
+      .set(description, { display: "block" })
+      .to(description, {
         duration: 0.1,
         rotationX: 0,
         ease: Power1.easeOut
@@ -167,25 +168,23 @@ const Projects = () => {
   };
 
   const newProjects = projects.map(item => (
-    <Parallax className="parallax" y={[15, -15]} key={item.key}>
-      <li>
-        <div onClick={handleClick} className={`project ${item.key}`}>
-          <h3 className="project-title">{`${item.key}. ${item.title}`}</h3>
-          <img src={item.img} alt={item.title} />
-        </div>
-        <div className={`project links ${item.key}`}>
-          <img src={item.img} alt={item.title} />
-          <a href={item.github}>
-            {" "}
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-          <a href={item.live}>
-            {" "}
-            <FontAwesomeIcon icon={faCode} />
-          </a>
-        </div>
-      </li>
-    </Parallax>
+    <li key={item.key}>
+      <div onClick={handleClick} className={`project ${item.key}`}>
+        <h3 className="project-title">{`${item.key}. ${item.title}`}</h3>
+        <img src={item.img} alt={item.title} />
+      </div>
+      <div className={`project links ${item.key}`}>
+        <img src={item.img} alt={item.title} />
+        <a href={item.github}>
+          {" "}
+          <FontAwesomeIcon icon={faGithub} />
+        </a>
+        <a href={item.live}>
+          {" "}
+          <FontAwesomeIcon icon={faCode} />
+        </a>
+      </div>
+    </li>
   ));
 
   useEffect(() => {
@@ -208,11 +207,10 @@ const Projects = () => {
 
   return (
     <Wrapper className="projects">
-      <Parallax className="parallax" y={[100, -200]}>
-        <SectionTitle className={"projects-section-title section-title"}>
-          projects
-        </SectionTitle>
-      </Parallax>
+      <SectionTitle className={"projects-section-title section-title"}>
+        projects
+      </SectionTitle>
+
       <ProjectsList>{newProjects}</ProjectsList>
     </Wrapper>
   );

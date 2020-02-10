@@ -2,17 +2,17 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import SectionTitle from "./SectionTitle";
 import skillsBg from "../img/skills-bg.jpg";
-import {
-  skillsAnimation,
-  spaceship,
-  spaceship2
-} from "../animations/patternsAnimation";
+import { spaceship, spaceship2 } from "../animations/patternsAnimation";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
 import { skillsSectionContentAnimation } from "../animations/contentAnimations";
 
 const Wrapper = styled.section`
+  position: relative;
   overflow: hidden;
-  transform: translate(0);
+  background-image: url(${skillsBg});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   .spaceship-2 {
     top: auto;
@@ -37,18 +37,6 @@ const Wrapper = styled.section`
   }
 `;
 
-const SkillsPattern = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  transform: scale(1.25);
-  background-image: url(${skillsBg});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
 const SkillsGradient = styled.div`
   position: absolute;
   top: 0;
@@ -184,7 +172,6 @@ const SkillsDescription = styled.ul`
 
 const Skills = () => {
   useEffect(() => {
-    skillsAnimation();
     spaceship();
     spaceship2();
   });
@@ -209,7 +196,6 @@ const Skills = () => {
   });
   return (
     <Wrapper className="skills">
-      <SkillsPattern className="skills-pattern" />
       <SkillsGradient />
       <Spaceship className="spaceship" />
       <Spaceship className="spaceship-2" />
@@ -219,6 +205,7 @@ const Skills = () => {
         <SectionTitle className={"skills-section-title section-title"}>
           skills
         </SectionTitle>
+
         <SkillsDescription>
           <li>
             <p className="react skill">

@@ -1,35 +1,35 @@
 import { gsap, Power0 } from "gsap/all";
 
-export const headerAnimation = () => {
-  const pattern = document.querySelector(".header-pattern");
-  const tl = gsap.timeline();
+// export const headerAnimation = () => {
+//   const pattern = document.querySelector(".header-pattern");
+//   const tl = gsap.timeline();
 
-  tl.to(pattern, {
-    duration: 10,
-    x: 20,
-    y: -5,
-    rotate: 3,
-    repeat: -1,
-    ease: Power0.easeNone,
-    yoyo: true,
-    yoyoEase: true
-  });
-};
-export const skillsAnimation = () => {
-  const pattern = document.querySelector(".skills-pattern");
-  const tl = gsap.timeline();
+//   tl.to(pattern, {
+//     duration: 10,
+//     x: 20,
+//     y: -5,
+//     rotate: 3,
+//     repeat: -1,
+//     ease: Power0.easeNone,
+//     yoyo: true,
+//     yoyoEase: true
+//   });
+// };
+// export const skillsAnimation = () => {
+//   const pattern = document.querySelector(".skills-pattern");
+//   const tl = gsap.timeline();
 
-  tl.to(pattern, {
-    duration: 8,
-    x: 5,
-    y: -20,
-    rotate: 2,
-    repeat: -1,
-    ease: Power0.easeNone,
-    yoyo: true,
-    yoyoEase: true
-  });
-};
+//   tl.to(pattern, {
+//     duration: 8,
+//     x: 5,
+//     y: -20,
+//     rotate: 2,
+//     repeat: -1,
+//     ease: Power0.easeNone,
+//     yoyo: true,
+//     yoyoEase: true
+//   });
+// };
 
 export const spaceship = () => {
   const rougeOne = document.querySelector(".spaceship");
