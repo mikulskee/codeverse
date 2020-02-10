@@ -1,35 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a15faa4ba226fee91757f5c97d4f39eb",
+    "revision": "a7ee26a924e23acc3590407e32c8753b",
     "url": "/codeverse/index.html"
   },
   {
-    "revision": "f4d5cd49053778a0122a",
+    "revision": "83fd7d0a408efef84732",
     "url": "/codeverse/static/css/main.e3e92313.chunk.css"
   },
   {
-    "revision": "c730b093f535134d06c8",
-    "url": "/codeverse/static/js/2.8dc780d9.chunk.js"
+    "revision": "bb87d275a077ad62b59b",
+    "url": "/codeverse/static/js/2.e88180ab.chunk.js"
   },
   {
-    "revision": "f4d5cd49053778a0122a",
-    "url": "/codeverse/static/js/main.528e04bd.chunk.js"
+    "revision": "83fd7d0a408efef84732",
+    "url": "/codeverse/static/js/main.1b470544.chunk.js"
   },
   {
     "revision": "756f4cf751f1532b79c7",
     "url": "/codeverse/static/js/runtime-main.68d11c0a.js"
   },
   {
-    "revision": "8271981109dfb3aed1212f9172036141",
-    "url": "/codeverse/static/media/header-bg.82719811.jpg"
+    "revision": "0343e5d9c5af5249c040d19e8848807e",
+    "url": "/codeverse/static/media/header-bg.0343e5d9.jpg"
   },
   {
     "revision": "b7378ea3d0f7aa00eea2cb5f99b8a326",
     "url": "/codeverse/static/media/logo.b7378ea3.png"
   },
   {
-    "revision": "44dd9d2ffe73af24eb4ccef29ed427e1",
-    "url": "/codeverse/static/media/me-and-ben.44dd9d2f.png"
+    "revision": "d7154d79dcbd779b76b200b823d16a17",
+    "url": "/codeverse/static/media/me-and-ben.d7154d79.png"
   },
   {
     "revision": "a1306bd32b2d7109c09ed96558cdabf3",
@@ -44,7 +44,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/media/project3.25abae1b.png"
   },
   {
-    "revision": "2e9f704629a2a061dda2dfa82d357b03",
-    "url": "/codeverse/static/media/skills-bg.2e9f7046.jpg"
+    "revision": "7df3e01212bb2a975180b02c0a562f17",
+    "url": "/codeverse/static/media/skills-bg.7df3e012.jpg"
   }
 ]);
