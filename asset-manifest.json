@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/codeverse/static/css/main.e3e92313.chunk.css",
-    "main.js": "/codeverse/static/js/main.28059780.chunk.js",
-    "main.js.map": "/codeverse/static/js/main.28059780.chunk.js.map",
+    "main.js": "/codeverse/static/js/main.9280f6d2.chunk.js",
+    "main.js.map": "/codeverse/static/js/main.9280f6d2.chunk.js.map",
     "runtime-main.js": "/codeverse/static/js/runtime-main.68d11c0a.js",
     "runtime-main.js.map": "/codeverse/static/js/runtime-main.68d11c0a.js.map",
-    "static/js/2.eab5ba73.chunk.js": "/codeverse/static/js/2.eab5ba73.chunk.js",
-    "static/js/2.eab5ba73.chunk.js.map": "/codeverse/static/js/2.eab5ba73.chunk.js.map",
+    "static/js/2.8a4d371a.chunk.js": "/codeverse/static/js/2.8a4d371a.chunk.js",
+    "static/js/2.8a4d371a.chunk.js.map": "/codeverse/static/js/2.8a4d371a.chunk.js.map",
     "index.html": "/codeverse/index.html",
-    "precache-manifest.58e32eaca97430e6d9d96f495354f9b7.js": "/codeverse/precache-manifest.58e32eaca97430e6d9d96f495354f9b7.js",
+    "precache-manifest.8db7f0e9b82efafabce07b11e739405b.js": "/codeverse/precache-manifest.8db7f0e9b82efafabce07b11e739405b.js",
     "service-worker.js": "/codeverse/service-worker.js",
     "static/css/main.e3e92313.chunk.css.map": "/codeverse/static/css/main.e3e92313.chunk.css.map",
     "static/media/about-me.jpg": "/codeverse/static/media/about-me.3cb71a1d.jpg",
@@ -19,12 +19,15 @@
     "static/media/project1.png": "/codeverse/static/media/project1.a1306bd3.png",
     "static/media/project2.png": "/codeverse/static/media/project2.77655b0d.png",
     "static/media/project3.png": "/codeverse/static/media/project3.25abae1b.png",
-    "static/media/skills-bg.jpg": "/codeverse/static/media/skills-bg.dd5ebf25.jpg"
+    "static/media/skills-bg.jpg": "/codeverse/static/media/skills-bg.dd5ebf25.jpg",
+    "static/media/sticker-1.png": "/codeverse/static/media/sticker-1.2285c7b1.png",
+    "static/media/sticker-2.png": "/codeverse/static/media/sticker-2.8e5824e0.png",
+    "static/media/sticker-6.png": "/codeverse/static/media/sticker-6.598673cb.png"
   },
   "entrypoints": [
     "static/js/runtime-main.68d11c0a.js",
-    "static/js/2.eab5ba73.chunk.js",
+    "static/js/2.8a4d371a.chunk.js",
     "static/css/main.e3e92313.chunk.css",
-    "static/js/main.28059780.chunk.js"
+    "static/js/main.9280f6d2.chunk.js"
   ]
 }
