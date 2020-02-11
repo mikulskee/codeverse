@@ -1,23 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6305232c8165248a78aed910b2160d48",
+    "revision": "7324e353c58cd4a4d2572338f422d46e",
     "url": "/codeverse/index.html"
   },
   {
-    "revision": "73ef9ee234f6b1e67e11",
+    "revision": "2ec8fbd0512e82805637",
     "url": "/codeverse/static/css/main.e3e92313.chunk.css"
   },
   {
-    "revision": "bb87d275a077ad62b59b",
-    "url": "/codeverse/static/js/2.e88180ab.chunk.js"
+    "revision": "4ba7743e78928035f985",
+    "url": "/codeverse/static/js/2.eab5ba73.chunk.js"
   },
   {
-    "revision": "73ef9ee234f6b1e67e11",
-    "url": "/codeverse/static/js/main.9b3a7cc2.chunk.js"
+    "revision": "2ec8fbd0512e82805637",
+    "url": "/codeverse/static/js/main.bb032a8d.chunk.js"
   },
   {
     "revision": "756f4cf751f1532b79c7",
     "url": "/codeverse/static/js/runtime-main.68d11c0a.js"
+  },
+  {
+    "revision": "3cb71a1d22bc13509223d6981d6e76bf",
+    "url": "/codeverse/static/media/about-me.3cb71a1d.jpg"
+  },
+  {
+    "revision": "899d21d91a5497ba23a13321da1d87ad",
+    "url": "/codeverse/static/media/about-me2.899d21d9.png"
   },
   {
     "revision": "0343e5d9c5af5249c040d19e8848807e",
@@ -28,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/media/logo.b7378ea3.png"
   },
   {
-    "revision": "87e3a3dc2c970c3040a95b88aec49114",
-    "url": "/codeverse/static/media/me-and-ben.87e3a3dc.png"
+    "revision": "30b2fcbaa1ae0a70331915a5193531a9",
+    "url": "/codeverse/static/media/me-and-ben.30b2fcba.jpg"
   },
   {
     "revision": "a1306bd32b2d7109c09ed96558cdabf3",
@@ -44,7 +52,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/media/project3.25abae1b.png"
   },
   {
-    "revision": "7df3e01212bb2a975180b02c0a562f17",
-    "url": "/codeverse/static/media/skills-bg.7df3e012.jpg"
+    "revision": "dd5ebf25c48a0ad7c4f0af4576ecf1e6",
+    "url": "/codeverse/static/media/skills-bg.dd5ebf25.jpg"
   }
 ]);
