@@ -1,26 +1,27 @@
 {
   "files": {
     "main.css": "/codeverse/static/css/main.e3e92313.chunk.css",
-    "main.js": "/codeverse/static/js/main.10f81f9a.chunk.js",
-    "main.js.map": "/codeverse/static/js/main.10f81f9a.chunk.js.map",
+    "main.js": "/codeverse/static/js/main.1d377ba9.chunk.js",
+    "main.js.map": "/codeverse/static/js/main.1d377ba9.chunk.js.map",
     "runtime-main.js": "/codeverse/static/js/runtime-main.68d11c0a.js",
     "runtime-main.js.map": "/codeverse/static/js/runtime-main.68d11c0a.js.map",
-    "static/js/2.5a3b7c36.chunk.js": "/codeverse/static/js/2.5a3b7c36.chunk.js",
-    "static/js/2.5a3b7c36.chunk.js.map": "/codeverse/static/js/2.5a3b7c36.chunk.js.map",
+    "static/js/2.f9aded3d.chunk.js": "/codeverse/static/js/2.f9aded3d.chunk.js",
+    "static/js/2.f9aded3d.chunk.js.map": "/codeverse/static/js/2.f9aded3d.chunk.js.map",
     "index.html": "/codeverse/index.html",
-    "precache-manifest.04711a195a41e7c8a7e722496ca9cb61.js": "/codeverse/precache-manifest.04711a195a41e7c8a7e722496ca9cb61.js",
+    "precache-manifest.5cb4295c6cd15cdd57a95350b4c4d809.js": "/codeverse/precache-manifest.5cb4295c6cd15cdd57a95350b4c4d809.js",
     "service-worker.js": "/codeverse/service-worker.js",
     "static/css/main.e3e92313.chunk.css.map": "/codeverse/static/css/main.e3e92313.chunk.css.map",
     "static/media/about-me.jpg": "/codeverse/static/media/about-me.3cb71a1d.jpg",
     "static/media/about-me2.png": "/codeverse/static/media/about-me2.899d21d9.png",
-    "static/media/grill.png": "/codeverse/static/media/grill.7abf8b3d.png",
+    "static/media/contact-bg.jpg": "/codeverse/static/media/contact-bg.a3e93817.jpg",
+    "static/media/grill.png": "/codeverse/static/media/grill.0509ff4d.png",
     "static/media/header-bg.jpg": "/codeverse/static/media/header-bg.0343e5d9.jpg",
     "static/media/logo.png": "/codeverse/static/media/logo.b7378ea3.png",
     "static/media/logo80s.png": "/codeverse/static/media/logo80s.4da45983.png",
     "static/media/me-and-ben.jpg": "/codeverse/static/media/me-and-ben.30b2fcba.jpg",
-    "static/media/project1.png": "/codeverse/static/media/project1.a1306bd3.png",
-    "static/media/project2.png": "/codeverse/static/media/project2.77655b0d.png",
-    "static/media/project3.png": "/codeverse/static/media/project3.25abae1b.png",
+    "static/media/project1.png": "/codeverse/static/media/project1.5382cd3d.png",
+    "static/media/project2.png": "/codeverse/static/media/project2.6358bd7e.png",
+    "static/media/project3.png": "/codeverse/static/media/project3.54247896.png",
     "static/media/skills-bg.jpg": "/codeverse/static/media/skills-bg.dd5ebf25.jpg",
     "static/media/sticker-2.png": "/codeverse/static/media/sticker-2.8e5824e0.png",
     "static/media/sticker-6.png": "/codeverse/static/media/sticker-6.598673cb.png",
@@ -28,8 +29,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.68d11c0a.js",
-    "static/js/2.5a3b7c36.chunk.js",
+    "static/js/2.f9aded3d.chunk.js",
     "static/css/main.e3e92313.chunk.css",
-    "static/js/main.10f81f9a.chunk.js"
+    "static/js/main.1d377ba9.chunk.js"
   ]
 }

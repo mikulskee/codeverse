@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c1e4c3244252a991e1a22dde69a3ac2d",
+    "revision": "176da7934456b61fbf61723bf0343996",
     "url": "/codeverse/index.html"
   },
   {
-    "revision": "f9df4e160155efef2236",
+    "revision": "23fe93d489f70ac0649a",
     "url": "/codeverse/static/css/main.e3e92313.chunk.css"
   },
   {
-    "revision": "8367660a9e6b9dee39b7",
-    "url": "/codeverse/static/js/2.5a3b7c36.chunk.js"
+    "revision": "1fdc2c04543e01b1d412",
+    "url": "/codeverse/static/js/2.f9aded3d.chunk.js"
   },
   {
-    "revision": "f9df4e160155efef2236",
-    "url": "/codeverse/static/js/main.10f81f9a.chunk.js"
+    "revision": "23fe93d489f70ac0649a",
+    "url": "/codeverse/static/js/main.1d377ba9.chunk.js"
   },
   {
     "revision": "756f4cf751f1532b79c7",
@@ -28,8 +28,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/media/about-me2.899d21d9.png"
   },
   {
-    "revision": "7abf8b3ddfe12d5beebcb48116b3b5cf",
-    "url": "/codeverse/static/media/grill.7abf8b3d.png"
+    "revision": "a3e938177eaba767aabaae06fb459168",
+    "url": "/codeverse/static/media/contact-bg.a3e93817.jpg"
+  },
+  {
+    "revision": "0509ff4da310db9af5ebcdab635872e5",
+    "url": "/codeverse/static/media/grill.0509ff4d.png"
   },
   {
     "revision": "0343e5d9c5af5249c040d19e8848807e",
@@ -48,16 +52,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/media/me-and-ben.30b2fcba.jpg"
   },
   {
-    "revision": "a1306bd32b2d7109c09ed96558cdabf3",
-    "url": "/codeverse/static/media/project1.a1306bd3.png"
+    "revision": "5382cd3d06f6ca13bb3a2b6f21322f6e",
+    "url": "/codeverse/static/media/project1.5382cd3d.png"
   },
   {
-    "revision": "77655b0d672269b25275d122f7b5ea9f",
-    "url": "/codeverse/static/media/project2.77655b0d.png"
+    "revision": "6358bd7ea682b4ba9b85f1df41029f25",
+    "url": "/codeverse/static/media/project2.6358bd7e.png"
   },
   {
-    "revision": "25abae1b278bbce854c13bb1f0a86ef0",
-    "url": "/codeverse/static/media/project3.25abae1b.png"
+    "revision": "542478964708e8e0aadf0ef8e1f430b0",
+    "url": "/codeverse/static/media/project3.54247896.png"
   },
   {
     "revision": "dd5ebf25c48a0ad7c4f0af4576ecf1e6",
