@@ -13,6 +13,7 @@ import { projectsSectionContentAnimation } from "../animations/contentAnimations
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
 
 const Wrapper = styled.section`
+  position: relative;
   background-image: url(${starsPattern});
   background-repeat: no-repeat;
   background-size: 95%;

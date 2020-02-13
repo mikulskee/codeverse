@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.h2`
+  position: relative;
   color: #f2f2f2;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;

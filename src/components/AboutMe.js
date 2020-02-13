@@ -8,9 +8,7 @@ import aboutMe from "../img/about-me.jpg";
 import aboutMe2 from "../img/about-me2.png";
 
 import stickerCap from "../img/sticker-2.png";
-// import sticker3 from "../img/sticker-3.png";
-// import sticker4 from "../img/sticker-4.png";
-// import sticker5 from "../img/sticker-5.png";
+import logo80s from "../img/logo80s.png";
 import sticker6 from "../img/sticker-6.png";
 import grill from "../img/grill.png";
 
@@ -185,10 +183,23 @@ const Grill = styled.div`
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% + 40px);
-  height: 80vw;
+  height: 54vw;
   margin-bottom: 30px;
   background-position: center;
   background-image: url(${grill});
+  background-size: contain;
+  background-repeat: no-repeat;
+`;
+
+const Logo80s = styled.div`
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 15vw;
+  margin-bottom: 30px;
+  background-position: center;
+  background-image: url(${logo80s});
   background-size: contain;
   background-repeat: no-repeat;
 `;
@@ -239,7 +250,7 @@ const AboutMe = () => {
       </DescriptionContainer>
       <Grill />
       <Description className="second">
-        I have finance <strong>Ania</strong>, and I am owner of French bulldog
+        I have fiance <strong>Ania</strong>, and I am owner of French bulldog
         named <strong>Benek</strong>.
         <br />I love sports. I love running, in fact I ran a{" "}
         <strong>half-marathon</strong> last year.
@@ -257,14 +268,7 @@ const AboutMe = () => {
         </span>
         .
       </Description>
-
-      {/*  I love sports. I love running, in fact I ran
-        a half-marathon last year. It took me two hours. I was very
-        proud of myself that day. It showed me that nothing is impossible, if
-        you really want something and you try hard to do it, you will achieve
-        success. I started to learn programming a year and a half ago and got so
-        involved that since then I spend every day at least 2 hours a day
-        learning. */}
+      <Logo80s />
     </Wrapper>
   );
 };

@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import headerBg from "../img/header-bg.jpg";
 import logo from "../img/logo.png";
+import triangles from "../img/triangles.png";
 import IconScrollSlide from "./IconScrollSlide";
 import { mandoAnimation } from "../animations/patternsAnimation";
 
 const Wrapper = styled.header`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,31 +45,31 @@ const Wrapper = styled.header`
 `;
 
 const MainDescription = styled.p`
-  position: absolute;
-  display: block;
   color: #f2f2f2;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 20px;
   width: 250px;
   line-height: 1.8;
-  transform: translateY(-50px);
-  margin-top: 50px;
 
   span {
     color: #68b5ef;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
   }
+`;
 
-  /* span.design {
-    font-family: "Courgette", cursive;
-    font-weight: 500;
-  }
-  span.develop {
-    font-family: "Share Tech Mono", monospace;
-    font-weight: 500;
-  } */
+const Triangles = styled.div`
+  margin-top: 50px;
+  position: absolute;
+  display: block;
+  transform: translateY(-50px);
+  background-image: url(${triangles});
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px;
+  z-index: 3;
 `;
 
 const MandoQuote = styled.p`
@@ -93,13 +95,15 @@ const Header = () => {
     <Wrapper className={"header"}>
       <div className="bg-gradient" />
       <img className="logo" src={logo} alt="logo" />
-      <MainDescription className="main-description">
-        Hi, my name is <span>Mateusz Mikulski</span> <br />i design and develop
-        websites
-        <br />
-        <br />
-        &#x270d; &#x1F933; &#x1F4bb; &#x1F320; &#x1F680; &#x1F4AB;
-      </MainDescription>
+      <Triangles>
+        <MainDescription className="main-description">
+          Hi, my name is <span>Mateusz Mikulski</span> <br />i design and
+          develop websites
+          <br />
+          <br />
+          &#x270d; &#x1F933; &#x1F4bb; &#x1F320; &#x1F680; &#x1F4AB;
+        </MainDescription>
+      </Triangles>
 
       <IconScrollSlide />
       <MandoQuote className="mando-quote">
