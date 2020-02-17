@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "176da7934456b61fbf61723bf0343996",
+    "revision": "6ec6514fcf0a540f2b3b5e172bed6966",
     "url": "/codeverse/index.html"
   },
   {
-    "revision": "23fe93d489f70ac0649a",
+    "revision": "f75f6761b91400441bcf",
     "url": "/codeverse/static/css/main.e3e92313.chunk.css"
   },
   {
-    "revision": "1fdc2c04543e01b1d412",
-    "url": "/codeverse/static/js/2.f9aded3d.chunk.js"
+    "revision": "34eea5306abc51762595",
+    "url": "/codeverse/static/js/2.5a96bab5.chunk.js"
   },
   {
-    "revision": "23fe93d489f70ac0649a",
-    "url": "/codeverse/static/js/main.1d377ba9.chunk.js"
+    "revision": "f75f6761b91400441bcf",
+    "url": "/codeverse/static/js/main.2ffddffb.chunk.js"
   },
   {
     "revision": "756f4cf751f1532b79c7",
@@ -66,10 +66,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dd5ebf25c48a0ad7c4f0af4576ecf1e6",
     "url": "/codeverse/static/media/skills-bg.dd5ebf25.jpg"
-  },
-  {
-    "revision": "8e5824e086e1267620fb31fd65ebd361",
-    "url": "/codeverse/static/media/sticker-2.8e5824e0.png"
   },
   {
     "revision": "598673cbe1203bfd7e9cba84e677e89a",
