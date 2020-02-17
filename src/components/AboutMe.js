@@ -6,8 +6,6 @@ import meAndBen from "../img/me-and-ben.jpg";
 import starsPattern from "../img/stars-pattern.png";
 import aboutMe from "../img/about-me.jpg";
 import aboutMe2 from "../img/about-me2.png";
-
-import stickerCap from "../img/sticker-2.png";
 import logo80s from "../img/logo80s.png";
 import sticker6 from "../img/sticker-6.png";
 import grill from "../img/grill.png";
@@ -80,19 +78,6 @@ const DescriptionContainer = styled.div`
   background-repeat: no-repeat;
   background-size: 95%;
   background-position: 640% 37%;
-
-  .sticker-captain {
-    position: absolute;
-    display: inline-block;
-    background-image: url(${stickerCap});
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 95px;
-    width: 95px;
-    right: 0;
-    bottom: 0;
-    transform: translate(70%, 0%);
-  }
 `;
 
 const Description = styled.p`

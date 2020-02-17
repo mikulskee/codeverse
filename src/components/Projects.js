@@ -19,6 +19,31 @@ const Wrapper = styled.section`
   background-size: 95%;
   background-position: 644% 40%;
   padding: 20px;
+  overflow: hidden;
+  z-index: 1;
+
+  ::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgb(4, 5, 25);
+    background: linear-gradient(
+      0deg,
+      rgba(4, 5, 25, 1) 0%,
+      rgba(4, 5, 25, 0.7) 25%,
+      rgba(4, 5, 25, 0.7) 75%,
+      rgba(4, 5, 25, 1) 100%
+    );
+  }
+`;
+
+const Content = styled.div`
+  position: relative;
+  z-index: 1;
 `;
 
 const ProjectsList = styled.ul`
@@ -41,25 +66,10 @@ const ProjectsList = styled.ul`
       pointer-events: auto !important;
       visibility: hidden;
 
-      ::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgb(4, 5, 25);
-        background: linear-gradient(
-          77deg,
-          rgba(4, 5, 25, 1) 0%,
-          rgba(4, 5, 25, 0.4) 45%
-        );
-      }
-
       h3 {
         position: absolute;
         top: 50%;
-        left: -40%;
+        left: -22%;
         transform: translateY(-50%);
         color: #f2f2f2;
         font-family: "Montserrat", sans-serif;
@@ -71,7 +81,8 @@ const ProjectsList = styled.ul`
       }
 
       img {
-        width: 190px;
+        pointer-events: none;
+        width: 250px;
       }
     }
 
@@ -111,8 +122,37 @@ const ProjectsList = styled.ul`
 
       h3 {
         left: auto;
-        right: -40%;
+        right: -22%;
       }
+    }
+  }
+`;
+
+const Pillars = styled.div`
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 80px;
+  top: 0;
+  left: 40px;
+  justify-content: space-between;
+
+  .pillar {
+    position: relative;
+    width: 25%;
+    height: 100%;
+    background-color: #b712c3;
+
+    ::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #b712c3;
+      box-shadow: 0px 0px 18px 6px rgba(183, 18, 195, 1);
     }
   }
 `;
@@ -143,7 +183,6 @@ const projects = [
 
 const Projects = () => {
   const handleClick = e => {
-    console.log(e.target);
     const tl = gsap.timeline();
     const description = e.target;
 
@@ -208,11 +247,17 @@ const Projects = () => {
 
   return (
     <Wrapper className="projects">
-      <SectionTitle className={"projects-section-title section-title"}>
-        projects
-      </SectionTitle>
+      <Content>
+        <SectionTitle className={"projects-section-title section-title"}>
+          projects
+        </SectionTitle>
 
-      <ProjectsList>{newProjects}</ProjectsList>
+        <ProjectsList>{newProjects}</ProjectsList>
+      </Content>
+      <Pillars>
+        <div className="pillar" />
+        <div className="pillar" />
+      </Pillars>
     </Wrapper>
   );
 };

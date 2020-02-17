@@ -74,8 +74,8 @@ const Spaceship = styled.div`
   height: 230px;
   transform: rotate(88deg);
   background-color: #fff;
-  background: linear-gradient(-45deg, #fff, rgba(0, 0, 255, 0));
-  filter: drop-shadow(0 0 6px #699bff);
+  background: linear-gradient(-45deg, #d013de, rgba(0, 0, 255, 0));
+  filter: drop-shadow(0 0 6px #fff);
   ::after {
     content: "";
     position: absolute;
@@ -108,8 +108,8 @@ const SkillsDescription = styled.ul`
       left: 0;
       background-color: #fff;
       opacity: 0.6;
-      background: linear-gradient(-45deg, #fff, rgba(0, 0, 255, 0));
-      filter: drop-shadow(0 0 6px #699bff);
+      background: linear-gradient(-45deg, #da42ab, rgba(0, 0, 255, 0));
+      filter: drop-shadow(0 0 6px #fff);
       transform: translateX(-100px);
       opacity: 0;
     }
@@ -119,8 +119,8 @@ const SkillsDescription = styled.ul`
     align-self: flex-end;
     text-align: right;
     div.border-line {
-      background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #fff);
-      filter: drop-shadow(0 0 6px #699bff);
+      background: linear-gradient(45deg, #da42ab, rgba(0, 0, 255, 0));
+      filter: drop-shadow(0 0 6px #fff);
       transform: translateX(100px);
     }
   }
