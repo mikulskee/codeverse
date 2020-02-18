@@ -153,29 +153,12 @@ const Contact = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    console.log("wysłano");
-
-    // axios({
-    //   method: "POST",
-    //   url: "/sendmail",
-    //   data: {
-    //     name,
-    //     mail,
-    //     message
-    //   }
-    // }).then(response => {
-    //   if (response.data.msg === "success") {
-    //     alert("wiadomość wysłana");
-    //   }
-    // });
-
     try {
-      const form = await axios.post("/sendmail", {
+      const form = await axios.post("/api/form", {
         name,
         mail,
         message
       });
-      // const data = await form.json();
       console.log(form);
     } catch (err) {
       console.log(err);
@@ -222,7 +205,7 @@ const Contact = () => {
             </a>
           </li>
         </Socials>
-        <Description>don't hesitate to write me a message!</Description>
+        <Description>don't hesitate to write me a message!asdasd</Description>
 
         <Form onSubmit={handleSubmit}>
           <input

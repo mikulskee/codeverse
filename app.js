@@ -3,11 +3,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const app = express();
+const path = require("path");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post("/sendmail", (req, res) => {
+app.post("/api/form", (req, res) => {
   const output = `
   <p>Masz nową wiadomość</p>
   <h5>${req.body.mail}</h5>
@@ -47,6 +48,16 @@ app.post("/sendmail", (req, res) => {
     }
   });
 });
+
+if (process.env.NODE_ENV === "production") {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, "client/build")));
+
+  // Handle React routing, return all requests to React app
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  });
+}
 
 const PORT = process.env.PORT || 3001;
 
