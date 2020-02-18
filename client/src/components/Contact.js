@@ -255,7 +255,7 @@ const Contact = () => {
             </a>
           </li>
         </Socials>
-        <Description>don't hesitate to write me a message!</Description>
+        <Description>don't hesitate to write me a message!!</Description>
 
         <Form onSubmit={handleSubmit}>
           <input
