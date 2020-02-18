@@ -132,6 +132,11 @@ const Form = styled.form`
     border: none;
     padding: 5px 0;
   }
+
+  p.error {
+    color: red;
+    font-size: 12px;
+  }
 `;
 const Contact = () => {
   useEffect(() => {
@@ -150,19 +155,64 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [message, setMessage] = useState("");
+  const [nameErrorMessage, setNameErrorMessage] = useState(" ");
+  const [mailErrorMessage, setMailErrorMessage] = useState(" ");
+  const [messageErrorMessage, setMessageErrorMessage] = useState(" ");
 
   const handleSubmit = async e => {
     e.preventDefault();
-    try {
-      const form = await axios.post("/api/form", {
-        name,
-        mail,
-        message
-      });
-      console.log(form);
-    } catch (err) {
-      console.log(err);
+    const txtarea = document.querySelector("textarea");
+    const inputMail = document.querySelector(`input[type="email"]`);
+    const inputName = document.querySelector(`input[type="text"]`);
+
+    if (inputName.value.length < 3) {
+      setNameErrorMessage("Name should consist of at least 3 letters.");
     }
+    if (inputMail.value.length === 0) {
+      setMailErrorMessage(`Invalid email address.`);
+    }
+    if (txtarea.value.length < 3) {
+      setMessageErrorMessage(`Hey! So where is your question?`);
+    }
+
+    if (
+      nameErrorMessage.length === 0 &&
+      mailErrorMessage.length === 0 &&
+      messageErrorMessage.length === 0
+    ) {
+      try {
+        const form = await axios.post("/api/form", {
+          name,
+          mail,
+          message
+        });
+        console.log(form);
+      } catch (err) {
+        console.log(err);
+      }
+    } else return;
+  };
+  const handleNameBlur = e => {
+    if (e.target.value.length > 0) {
+      if (e.target.value.length < 3) {
+        setNameErrorMessage("Name should consist of at least 3 letters");
+      } else setNameErrorMessage("");
+    } else setNameErrorMessage("");
+  };
+  const handleMailBlur = e => {
+    if (e.target.value.length > 0) {
+      if (e.target.value.indexOf("@") === -1) {
+        setMailErrorMessage(
+          `"${e.target.value}" address is incomplete. Email address should include "@".`
+        );
+      } else if (e.target.value.indexOf("@") > -1) {
+        if (e.target.value.indexOf("@") + 1 === e.target.value.length) {
+          setMailErrorMessage(
+            `Invalid email address. "${e.target.value}" address is incomplete.`
+          );
+        } else setMailErrorMessage("");
+      } else setMailErrorMessage("");
+    } else setMailErrorMessage("");
   };
   return (
     <Wrapper className="contact">
@@ -205,7 +255,7 @@ const Contact = () => {
             </a>
           </li>
         </Socials>
-        <Description>don't hesitate to write me a message!asdasd</Description>
+        <Description>don't hesitate to write me a message!</Description>
 
         <Form onSubmit={handleSubmit}>
           <input
@@ -216,8 +266,13 @@ const Contact = () => {
             value={name}
             onChange={e => {
               setName(e.target.value);
+              if (e.target.value.length > 2) {
+                setNameErrorMessage("");
+              }
             }}
+            onBlur={handleNameBlur}
           />
+          <p className="error name-error">{nameErrorMessage}</p>
           <input
             type="email"
             name=""
@@ -226,8 +281,13 @@ const Contact = () => {
             value={mail}
             onChange={e => {
               setMail(e.target.value);
+              if (e.target.value.indexOf("@") > -1) {
+                setMailErrorMessage("");
+              }
             }}
+            onBlur={handleMailBlur}
           />
+          <p className="error mail-error">{mailErrorMessage}</p>
           <textarea
             name=""
             id=""
@@ -237,8 +297,10 @@ const Contact = () => {
             value={message}
             onChange={e => {
               setMessage(e.target.value);
+              setMessageErrorMessage("");
             }}
           ></textarea>
+          <p className="error message-error">{messageErrorMessage}</p>
           <button>send</button>
         </Form>
       </Content>
