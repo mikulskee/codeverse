@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import styled from "styled-components";
 import contactBg from "../img/contact-bg.jpg";
 import SectionTitle from "./SectionTitle";
@@ -78,6 +79,60 @@ const Socials = styled.ul`
     }
   }
 `;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(5, 7, 27, 0.6);
+  padding: 10px;
+  margin: 10px 0;
+  input[type="text"],
+  input[type="email"] {
+    margin: 5px 0;
+    background: none;
+    border: none;
+    border: 2px solid #bf2ac8;
+    padding: 5px 10px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    color: #f2f2f2;
+  }
+  input::placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    color: #f2f2f2;
+  }
+  textarea {
+    margin: 5px 0;
+    background: none;
+    border: 2px solid #bf2ac8;
+    padding: 5px 10px;
+    resize: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    color: #f2f2f2;
+  }
+
+  textarea::placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    color: #f2f2f2;
+  }
+  button {
+    margin: 5px 0;
+    width: 100px;
+    align-self: center;
+  }
+
+  button {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    color: #f2f2f2;
+    background: #bf2ac8;
+    border: none;
+    padding: 5px 0;
+  }
+`;
 const Contact = () => {
   useEffect(() => {
     const title = document.querySelector(".contact-section-title");
@@ -92,6 +147,40 @@ const Contact = () => {
       } else return;
     });
   });
+  const [name, setName] = useState("");
+  const [mail, setMail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    console.log("wysłano");
+
+    // axios({
+    //   method: "POST",
+    //   url: "/sendmail",
+    //   data: {
+    //     name,
+    //     mail,
+    //     message
+    //   }
+    // }).then(response => {
+    //   if (response.data.msg === "success") {
+    //     alert("wiadomość wysłana");
+    //   }
+    // });
+
+    try {
+      const form = await axios.post("/sendmail", {
+        name,
+        mail,
+        message
+      });
+      // const data = await form.json();
+      console.log(form);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <Wrapper className="contact">
       <Gradient />
@@ -134,6 +223,41 @@ const Contact = () => {
           </li>
         </Socials>
         <Description>don't hesitate to write me a message!</Description>
+
+        <Form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="name"
+            value={name}
+            onChange={e => {
+              setName(e.target.value);
+            }}
+          />
+          <input
+            type="email"
+            name=""
+            id=""
+            placeholder="mail"
+            value={mail}
+            onChange={e => {
+              setMail(e.target.value);
+            }}
+          />
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="your message"
+            value={message}
+            onChange={e => {
+              setMessage(e.target.value);
+            }}
+          ></textarea>
+          <button>send</button>
+        </Form>
       </Content>
     </Wrapper>
   );
