@@ -16,9 +16,9 @@ app.post("/api/form", (req, res) => {
   <p>${req.body.message}</p>
   `;
   let transporter = nodemailer.createTransport({
-    host: "codeverse.pl",
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true, // true for 465, false for other ports
     auth: {
       user: process.env.EMAIL, // generated ethereal user
       pass: process.env.PASSWORD // generated ethereal password
@@ -29,7 +29,6 @@ app.post("/api/form", (req, res) => {
   });
 
   let mailOptions = {
-    from: '"Codeverse" <biuro@codeverse.pl>', // sender address
     to: "mikulskee@gmail.com", // list of receivers
     subject: "Powiadomienie ze strony", // Subject line
     text: "Hello world?", // plain text body
@@ -49,15 +48,15 @@ app.post("/api/form", (req, res) => {
   });
 });
 
-if (process.env.NODE_ENV === "production") {
-  // Serve any static files
-  app.use(express.static(path.join(__dirname, "client/build")));
+// if (process.env.NODE_ENV === "production") {
+//   // Serve any static files
+//   app.use(express.static(path.join(__dirname, "client/build")));
 
-  // Handle React routing, return all requests to React app
-  app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "client/build", "index.html"));
-  });
-}
+//   // Handle React routing, return all requests to React app
+//   app.get("*", function(req, res) {
+//     res.sendFile(path.join(__dirname, "client/build", "index.html"));
+//   });
+// }
 
 const PORT = process.env.PORT || 5000;
 
