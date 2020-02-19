@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import styled from "styled-components";
 import contactBg from "../img/contact-bg.jpg";
 import SectionTitle from "./SectionTitle";
@@ -81,11 +80,32 @@ const Socials = styled.ul`
 `;
 
 const Form = styled.form`
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: rgba(5, 7, 27, 0.6);
   padding: 10px;
   margin: 10px 0;
+
+  div.status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+
+    h3 {
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      color: #f2f2f2;
+    }
+  }
+
   input[type="text"],
   input[type="email"] {
     margin: 5px 0;
@@ -158,6 +178,13 @@ const Contact = () => {
   const [nameErrorMessage, setNameErrorMessage] = useState(" ");
   const [mailErrorMessage, setMailErrorMessage] = useState(" ");
   const [messageErrorMessage, setMessageErrorMessage] = useState(" ");
+  const [status, setStatus] = useState("");
+
+  const resetForm = () => {
+    setName("");
+    setMail("");
+    setMessage("");
+  };
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -180,17 +207,28 @@ const Contact = () => {
       mailErrorMessage.length === 0 &&
       messageErrorMessage.length === 0
     ) {
-      try {
-        const form = await axios.post("/api/form", {
-          name,
-          mail,
-          message
-        });
-        console.log(form);
-      } catch (err) {
-        console.log(err);
-      }
-    } else return;
+      setStatus("sending...");
+
+      const form = e.target;
+      const data = new FormData(form);
+      const xhr = new XMLHttpRequest();
+      xhr.open(form.method, form.action);
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+          form.reset();
+          setStatus("mail has been sended");
+          setTimeout(() => {
+            resetForm();
+            setStatus("");
+          }, 2000);
+        } else {
+          setStatus("error");
+        }
+      };
+      xhr.send(data);
+    }
   };
   const handleNameBlur = e => {
     if (e.target.value.length > 0) {
@@ -257,11 +295,24 @@ const Contact = () => {
         </Socials>
         <Description>don't hesitate to write me a message!!</Description>
 
-        <Form onSubmit={handleSubmit}>
+        <Form
+          id="gform"
+          onSubmit={handleSubmit}
+          action="https://script.google.com/macros/s/AKfycbwrPs4U9aB42ZDsoRbQXspIZWyweA1r-LZZotF3/exec"
+          method="POST"
+          data-email="biuro@codeverse.pl"
+          status={status}
+        >
+          {status.length === 0 ? null : (
+            <div className="status">
+              <h3>{status}</h3>
+            </div>
+          )}
+
           <input
+            id="name"
             type="text"
-            name=""
-            id=""
+            name="name"
             placeholder="name"
             value={name}
             onChange={e => {
@@ -274,9 +325,9 @@ const Contact = () => {
           />
           <p className="error name-error">{nameErrorMessage}</p>
           <input
+            id="email"
             type="email"
-            name=""
-            id=""
+            name="email"
             placeholder="mail"
             value={mail}
             onChange={e => {
@@ -289,8 +340,8 @@ const Contact = () => {
           />
           <p className="error mail-error">{mailErrorMessage}</p>
           <textarea
-            name=""
-            id=""
+            name="message"
+            id="message"
             cols="30"
             rows="10"
             placeholder="your message"
@@ -301,7 +352,7 @@ const Contact = () => {
             }}
           ></textarea>
           <p className="error message-error">{messageErrorMessage}</p>
-          <button>send</button>
+          <button type="submit">send</button>
         </Form>
       </Content>
     </Wrapper>
