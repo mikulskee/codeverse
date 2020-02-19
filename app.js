@@ -16,20 +16,20 @@ app.post("/api/form", (req, res) => {
   <p>${req.body.message}</p>
   `;
   let transporter = nodemailer.createTransport({
-    host: "codeverse.pl",
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true, // true for 465, false for other ports
     auth: {
       user: process.env.EMAIL, // generated ethereal user
       pass: process.env.PASSWORD // generated ethereal password
-    },
-    tls: {
-      rejectUnauthorized: false
     }
+    // tls: {
+    //   rejectUnauthorized: false
+    // }
   });
 
   let mailOptions = {
-    from: '"Codeverse 👻" <biuro@codeverse.pl>',
+    from: '"Codeverse 👻" <mikulskee@gmail.com>',
     to: "biuro@codeverse.pl", // list of receivers
     subject: "Powiadomienie ze strony", // Subject line
     text: "Hello world?", // plain text body
