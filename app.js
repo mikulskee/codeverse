@@ -17,7 +17,7 @@ app.post("/api/form", (req, res) => {
   `;
 
   let transporter = nodemailer.createTransport({
-    host: "mail.codeverse.pl",
+    host: "s8.linuxpl.com",
     port: 587,
     secure: false,
     auth: {
