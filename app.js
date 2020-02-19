@@ -6,7 +6,7 @@ const app = express();
 const path = require("path");
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/api/form", (req, res) => {
   const output = `
@@ -30,7 +30,7 @@ app.post("/api/form", (req, res) => {
 
   let mailOptions = {
     from: '"Codeverse 👻" <biuro@codeverse.pl>',
-    to: "mikulskee@gmail.com", // list of receivers
+    to: "biuro@codeverse.pl", // list of receivers
     subject: "Powiadomienie ze strony", // Subject line
     text: "Hello world?", // plain text body
     html: output // html body
