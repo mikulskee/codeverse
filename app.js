@@ -6,7 +6,7 @@ const app = express();
 const path = require("path");
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post("/api/form", (req, res) => {
   const output = `
@@ -16,12 +16,12 @@ app.post("/api/form", (req, res) => {
   <p>${req.body.message}</p>
   `;
   let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true, // true for 465, false for other ports
+    host: "codeverse.pl",
+    port: 587,
+    secure: false, // true for 465, false for other ports
     auth: {
-      user: "mikulskee@gmail.com", // generated ethereal user
-      pass: "Czosnek1!" // generated ethereal password
+      user: process.env.EMAIL, // generated ethereal user
+      pass: process.env.PASSWORD // generated ethereal password
     },
     tls: {
       rejectUnauthorized: false
@@ -29,6 +29,7 @@ app.post("/api/form", (req, res) => {
   });
 
   let mailOptions = {
+    from: '"Codeverse 👻" <biuro@codeverse.pl>',
     to: "mikulskee@gmail.com", // list of receivers
     subject: "Powiadomienie ze strony", // Subject line
     text: "Hello world?", // plain text body
@@ -38,7 +39,8 @@ app.post("/api/form", (req, res) => {
   transporter.sendMail(mailOptions, (err, data) => {
     if (err) {
       res.json({
-        msg: "fail"
+        msg: "fail",
+        err
       });
     } else {
       res.json({
