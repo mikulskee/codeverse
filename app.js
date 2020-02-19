@@ -16,6 +16,7 @@ app.post("/api/form", (req, res) => {
   <p>${req.body.message}</p>
   `;
   let transporter = nodemailer.createTransport({
+    service: "gmail",
     host: "smtp.gmail.com",
     port: 465,
     secure: true, // true for 465, false for other ports
@@ -42,6 +43,7 @@ app.post("/api/form", (req, res) => {
         msg: "fail",
         err
       });
+      console.log(err);
     } else {
       res.json({
         msg: "success"
