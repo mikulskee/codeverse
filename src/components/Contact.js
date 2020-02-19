@@ -296,12 +296,12 @@ const Contact = () => {
             </a>
           </li>
         </Socials>
-        <Description>don't hesitate to write me a message!!</Description>
+        <Description>don't hesitate to write me a message!</Description>
 
         <Form
           id="gform"
           onSubmit={handleSubmit}
-          action="https://script.google.com/macros/s/AKfycbwrPs4U9aB42ZDsoRbQXspIZWyweA1r-LZZotF3/exec"
+          action="https://script.google.com/macros/s/AKfycbx8R9YrPa1aLtQD-gMLJwe5vTnLQ4qGlh4-H_7KxNniI9jlBPI/exec"
           method="POST"
           data-email="biuro@codeverse.pl"
           status={status}
