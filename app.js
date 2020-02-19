@@ -22,10 +22,10 @@ app.post("/api/form", (req, res) => {
     auth: {
       user: process.env.EMAIL, // generated ethereal user
       pass: process.env.PASSWORD // generated ethereal password
+    },
+    tls: {
+      rejectUnauthorized: false
     }
-    // tls: {
-    //   rejectUnauthorized: false
-    // }
   });
 
   let mailOptions = {
