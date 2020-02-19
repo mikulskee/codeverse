@@ -10,6 +10,7 @@ import {
   faYoutube,
   faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
+import { Loader } from "./Loader";
 
 const Wrapper = styled.section`
   position: relative;
@@ -97,12 +98,15 @@ const Form = styled.form`
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(2px);
-
+    font-size: 30px;
+    color: #f2f2f2;
+    flex-direction: column;
     h3 {
       text-align: center;
       font-family: "Montserrat", sans-serif;
       font-size: 16px;
       color: #f2f2f2;
+      margin-bottom: 25px;
     }
   }
 
@@ -208,7 +212,6 @@ const Contact = () => {
       messageErrorMessage.length === 0
     ) {
       setStatus("sending...");
-
       const form = e.target;
       const data = new FormData(form);
       const xhr = new XMLHttpRequest();
@@ -224,7 +227,7 @@ const Contact = () => {
             setStatus("");
           }, 2000);
         } else {
-          setStatus("error");
+          setStatus("something went wrong. try again later");
         }
       };
       xhr.send(data);
@@ -306,6 +309,7 @@ const Contact = () => {
           {status.length === 0 ? null : (
             <div className="status">
               <h3>{status}</h3>
+              {status === "sending..." ? <Loader /> : null}
             </div>
           )}
 
