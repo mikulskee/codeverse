@@ -63,3 +63,12 @@ export const skillsSectionContentAnimation = () => {
 
   return tl;
 };
+
+export const footerContentAnimation = () => {
+  const bgFooter = document.querySelectorAll("footer .bg");
+  const tl = gsap.timeline({ paused: true });
+
+  tl.to(bgFooter, 0.35, { scaleX: 0.95, scaleY: 0.93 });
+
+  return tl;
+};

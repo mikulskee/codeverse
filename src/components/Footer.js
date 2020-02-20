@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import bgFooter from "../img/bg-footer.jpg";
 import logo from "../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,35 +8,38 @@ import {
   faYoutube,
   faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
+import { footerContentAnimation } from "../animations/contentAnimations";
 
 const Wrapper = styled.footer`
   position: relative;
+  overflow: hidden;
   height: 55vw;
-  background-image: url(${bgFooter});
-  background-position: center;
-  background-size: cover;
+  background: rgb(4, 5, 25);
+  .border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 20px solid #bf2ac8;
+  }
+  .bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgb(4, 5, 25);
+    border-radius: 10px;
+  }
 `;
 
-const Gradient = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgb(4, 5, 25);
-  background: linear-gradient(
-    180deg,
-    rgba(4, 5, 25, 1) 0%,
-    rgba(4, 5, 25, 1) 10%,
-    rgba(4, 5, 25, 0.7) 30%,
-    rgba(4, 5, 25, 0.7) 75%,
-    rgba(4, 5, 25, 1) 100%
-  );
-`;
 const Content = styled.div`
   position: relative;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   padding: 20px 20px 10px;
@@ -58,8 +60,13 @@ const Content = styled.div`
   }
   h3 {
     font-style: italic;
-    font-size: 14px;
-    color: #bf2ac8;
+    font-size: 12px;
+    color: #f2f2f2;
+    span {
+      color: #bf2ac8;
+      font-size: 12px;
+      font-family: "Montserrat", sans-serif;
+    }
   }
 `;
 
@@ -88,12 +95,30 @@ const Socials = styled.ul`
   }
 `;
 const Footer = () => {
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    const timeline = footerContentAnimation();
+
+    window.addEventListener("scroll", () => {
+      const height = window.innerHeight;
+      const top = footer.getBoundingClientRect().top + 30;
+
+      if (height >= top) {
+        timeline.play();
+      } else if (height < top) {
+        timeline.reverse();
+      }
+    });
+  });
   return (
     <Wrapper>
-      <Gradient />
+      <div className="border" />
+      <div className="bg" />
       <Content>
         <img src={logo} alt="logo" />
-        <h3>to boldly go where no man has gone before</h3>
+        <h3>
+          to <span>boldly</span> go where no man has gone before &#x1F680;
+        </h3>
         <Socials>
           <li>
             <a href="https://github.com/mikulskee">
