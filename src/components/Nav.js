@@ -149,93 +149,96 @@ const Nav = () => {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const home = document.querySelector("header");
-      const homeTop = home.getBoundingClientRect().top - 40;
-      const homeHeight = -Math.round(home.getBoundingClientRect().height);
-      const buttons = document.querySelectorAll("nav li button");
-      const projects = document.querySelector("section.projects");
-      const projectsTop = projects.getBoundingClientRect().top - 40;
-      const projectsHeight = -Math.round(
-        projects.getBoundingClientRect().height
+  const coloringNavButtons = () => {
+    const home = document.querySelector("header");
+    const homeTop = home.getBoundingClientRect().top - 40;
+    const homeHeight = -Math.round(home.getBoundingClientRect().height);
+    const buttons = document.querySelectorAll("nav li button");
+    const projects = document.querySelector("section.projects");
+    const projectsTop = projects.getBoundingClientRect().top - 40;
+    const projectsHeight = -Math.round(projects.getBoundingClientRect().height);
+    const skills = document.querySelector("section.skills");
+    const skillsTop = skills.getBoundingClientRect().top - 40;
+    const skillsHeight = -Math.round(skills.getBoundingClientRect().height);
+    const aboutMe = document.querySelector("section.about-me");
+    const aboutMeTop = aboutMe.getBoundingClientRect().top - 40;
+    const aboutMeHeight = -Math.round(aboutMe.getBoundingClientRect().height);
+    const contact = document.querySelector("section.contact");
+    const contactTop = contact.getBoundingClientRect().top - 40;
+    const contactHeight = -Math.round(contact.getBoundingClientRect().height);
+
+    if (homeTop > homeHeight) {
+      buttons.forEach(button =>
+        button.classList.contains("home")
+          ? button.classList.add("active")
+          : null
       );
-      const skills = document.querySelector("section.skills");
-      const skillsTop = skills.getBoundingClientRect().top - 40;
-      const skillsHeight = -Math.round(skills.getBoundingClientRect().height);
-      const aboutMe = document.querySelector("section.about-me");
-      const aboutMeTop = aboutMe.getBoundingClientRect().top - 40;
-      const aboutMeHeight = -Math.round(aboutMe.getBoundingClientRect().height);
-      const contact = document.querySelector("section.contact");
-      const contactTop = contact.getBoundingClientRect().top - 40;
-      const contactHeight = -Math.round(contact.getBoundingClientRect().height);
+    } else {
+      buttons.forEach(button =>
+        button.classList.contains("home")
+          ? button.classList.remove("active")
+          : null
+      );
+    }
 
-      if (homeTop > homeHeight) {
-        buttons.forEach(button =>
-          button.classList.contains("home")
-            ? button.classList.add("active")
-            : null
-        );
-      } else {
-        buttons.forEach(button =>
-          button.classList.contains("home")
-            ? button.classList.remove("active")
-            : null
-        );
-      }
+    if (projectsTop > projectsHeight && projectsTop < 0) {
+      buttons.forEach(button =>
+        button.classList.contains("projects")
+          ? button.classList.add("active")
+          : null
+      );
+    } else {
+      buttons.forEach(button =>
+        button.classList.contains("projects")
+          ? button.classList.remove("active")
+          : null
+      );
+    }
+    if (skillsTop > skillsHeight && skillsTop < 0) {
+      buttons.forEach(button =>
+        button.classList.contains("skills")
+          ? button.classList.add("active")
+          : null
+      );
+    } else {
+      buttons.forEach(button =>
+        button.classList.contains("skills")
+          ? button.classList.remove("active")
+          : null
+      );
+    }
+    if (aboutMeTop > aboutMeHeight && aboutMeTop < 0) {
+      buttons.forEach(button =>
+        button.classList.contains("about-me")
+          ? button.classList.add("active")
+          : null
+      );
+    } else {
+      buttons.forEach(button =>
+        button.classList.contains("about-me")
+          ? button.classList.remove("active")
+          : null
+      );
+    }
+    if (contactTop > contactHeight && contactTop < 0) {
+      buttons.forEach(button =>
+        button.classList.contains("contact")
+          ? button.classList.add("active")
+          : null
+      );
+    } else {
+      buttons.forEach(button =>
+        button.classList.contains("contact")
+          ? button.classList.remove("active")
+          : null
+      );
+    }
+  };
 
-      if (projectsTop > projectsHeight && projectsTop < 0) {
-        buttons.forEach(button =>
-          button.classList.contains("projects")
-            ? button.classList.add("active")
-            : null
-        );
-      } else {
-        buttons.forEach(button =>
-          button.classList.contains("projects")
-            ? button.classList.remove("active")
-            : null
-        );
-      }
-      if (skillsTop > skillsHeight && skillsTop < 0) {
-        buttons.forEach(button =>
-          button.classList.contains("skills")
-            ? button.classList.add("active")
-            : null
-        );
-      } else {
-        buttons.forEach(button =>
-          button.classList.contains("skills")
-            ? button.classList.remove("active")
-            : null
-        );
-      }
-      if (aboutMeTop > aboutMeHeight && aboutMeTop < 0) {
-        buttons.forEach(button =>
-          button.classList.contains("about-me")
-            ? button.classList.add("active")
-            : null
-        );
-      } else {
-        buttons.forEach(button =>
-          button.classList.contains("about-me")
-            ? button.classList.remove("active")
-            : null
-        );
-      }
-      if (contactTop > contactHeight && contactTop < 0) {
-        buttons.forEach(button =>
-          button.classList.contains("contact")
-            ? button.classList.add("active")
-            : null
-        );
-      } else {
-        buttons.forEach(button =>
-          button.classList.contains("contact")
-            ? button.classList.remove("active")
-            : null
-        );
-      }
+  useEffect(() => {
+    coloringNavButtons();
+    window.addEventListener("scroll", () => {
+      coloringNavButtons();
     });
   });
   return (
