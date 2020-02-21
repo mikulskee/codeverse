@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Burger from "./Burger";
 import logo from "../img/logo.png";
@@ -29,9 +29,12 @@ const Wrapper = styled.nav`
 
     li {
       margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       button {
         font-family: "Montserrat", sans-serif;
-        font-size: 14px;
+        font-size: 20px;
         font-weight: bold;
         font-style: italic;
         letter-spacing: 1px;
@@ -39,6 +42,9 @@ const Wrapper = styled.nav`
         border: none;
         color: #f2f2f2;
         padding: 10px 15px;
+        &.active {
+          color: #b712c3;
+        }
       }
     }
   }
@@ -142,6 +148,96 @@ const Nav = () => {
         console.log("");
     }
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const home = document.querySelector("header");
+      const homeTop = home.getBoundingClientRect().top - 40;
+      const homeHeight = -Math.round(home.getBoundingClientRect().height);
+      const buttons = document.querySelectorAll("nav li button");
+      const projects = document.querySelector("section.projects");
+      const projectsTop = projects.getBoundingClientRect().top - 40;
+      const projectsHeight = -Math.round(
+        projects.getBoundingClientRect().height
+      );
+      const skills = document.querySelector("section.skills");
+      const skillsTop = skills.getBoundingClientRect().top - 40;
+      const skillsHeight = -Math.round(skills.getBoundingClientRect().height);
+      const aboutMe = document.querySelector("section.about-me");
+      const aboutMeTop = aboutMe.getBoundingClientRect().top - 40;
+      const aboutMeHeight = -Math.round(aboutMe.getBoundingClientRect().height);
+      const contact = document.querySelector("section.contact");
+      const contactTop = contact.getBoundingClientRect().top - 40;
+      const contactHeight = -Math.round(contact.getBoundingClientRect().height);
+
+      if (homeTop > homeHeight) {
+        buttons.forEach(button =>
+          button.classList.contains("home")
+            ? button.classList.add("active")
+            : null
+        );
+      } else {
+        buttons.forEach(button =>
+          button.classList.contains("home")
+            ? button.classList.remove("active")
+            : null
+        );
+      }
+
+      if (projectsTop > projectsHeight && projectsTop < 0) {
+        buttons.forEach(button =>
+          button.classList.contains("projects")
+            ? button.classList.add("active")
+            : null
+        );
+      } else {
+        buttons.forEach(button =>
+          button.classList.contains("projects")
+            ? button.classList.remove("active")
+            : null
+        );
+      }
+      if (skillsTop > skillsHeight && skillsTop < 0) {
+        buttons.forEach(button =>
+          button.classList.contains("skills")
+            ? button.classList.add("active")
+            : null
+        );
+      } else {
+        buttons.forEach(button =>
+          button.classList.contains("skills")
+            ? button.classList.remove("active")
+            : null
+        );
+      }
+      if (aboutMeTop > aboutMeHeight && aboutMeTop < 0) {
+        buttons.forEach(button =>
+          button.classList.contains("about-me")
+            ? button.classList.add("active")
+            : null
+        );
+      } else {
+        buttons.forEach(button =>
+          button.classList.contains("about-me")
+            ? button.classList.remove("active")
+            : null
+        );
+      }
+      if (contactTop > contactHeight && contactTop < 0) {
+        buttons.forEach(button =>
+          button.classList.contains("contact")
+            ? button.classList.add("active")
+            : null
+        );
+      } else {
+        buttons.forEach(button =>
+          button.classList.contains("contact")
+            ? button.classList.remove("active")
+            : null
+        );
+      }
+    });
+  });
   return (
     <Wrapper className="closed">
       <TopBar className="top-bar">
@@ -151,22 +247,29 @@ const Nav = () => {
 
       <ul className="nav-list">
         <li>
-          <span role="img" aria-label="backhand index pointing right">
-            &#x1F449;
-          </span>
-          <button onClick={handleClick}>Home</button>
+          <button className="home" onClick={handleClick}>
+            Home
+          </button>
         </li>
         <li>
-          <button onClick={handleClick}>Projects</button>
+          <button className="projects" onClick={handleClick}>
+            Projects
+          </button>
         </li>
         <li>
-          <button onClick={handleClick}>Skills</button>
+          <button className="skills" onClick={handleClick}>
+            Skills
+          </button>
         </li>
         <li>
-          <button onClick={handleClick}>About Me</button>
+          <button className="about-me" onClick={handleClick}>
+            About Me
+          </button>
         </li>
         <li>
-          <button onClick={handleClick}>Contact</button>
+          <button className="contact" onClick={handleClick}>
+            Contact
+          </button>
         </li>
       </ul>
     </Wrapper>
