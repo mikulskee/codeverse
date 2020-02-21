@@ -72,3 +72,35 @@ export const footerContentAnimation = () => {
 
   return tl;
 };
+
+export const openBurgerAnimation = () => {
+  const ul = document.querySelector(".nav-list");
+  const nav = document.querySelector("nav");
+  nav.classList.remove("closed");
+
+  const tl = gsap.timeline({ paused: true });
+  tl.set(nav, { height: "auto" }).to(ul, 0.35, { translateY: 0 });
+  return tl;
+};
+export const closeBurgerAnimation = () => {
+  const ul = document.querySelector(".nav-list");
+  const nav = document.querySelector("nav");
+  nav.classList.add("closed");
+
+  const tl = gsap.timeline({ paused: true });
+  tl.set(nav, { height: 0 }).to(ul, 0.35, { translateY: "-120%" });
+  return tl;
+};
+
+export const hideNav = () => {
+  const nav = document.querySelector("nav");
+  const tl = gsap.timeline({ paused: true });
+  tl.to(nav, 0.7, { y: -150, ease: Power1.easeOut });
+  return tl;
+};
+export const showNav = () => {
+  const nav = document.querySelector("nav");
+  const tl = gsap.timeline({ paused: true });
+  tl.to(nav, 0.5, { y: 0, ease: Power1.easeOut });
+  return tl;
+};

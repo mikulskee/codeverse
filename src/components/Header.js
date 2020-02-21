@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import headerBg from "../img/header-bg.jpg";
-import logo from "../img/logo.png";
 import triangles from "../img/triangles.png";
 import IconScrollSlide from "./IconScrollSlide";
 import { mandoAnimation } from "../animations/patternsAnimation";
@@ -30,17 +29,12 @@ const Wrapper = styled.header`
     background: rgb(4, 5, 25);
     background: linear-gradient(
       180deg,
-      rgba(4, 5, 25, 0.7) 0%,
+      rgba(4, 5, 25, 1) 0%,
+      rgba(4, 5, 25, 1) 5%,
+      rgba(4, 5, 25, 0.7) 15%,
       rgba(4, 5, 25, 0.4) 75%,
       rgba(4, 5, 25, 1) 100%
     );
-  }
-
-  img.logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 130px;
   }
 `;
 
@@ -94,7 +88,6 @@ const Header = () => {
   return (
     <Wrapper className={"header"}>
       <div className="bg-gradient" />
-      <img className="logo" src={logo} alt="logo" />
       <Triangles>
         <MainDescription className="main-description">
           Hi, my name is <span>Mateusz Mikulski</span> <br />i design and

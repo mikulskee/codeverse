@@ -14,7 +14,7 @@ import { Loader } from "./Loader";
 
 const Wrapper = styled.section`
   position: relative;
-  padding: 30px 20px 0;
+  padding: 60px 20px 20px;
   min-height: 120vh;
   background-image: url(${contactBg});
   background-position: center;

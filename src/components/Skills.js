@@ -60,7 +60,7 @@ const Content = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  padding: 60px 20px 0;
+  padding: 60px 20px 20px;
 `;
 
 const Spaceship = styled.div`

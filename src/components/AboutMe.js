@@ -11,7 +11,7 @@ import sticker6 from "../img/sticker-6.png";
 import grill from "../img/grill.png";
 
 const Wrapper = styled.section`
-  padding: 80px 20px 0;
+  padding: 60px 20px 20px;
   background-image: url(${starsPattern});
   background-repeat: no-repeat;
   background-size: 95%;
@@ -182,7 +182,6 @@ const Logo80s = styled.div`
   transform: translateX(-50%);
   width: 100%;
   height: 15vw;
-  margin-bottom: 30px;
   background-position: center;
   background-image: url(${logo80s});
   background-size: contain;
@@ -204,7 +203,7 @@ const AboutMe = () => {
     });
   });
   return (
-    <Wrapper>
+    <Wrapper className="about-me">
       <StyledSectionTitle className={"about-me-section-title section-title"}>
         about&nbsp;me
       </StyledSectionTitle>

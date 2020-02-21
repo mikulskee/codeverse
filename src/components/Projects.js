@@ -18,7 +18,7 @@ const Wrapper = styled.section`
   background-repeat: no-repeat;
   background-size: 95%;
   background-position: 644% 40%;
-  padding: 20px;
+  padding: 60px 20px 20px;
   overflow: hidden;
   z-index: 1;
 

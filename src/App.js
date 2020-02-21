@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 import MainTemplate from "./templates/MainTemplate";
+import BurgerContextProvider from "./contexts/BurgerContext";
 
 const App = () => {
   useEffect(() => {
@@ -12,7 +13,11 @@ const App = () => {
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     });
   });
-  return <MainTemplate />;
+  return (
+    <BurgerContextProvider>
+      <MainTemplate />
+    </BurgerContextProvider>
+  );
 };
 
 export default App;
