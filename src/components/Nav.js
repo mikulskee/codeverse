@@ -6,6 +6,7 @@ import {
   openBurgerAnimation,
   closeBurgerAnimation
 } from "../animations/contentAnimations";
+import smoothscroll from "smoothscroll-polyfill";
 
 const Wrapper = styled.nav`
   position: fixed;
@@ -83,7 +84,7 @@ const Nav = () => {
     const el = e.target.innerHTML;
     const offset = 40;
     const bodyRect = document.body.getBoundingClientRect().top;
-
+    smoothscroll.polyfill();
     switch (el) {
       case "Home":
         window.scrollTo({ top: 0, behavior: "smooth" });
