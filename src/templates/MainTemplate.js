@@ -38,6 +38,19 @@ const MainTemplate = () => {
           }
         }
       } else return;
+
+      window.addEventListener("scroll", () => {
+        if (
+          Math.round(window.pageYOffset) + window.innerHeight ===
+          Math.round(document.body.getBoundingClientRect().height)
+        ) {
+          showNav().play();
+        }
+      });
+    });
+
+    window.addEventListener("orientationchange", () => {
+      showNav().play();
     });
   }, []);
 
