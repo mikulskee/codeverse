@@ -94,13 +94,19 @@ export const closeBurgerAnimation = () => {
 
 export const hideNav = () => {
   const nav = document.querySelector("nav");
+  const topBar = document.querySelector(".top-bar");
+  topBar.classList.add("hide");
   const tl = gsap.timeline({ paused: true });
-  tl.to(nav, 0.7, { y: -150, ease: Power1.easeOut });
+  tl.to(nav, 0.35, { y: -150, ease: Power1.easeIn });
   return tl;
 };
 export const showNav = () => {
   const nav = document.querySelector("nav");
+  const topBar = document.querySelector(".top-bar");
+
+  topBar.classList.remove("hide");
+
   const tl = gsap.timeline({ paused: true });
-  tl.to(nav, 0.5, { y: 0, ease: Power1.easeOut });
+  tl.to(nav, 0.35, { y: 0, ease: Power1.easeOut });
   return tl;
 };

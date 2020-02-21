@@ -4,7 +4,7 @@ import Main from "../components/Main";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-import debounce from "lodash.debounce";
+
 import {
   hideNav,
   showNav,
@@ -14,22 +14,32 @@ import {
 const MainTemplate = () => {
   useEffect(() => {
     let oldScroll = window.pageYOffset;
-    window.addEventListener(
-      "scroll",
-      debounce(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 150) {
         const newScroll = window.pageYOffset;
         if (oldScroll < newScroll) {
+          const topBar = document.querySelector(".top-bar");
           oldScroll = window.pageYOffset;
-          hideNav().play();
-          closeBurgerAnimation().play();
+
+          if (topBar.classList.contains("hide")) {
+            return;
+          } else {
+            hideNav().play();
+            closeBurgerAnimation().play();
+          }
         } else if (oldScroll > newScroll) {
+          const topBar = document.querySelector(".top-bar");
           oldScroll = window.pageYOffset;
-          showNav().play();
-          closeBurgerAnimation().play();
+          if (topBar.classList.contains("hide")) {
+            showNav().play();
+            closeBurgerAnimation().play();
+          } else {
+            return;
+          }
         }
-      }, 50)
-    );
-  });
+      } else return;
+    });
+  }, []);
 
   return (
     <>

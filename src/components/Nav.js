@@ -144,7 +144,7 @@ const Nav = () => {
   };
   return (
     <Wrapper className="closed">
-      <TopBar>
+      <TopBar className="top-bar">
         <img className="logo" src={logo} alt="logo" />
         <Burger handleClick={handleClickAnimation} />
       </TopBar>
