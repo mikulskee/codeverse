@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6df09bbf5a3551eb8a9fa44123225f11",
+    "revision": "2b5bc65f5b5d8255529deb0107a4f371",
     "url": "/codeverse/index.html"
   },
   {
-    "revision": "113719dcc022dbc3761f",
+    "revision": "e7f2374a08a6b7358a3d",
     "url": "/codeverse/static/css/main.e3e92313.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/js/2.ff399736.chunk.js"
   },
   {
-    "revision": "113719dcc022dbc3761f",
-    "url": "/codeverse/static/js/main.49c04ed0.chunk.js"
+    "revision": "e7f2374a08a6b7358a3d",
+    "url": "/codeverse/static/js/main.bbea1999.chunk.js"
   },
   {
     "revision": "756f4cf751f1532b79c7",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/media/contact-bg.a3e93817.jpg"
   },
   {
-    "revision": "0509ff4da310db9af5ebcdab635872e5",
-    "url": "/codeverse/static/media/grill.0509ff4d.png"
+    "revision": "b9cb33dab2d10e3eb1d16ec53f8ac9a4",
+    "url": "/codeverse/static/media/grill.b9cb33da.png"
   },
   {
     "revision": "b0337a9c3752862ddd0bb487d1a13b28",
@@ -52,16 +52,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/media/me-and-ben.30b2fcba.jpg"
   },
   {
-    "revision": "5382cd3d06f6ca13bb3a2b6f21322f6e",
-    "url": "/codeverse/static/media/project1.5382cd3d.png"
+    "revision": "9d4fe1b332853f7eba4eec3db5cc478a",
+    "url": "/codeverse/static/media/proj1.9d4fe1b3.png"
   },
   {
-    "revision": "6358bd7ea682b4ba9b85f1df41029f25",
-    "url": "/codeverse/static/media/project2.6358bd7e.png"
+    "revision": "dfff00940780370db07bda0342967636",
+    "url": "/codeverse/static/media/proj2.dfff0094.png"
   },
   {
-    "revision": "542478964708e8e0aadf0ef8e1f430b0",
-    "url": "/codeverse/static/media/project3.54247896.png"
+    "revision": "f3d331094941d5ddd5a13e61e4bff4ba",
+    "url": "/codeverse/static/media/proj3.f3d33109.png"
   },
   {
     "revision": "86afc8731da19243f9cfb5a4212128e2",
