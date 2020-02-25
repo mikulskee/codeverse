@@ -39,32 +39,6 @@ const Wrapper = styled.header`
       rgba(4, 5, 25, 0.4) 75%,
       rgba(4, 5, 25, 1) 100%
     );
-
-    @media only screen and (min-width: 1500px) {
-      background: linear-gradient(
-        180deg,
-        rgba(4, 5, 25, 1) 0%,
-        rgba(4, 5, 25, 1) 5%,
-        rgba(4, 5, 25, 0.3) 15%,
-        rgba(4, 5, 25, 0.2) 75%,
-        rgba(4, 5, 25, 1) 100%
-      );
-    }
-  }
-  .horizontal {
-    display: none;
-    background: rgb(4, 5, 25);
-    background: linear-gradient(
-      90deg,
-      rgba(4, 5, 25, 1) 0%,
-      rgba(4, 5, 25, 0.3) 15%,
-      rgba(4, 5, 25, 0.2) 75%,
-      rgba(4, 5, 25, 1) 100%
-    );
-
-    @media only screen and (min-width: 1700px) {
-      display: block;
-    }
   }
 `;
 
@@ -141,7 +115,6 @@ const Header = () => {
   return (
     <Wrapper className={"header"}>
       <div className="bg-gradient vertical" />
-      <div className="bg-gradient horizontal" />
       <Triangles>
         <MainDescription className="main-description">
           Hi, my name is <span>Mateusz Mikulski</span> <br />i design and

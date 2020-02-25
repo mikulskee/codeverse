@@ -23,7 +23,7 @@ const MainTemplate = () => {
 
           if (topBar.classList.contains("hide")) {
             return;
-          } else {
+          } else if (window.innerWidth < 1024) {
             hideNav().play();
             closeBurgerAnimation().play();
           }
@@ -33,9 +33,7 @@ const MainTemplate = () => {
           if (topBar.classList.contains("hide")) {
             showNav().play();
             closeBurgerAnimation().play();
-          } else {
-            return;
-          }
+          } else return;
         }
       } else return;
 

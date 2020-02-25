@@ -9,6 +9,9 @@ const Wrapper = styled.button`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (min-width: 1024px) {
+    display: none;
+  }
 
   .bar {
     width: 30px;

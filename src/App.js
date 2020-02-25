@@ -9,19 +9,11 @@ const App = () => {
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 1024 && window.innerWidth > window.innerHeight) {
-        window.addEventListener("resize", () => {
-          let vh = window.innerHeight * 0.01;
-          document.documentElement.style.setProperty("--vh", `${vh}px`);
-        });
-      } else if (window.innerWidth < 1024) {
-        window.addEventListener("orientationchange", () => {
-          let vh = window.innerHeight * 0.01;
-          document.documentElement.style.setProperty("--vh", `${vh}px`);
-        });
-      }
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
     });
   });
+
   return (
     <BurgerContextProvider>
       <MainTemplate />

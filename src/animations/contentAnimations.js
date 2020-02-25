@@ -79,7 +79,7 @@ export const openBurgerAnimation = () => {
   nav.classList.remove("closed");
 
   const tl = gsap.timeline({ paused: true });
-  tl.set(nav, { height: "auto" }).to(ul, 0.35, { translateY: 0 });
+  tl.to(ul, 0.35, { translateY: 0 });
   return tl;
 };
 export const closeBurgerAnimation = () => {
@@ -88,7 +88,7 @@ export const closeBurgerAnimation = () => {
   nav.classList.add("closed");
 
   const tl = gsap.timeline({ paused: true });
-  tl.set(nav, { height: 0 }).to(ul, 0.35, { translateY: "-120%" });
+  tl.to(ul, 0.35, { translateY: "-120%" });
   return tl;
 };
 
