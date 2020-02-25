@@ -15,7 +15,6 @@ import { Loader } from "./Loader";
 const Wrapper = styled.section`
   position: relative;
   padding: 60px 20px 20px;
-  min-height: 120vh;
   background-image: url(${contactBg});
   background-position: center;
   background-size: cover;
@@ -54,28 +53,30 @@ const Description = styled.p`
   font-size: 18px;
   line-height: 1.8;
   font-weight: bold;
+  @media only screen and (orientation: landscape) {
+    text-align: center;
+  }
 `;
 
 const Socials = styled.ul`
-  margin: 40px 0;
+  margin: 40px auto;
   list-style: none;
-  li {
-    padding: 5px 0;
-    a {
-      display: flex;
-      align-items: center;
-      font-family: "Montserrat", sans-serif;
-      font-size: 14px;
-      color: #f2f2f2;
-      text-decoration: none;
-      span.icon {
-        font-size: 26px;
-        width: 50px;
-        text-align: center;
-      }
-      span.name {
-        margin-left: 15px;
-      }
+  max-width: 180px;
+  padding: 5px 0;
+  a {
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #f2f2f2;
+    text-decoration: none;
+    span.icon {
+      font-size: 26px;
+      width: 50px;
+      text-align: center;
+    }
+    span.name {
+      margin-left: 15px;
     }
   }
 `;
@@ -86,7 +87,13 @@ const Form = styled.form`
   flex-direction: column;
   background-color: rgba(5, 7, 27, 0.6);
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px auto;
+  @media only screen and (orientation: landscape) {
+    width: 65%;
+  }
+  @media only screen and (min-width: 736px) {
+    width: 65%;
+  }
 
   div.status {
     position: absolute;

@@ -21,8 +21,6 @@ const App = () => {
         });
       }
     });
-
-    console.log(window.innerWidth > window.innerHeight);
   });
   return (
     <BurgerContextProvider>

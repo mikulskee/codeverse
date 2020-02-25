@@ -91,10 +91,16 @@ const Spaceship = styled.div`
 
 const SkillsDescription = styled.ul`
   list-style: none;
-  margin-top: 50px;
+  margin: 50px auto 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media only screen and (orientation: landscape) {
+    width: 80vw;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 80vw;
+  }
 
   li {
     position: relative;
@@ -104,7 +110,7 @@ const SkillsDescription = styled.ul`
       position: absolute;
       height: 2px;
       width: 100%;
-      bottom: 15%;
+      bottom: 10%;
       left: 0;
       background-color: #fff;
       opacity: 0.6;
@@ -132,42 +138,21 @@ const SkillsDescription = styled.ul`
     font-size: 13px;
     margin: 20px;
     line-height: 1.4;
+    @media only screen and (min-width: 768px) {
+      font-size: 16px;
+    }
     strong,
     span {
       font-size: 18px;
+      @media only screen and (min-width: 768px) {
+        font-size: 20px;
+      }
     }
   }
 
   p.rwd {
     text-align: left;
   }
-  /* p.react strong {
-    color: #53c1de;
-  }
-  p.styled-components strong {
-    color: #d180c2;
-  }
-  p.gsap strong {
-    color: #83c801;
-  }
-  p.redux strong {
-    color: #7347b7;
-  }
-  p.hooks strong {
-    color: #4aacc2;
-  }
-  p.html strong {
-    color: #eb6228;
-  }
-  p.rwd strong {
-    color: #2762ea;
-  }
-  p.react-native strong {
-    color: #53c1de;
-  }
-  p.git strong {
-    color: #ea4e32;
-  } */
 `;
 
 const Skills = () => {
@@ -228,6 +213,17 @@ const Skills = () => {
             <div className="border-line" />
           </li>
 
+          <li>
+            <p className="design skill">
+              designing layouts in <br />
+              <strong>Adobe XD,</strong> <strong>Adobe Illustrator</strong>
+              <br /> and <strong>Figma </strong>
+              <span role="img" aria-label="man artist">
+                &#x1F3A8;
+              </span>
+            </p>
+            <div className="border-line" />
+          </li>
           <li>
             <p className="gsap skill">
               animations in <br />

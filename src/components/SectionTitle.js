@@ -11,6 +11,10 @@ const Wrapper = styled.h2`
   font-style: italic;
   display: flex;
   flex-direction: row;
+  @media only screen and (min-width: 768px) {
+    margin-left: 45px;
+    font-size: 28px;
+  }
 
   span {
     color: #f2f2f2;

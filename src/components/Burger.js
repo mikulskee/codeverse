@@ -4,7 +4,7 @@ const Wrapper = styled.button`
   background: none;
   border: none;
   width: 30px;
-  height: 20px;
+  height: 21px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

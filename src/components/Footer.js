@@ -15,6 +15,13 @@ const Wrapper = styled.footer`
   overflow: hidden;
   height: 55vw;
   background: rgb(4, 5, 25);
+  @media only screen and (min-width: 768px) {
+    height: 30vw;
+  }
+  @media only screen and (orientation: landscape) {
+    height: 30vw;
+  }
+
   .border {
     position: absolute;
     top: 0;
@@ -32,6 +39,9 @@ const Wrapper = styled.footer`
     transform: translate(-50%, -50%) scale(1.1);
     background: rgb(4, 5, 25);
     border-radius: 10px;
+    @media only screen and (min-width: 768px) {
+      width: 103%;
+    }
   }
 `;
 
@@ -49,7 +59,10 @@ const Content = styled.div`
   align-items: center;
 
   img {
-    width: 135px;
+    width: 130px;
+    @media only screen and (orientation: landscape) {
+      width: 115px;
+    }
   }
   h3,
   h5 {

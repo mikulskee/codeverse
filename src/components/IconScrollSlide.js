@@ -17,6 +17,9 @@ const Icon = styled.div`
   align-items: flex-end;
   justify-content: flex-start;
   opacity: 0;
+  @media only screen and (orientation: landscape) {
+    font-size: 22px;
+  }
 
   svg {
     transform: translateY(0) rotate(-115deg);
@@ -46,10 +49,10 @@ const Animation = () => {
   tl.to(container, { duration: 0.4, opacity: 1, delay: 1.5 })
     .to(hand, {
       duration: 1.5,
-      y: -30,
+      y: -20,
       ease: Power1.easeOut
     })
-    .to(line, { duration: 1.5, height: "74%" }, "-=1.5")
+    .to(line, { duration: 1.5, height: "60%" }, "-=1.5")
     .to(container, { duration: 0.25, opacity: 0 });
 };
 

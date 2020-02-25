@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { gsap, Power1 } from "gsap/all";
 import SectionTitle from "./SectionTitle";
 import styled from "styled-components";
-import fifaDraw from "../img/project1.png";
-import hairstyleWebsite from "../img/project2.png";
-import changingRoom from "../img/project3.png";
+import fifaDraw from "../img/proj1.png";
+import hairstyleWebsite from "../img/proj2.png";
+import changingRoom from "../img/proj3.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
@@ -49,17 +49,30 @@ const Content = styled.div`
 const ProjectsList = styled.ul`
   list-style: none;
   height: 80%;
-  margin-top: 20px;
+  margin: 20px auto 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
+  @media only screen and (orientation: landscape) {
+    width: 80vw;
+  }
+
+  @media only screen and (min-width: 736px) {
+    margin: 50px auto 0;
+    width: 80vw;
+  }
+
   li {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     pointer-events: none;
     margin: 35px 0;
+
+    @media only screen and (min-width: 736px) {
+      margin: 15px 0;
+    }
 
     div {
       position: relative;
@@ -69,7 +82,7 @@ const ProjectsList = styled.ul`
       h3 {
         position: absolute;
         top: 50%;
-        left: -22%;
+        right: -22%;
         transform: translateY(-50%);
         color: #f2f2f2;
         font-family: "Montserrat", sans-serif;
@@ -78,11 +91,19 @@ const ProjectsList = styled.ul`
         font-style: italic;
         pointer-events: none;
         visibility: hidden;
+
+        @media only screen and (min-width: 736px) {
+          font-size: 16px;
+        }
       }
 
       img {
         pointer-events: none;
-        width: 250px;
+        width: 230px;
+
+        @media only screen and (min-width: 736px) {
+          width: 280px;
+        }
       }
     }
 
@@ -108,21 +129,12 @@ const ProjectsList = styled.ul`
   }
 
   li:nth-child(even) {
-    justify-content: flex-start;
+    justify-content: flex-end;
 
     div {
-      ::before {
-        background: rgb(4, 5, 25);
-        background: linear-gradient(
-          263deg,
-          rgba(4, 5, 25, 1) 0%,
-          rgba(4, 5, 25, 0.4) 45%
-        );
-      }
-
       h3 {
-        left: auto;
-        right: -22%;
+        right: auto;
+        left: -22%;
       }
     }
   }

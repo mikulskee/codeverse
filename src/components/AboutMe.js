@@ -28,6 +28,7 @@ const Poster = styled.div`
   div.poster-image {
     position: relative;
     display: inline-block;
+    transform: translateX(-50%);
     ::before {
       position: absolute;
       top: 50%;
@@ -46,6 +47,9 @@ const Poster = styled.div`
     img.ben {
       width: 150px;
       display: block;
+      @media only screen and (min-width: 375px) {
+        width: 180px;
+      }
     }
     .sticker6 {
       position: absolute;
@@ -55,15 +59,20 @@ const Poster = styled.div`
       background-repeat: no-repeat;
       height: 230px;
       width: 230px;
-      transform: translate(145px, -125px);
+      transform: translate(125px, -125px);
+      @media only screen and (min-width: 375px) {
+        height: 290px;
+        width: 290px;
+        transform: translate(150px, -186px);
+      }
     }
   }
 
   .poster-description {
-    position: relative;
-    width: 45vw;
+    position: absolute;
+    width: 155px;
     font-weight: bold;
-    transform: translate(-26%, 60%);
+    transform: translate(20%, 60%);
     z-index: 1;
     font-size: 18px;
     line-height: 1.5;
@@ -91,6 +100,9 @@ const Description = styled.p`
   max-width: 320px;
   z-index: 1;
   pointer-events: none;
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 
   a {
     font-family: "Montserrat", sans-serif;
@@ -152,9 +164,16 @@ const Photos = styled.div`
     background-image: url(${aboutMe});
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    @media only screen and (min-width: 768px) {
+      height: 35vw;
+    }
   }
   .photo:nth-child(2) {
     background-image: url(${aboutMe2});
+    @media only screen and (min-width: 768px) {
+      background-position: top;
+    }
   }
 `;
 
@@ -167,13 +186,21 @@ const Grill = styled.div`
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% + 40px);
-  height: 54vw;
+  width: calc(209% + 40px);
+  height: 60vw;
   margin-bottom: 30px;
   background-position: center;
   background-image: url(${grill});
   background-size: contain;
   background-repeat: no-repeat;
+  @media only screen and (orientation: landscape) {
+    width: calc(100% + 40px);
+    height: 35vw;
+  }
+  @media only screen and (min-width: 768px) {
+    width: calc(130% + 40px);
+    height: 40vw;
+  }
 `;
 
 const Logo80s = styled.div`
@@ -186,6 +213,12 @@ const Logo80s = styled.div`
   background-image: url(${logo80s});
   background-size: contain;
   background-repeat: no-repeat;
+  @media only screen and (orientation: landscape) {
+    width: 70%;
+  }
+  @media only screen and (min-width: 736px) {
+    width: 70%;
+  }
 `;
 
 const AboutMe = () => {
@@ -239,9 +272,9 @@ const AboutMe = () => {
         <br />I love sports. I love running, in fact I ran a{" "}
         <strong>half-marathon</strong> last year.
         <br />
-        <br />I also love <strong>travelling</strong> with my friends.
-        <br /> I make <strong>movies</strong> from our adventures. You can see
-        them on my{" "}
+        <br />I also love <strong>travelling</strong> with my friends. I make{" "}
+        <strong>movies</strong> from our adventures.
+        <br /> You can see them on my{" "}
         <a href="https://www.youtube.com/user/MikulskeeTV">Youtube channel</a>
         <span
           role="img"

@@ -27,12 +27,21 @@ const Wrapper = styled.nav`
     flex-direction: column;
     background: rgb(4, 5, 25);
     box-shadow: 0px 20px 40px 30px rgba(4, 5, 25, 1);
+    @media only screen and (orientation: landscape) {
+      margin: 15px 0 0;
+    }
+    @media only screen and (min-width: 768px) {
+      margin: 40px 0 30px;
+    }
 
     li {
       margin: 10px 0;
       display: flex;
       align-items: center;
       justify-content: center;
+      @media only screen and (orientation: landscape) {
+        margin: 5px 0;
+      }
       button {
         font-family: "Montserrat", sans-serif;
         font-size: 20px;
@@ -43,6 +52,9 @@ const Wrapper = styled.nav`
         border: none;
         color: #f2f2f2;
         padding: 10px 15px;
+        @media only screen and (orientation: landscape) {
+          padding: 7px 15px;
+        }
         &.active {
           color: #b712c3;
         }
@@ -63,10 +75,19 @@ const TopBar = styled.div`
   align-items: center;
   z-index: 5;
   background: rgb(4, 5, 25);
-  box-shadow: 0px 7px 40px 30px rgba(4, 5, 25, 1);
+  box-shadow: 0px 7px 40px 15px rgba(4, 5, 25, 1);
+  @media only screen and (orientation: landscape) {
+    padding: 10px 20px;
+  }
 
   img.logo {
     width: 130px;
+    @media only screen and (orientation: landscape) {
+      width: 115px;
+    }
+    @media only screen and (min-width: 768px) {
+      width: 150px;
+    }
   }
 `;
 const Nav = () => {

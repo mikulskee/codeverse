@@ -75,6 +75,12 @@ const MainDescription = styled.p`
   font-size: 20px;
   width: 250px;
   line-height: 1.8;
+  @media only screen and (orientation: landscape) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 
   span {
     color: #68b5ef;
@@ -86,7 +92,9 @@ const MainDescription = styled.p`
 const Triangles = styled.div`
   margin-top: 50px;
   position: absolute;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transform: translateY(-50px);
   background-image: url(${triangles});
   background-size: contain;
@@ -94,6 +102,18 @@ const Triangles = styled.div`
   background-repeat: no-repeat;
   padding: 60px;
   z-index: 3;
+  width: 320px;
+  @media only screen and (orientation: landscape) {
+    margin-top: 40px;
+
+    width: 300px;
+    height: 300px;
+  }
+  @media only screen and (min-width: 768px) {
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;
+  }
 `;
 
 const MandoQuote = styled.p`
@@ -102,6 +122,9 @@ const MandoQuote = styled.p`
   font-family: "Montserrat", sans-serif;
   font-size: 8px;
   bottom: 10%;
+  @media only screen and (orientation: landscape) {
+    font-size: 6px;
+  }
   span {
     font-size: 12px;
   }
