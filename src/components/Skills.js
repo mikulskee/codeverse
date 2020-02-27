@@ -29,11 +29,12 @@ const Content = styled.div`
 
 const SkillsDescription = styled.ul`
   list-style: none;
-  margin: 50px auto 0;
+  margin: 50px -10px 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-bottom: 50px;
+  width: 85%;
   @media only screen and (orientation: landscape) {
     width: 80vw;
   }
@@ -42,6 +43,7 @@ const SkillsDescription = styled.ul`
   }
   @media only screen and (min-width: 1024px) {
     width: 70vw;
+    margin: 50px auto 0;
   }
   @media only screen and (min-width: 1280px) {
     width: 820px;
@@ -83,15 +85,21 @@ const SkillsDescription = styled.ul`
     color: #f2f2f2;
     font-family: "Montserrat", sans-serif;
     font-weight: 300;
-    font-size: 13px;
+    font-size: 12px;
     margin: 20px;
     line-height: 1.4;
+    @media only screen and (min-width: 375px) {
+      font-size: 14px;
+    }
     @media only screen and (min-width: 768px) {
       font-size: 16px;
     }
     strong,
     span {
-      font-size: 18px;
+      font-size: 16px;
+      @media only screen and (min-width: 375px) {
+        font-size: 18px;
+      }
       @media only screen and (min-width: 768px) {
         font-size: 20px;
       }
@@ -110,13 +118,12 @@ const SkillsDescription = styled.ul`
 `;
 
 const NeonSign = styled.div`
-  display: none;
   position: absolute;
   transform: skewY(-12deg) translate(0%, -50%);
   top: 50%;
   left: 5px;
-  @media only screen and (min-width: 1024px) {
-    display: block;
+  @media only screen and (min-width: 1366px) {
+    left: 20px;
   }
 
   h4 {
@@ -128,14 +135,32 @@ const NeonSign = styled.div`
     }
   }
   span {
-    height: 130px;
+    height: 100px;
+    @media only screen and (orientation: landscape) {
+      height: 130px;
+    }
+    @media only screen and (min-width: 1024px) {
+      height: 150px;
+    }
+    @media only screen and (min-width: 1366px) {
+      height: 165px;
+    }
   }
   h4,
   span {
     font-weight: 400;
     font-family: "Monoton";
     color: #00f4ff;
-    font-size: 150px;
+    font-size: 100px;
+    @media only screen and (orientation: landscape) {
+      font-size: 130px;
+    }
+    @media only screen and (min-width: 1024px) {
+      font-size: 150px;
+    }
+    @media only screen and (min-width: 1366px) {
+      font-size: 165px;
+    }
   }
 
   span {
@@ -292,7 +317,7 @@ const Skills = () => {
 
     const flickerLetter = letter =>
       `<span style="animation: text-flicker-in-glow ${Math.random() *
-        2}s linear both ">${letter}</span>`;
+        3}s linear both ">${letter}</span>`;
 
     const flickerText = text =>
       text

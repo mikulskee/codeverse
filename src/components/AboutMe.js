@@ -151,7 +151,7 @@ const Description = styled.p`
       background-size: 95%;
       background-position: 640% 166%;
     }
-  }
+  
 `;
 
 const Photos = styled.div`
