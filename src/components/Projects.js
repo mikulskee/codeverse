@@ -63,6 +63,16 @@ const ProjectsList = styled.ul`
     width: 80vw;
   }
 
+  @media only screen and (min-width: 1024px) {
+    width: 73vw;
+  }
+  @media only screen and (min-width: 1280px) {
+    width: 820px;
+  }
+  @media only screen and (min-width: 1500px) {
+    width: 1030px;
+  }
+
   li {
     display: flex;
     justify-content: flex-start;
@@ -72,6 +82,9 @@ const ProjectsList = styled.ul`
 
     @media only screen and (min-width: 736px) {
       margin: 15px 0;
+    }
+    @media only screen and (min-width: 1024px) {
+      margin: 0;
     }
 
     div {
@@ -95,6 +108,9 @@ const ProjectsList = styled.ul`
         @media only screen and (min-width: 736px) {
           font-size: 16px;
         }
+        @media only screen and (min-width: 1500px) {
+          font-size: 18px;
+        }
       }
 
       img {
@@ -103,6 +119,12 @@ const ProjectsList = styled.ul`
 
         @media only screen and (min-width: 736px) {
           width: 280px;
+        }
+        @media only screen and (min-width: 1024px) {
+          width: 340px;
+        }
+        @media only screen and (min-width: 1500px) {
+          width: 400px;
         }
       }
     }
@@ -148,6 +170,9 @@ const Pillars = styled.div`
   top: 0;
   left: 40px;
   justify-content: space-between;
+  @media only screen and (min-width: 1024px) {
+    left: 50px;
+  }
 
   .pillar {
     position: relative;

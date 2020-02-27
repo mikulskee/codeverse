@@ -16,6 +16,7 @@
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0",
     "react-scroll-parallax": "^2.2.0",
+    "react-use": "^13.26.3",
     "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^4.4.1"
   },

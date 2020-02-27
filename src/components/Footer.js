@@ -15,11 +15,16 @@ const Wrapper = styled.footer`
   overflow: hidden;
   height: 55vw;
   background: rgb(4, 5, 25);
+  max-width: 2100px;
+  margin: 0 auto;
   @media only screen and (min-width: 768px) {
     height: 30vw;
   }
   @media only screen and (orientation: landscape) {
     height: 30vw;
+  }
+  @media only screen and (min-width: 1024px) {
+    height: 220px;
   }
 
   .border {
@@ -63,6 +68,9 @@ const Content = styled.div`
     @media only screen and (orientation: landscape) {
       width: 115px;
     }
+    @media only screen and (min-width: 1024px) {
+      width: 150px;
+    }
   }
   h3,
   h5 {
@@ -75,10 +83,16 @@ const Content = styled.div`
     font-style: italic;
     font-size: 12px;
     color: #f2f2f2;
+    @media only screen and (min-width: 1024px) {
+      font-size: 14px;
+    }
     span {
       color: #bf2ac8;
       font-size: 12px;
       font-family: "Montserrat", sans-serif;
+      @media only screen and (min-width: 1024px) {
+        font-size: 14px;
+      }
     }
   }
 `;
@@ -109,12 +123,13 @@ const Socials = styled.ul`
 `;
 const Footer = () => {
   useEffect(() => {
-    const footer = document.querySelector("footer");
     const timeline = footerContentAnimation();
 
     window.addEventListener("scroll", () => {
+      const footer = document.querySelector("footer");
       const height = window.innerHeight;
-      const top = footer.getBoundingClientRect().top + 30;
+      const footerHeight = footer.getBoundingClientRect().height;
+      const top = Math.floor(footer.getBoundingClientRect().top + footerHeight);
 
       if (height >= top) {
         timeline.play();

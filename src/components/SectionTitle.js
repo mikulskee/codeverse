@@ -15,6 +15,12 @@ const Wrapper = styled.h2`
     margin-left: 45px;
     font-size: 28px;
   }
+  @media only screen and (min-width: 1024px) {
+    font-size: 17px;
+  }
+  @media only screen and (min-width: 1500px) {
+    font-size: 22px;
+  }
 
   span {
     color: #f2f2f2;
@@ -24,6 +30,9 @@ const Wrapper = styled.h2`
     font-style: normal;
     display: block;
     margin: 0.5px;
+    @media only screen and (min-width: 1024px) {
+      font-size: 2em;
+    }
   }
 
   span.anim-txt {

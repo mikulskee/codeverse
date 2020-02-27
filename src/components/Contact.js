@@ -19,6 +19,8 @@ const Wrapper = styled.section`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  max-width: 2100px;
+  margin: 0 auto;
 `;
 
 const Gradient = styled.div`
@@ -56,6 +58,9 @@ const Description = styled.p`
   @media only screen and (orientation: landscape) {
     text-align: center;
   }
+  @media only screen and (min-width: 1024px) {
+    font-size: 24px;
+  }
 `;
 
 const Socials = styled.ul`
@@ -63,6 +68,14 @@ const Socials = styled.ul`
   list-style: none;
   max-width: 180px;
   padding: 5px 0;
+  @media only screen and (min-width: 1024px) {
+    max-width: 202px;
+  }
+  li {
+    @media only screen and (min-width: 1024px) {
+      padding: 5px 0;
+    }
+  }
   a {
     display: flex;
     align-items: center;
@@ -70,10 +83,16 @@ const Socials = styled.ul`
     font-size: 14px;
     color: #f2f2f2;
     text-decoration: none;
+    @media only screen and (min-width: 1024px) {
+      font-size: 18px;
+    }
     span.icon {
       font-size: 26px;
       width: 50px;
       text-align: center;
+      @media only screen and (min-width: 1024px) {
+        font-size: 30px;
+      }
     }
     span.name {
       margin-left: 15px;
@@ -93,6 +112,9 @@ const Form = styled.form`
   }
   @media only screen and (min-width: 736px) {
     width: 65%;
+  }
+  @media only screen and (min-width: 1024px) {
+    width: 500px;
   }
 
   div.status {
@@ -127,11 +149,18 @@ const Form = styled.form`
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     color: #f2f2f2;
+    @media only screen and (min-width: 1024px) {
+      height: 45px;
+    }
   }
-  input::placeholder {
+  input::placeholder,
+  textarea::placeholder {
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     color: #f2f2f2;
+    @media only screen and (min-width: 1024px) {
+      font-size: 14px;
+    }
   }
   textarea {
     margin: 5px 0;
@@ -144,17 +173,6 @@ const Form = styled.form`
     color: #f2f2f2;
   }
 
-  textarea::placeholder {
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    color: #f2f2f2;
-  }
-  button {
-    margin: 5px 0;
-    width: 100px;
-    align-self: center;
-  }
-
   button {
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
@@ -162,11 +180,21 @@ const Form = styled.form`
     background: #bf2ac8;
     border: none;
     padding: 5px 0;
+    margin: 5px 0;
+    width: 100px;
+    align-self: center;
+    @media only screen and (min-width: 1024px) {
+      font-size: 16px;
+      padding: 10px 15px;
+    }
   }
 
   p.error {
     color: red;
     font-size: 12px;
+    @media only screen and (min-width: 1024px) {
+      font-size: 16px;
+    }
   }
 `;
 const Contact = () => {
@@ -228,13 +256,17 @@ const Contact = () => {
         if (xhr.readyState !== XMLHttpRequest.DONE) return;
         if (xhr.status === 200) {
           form.reset();
-          setStatus("mail has been sended");
+          setStatus("Mail has been sent");
           setTimeout(() => {
             resetForm();
             setStatus("");
           }, 2000);
         } else {
-          setStatus("something went wrong. try again later");
+          setStatus("Something went wrong. Try again later");
+          setTimeout(() => {
+            resetForm();
+            setStatus("");
+          }, 2000);
         }
       };
       xhr.send(data);

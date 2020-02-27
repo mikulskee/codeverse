@@ -26,6 +26,7 @@ const Wrapper = styled.ul`
     margin: 10px 0;
     padding: 0;
     box-shadow: none;
+    background: none;
   }
 
   li {
@@ -50,7 +51,11 @@ const Wrapper = styled.ul`
       color: #f2f2f2;
       padding: 10px 15px;
       @media only screen and (orientation: landscape) {
-        padding: 7px 15px;
+        font-size: 16px;
+        padding: 7px 20px;
+      }
+      @media only screen and (min-width: 1920px) {
+        font-size: 18px;
       }
       &.active {
         color: #e916f2;

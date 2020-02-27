@@ -15,6 +15,12 @@ const Wrapper = styled.nav`
   width: 100%;
   z-index: 4;
   transform: translateY(0);
+  height: 0;
+  max-width: 2100px;
+  @media only screen and (min-width: 2100px) {
+    transform: translate(-50%, 0);
+    left: 50%;
+  }
 `;
 
 const TopBar = styled.div`
@@ -39,7 +45,8 @@ const TopBar = styled.div`
     top: inherit;
     left: inherit;
     transform: translate(0);
-    box-shadow: 0px 5px 15px 10px rgba(4, 5, 25, 1);
+    background: rgba(4, 5, 25, 0.75);
+    box-shadow: 0px 5px 15px 10px rgba(4, 5, 25, 0.75);
   }
 
   img.logo {
@@ -49,6 +56,12 @@ const TopBar = styled.div`
     }
     @media only screen and (min-width: 768px) {
       width: 150px;
+    }
+    @media only screen and (min-width: 1200px) {
+      width: 165px;
+    }
+    @media only screen and (min-width: 1920px) {
+      width: 180px;
     }
   }
 `;

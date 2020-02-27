@@ -6,6 +6,8 @@ import AboutMe from "./AboutMe";
 
 const Wrapper = styled.main`
   background-color: #040519;
+  max-width: 2100px;
+  margin: 0 auto;
 `;
 const Main = () => {
   return (

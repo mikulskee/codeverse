@@ -20,6 +20,12 @@ const Icon = styled.div`
   @media only screen and (orientation: landscape) {
     font-size: 22px;
   }
+  @media only screen and (min-width: 1024px) {
+    font-size: 28px;
+  }
+  @media only screen and (min-height: 1300px) {
+    display: none;
+  }
 
   svg {
     transform: translateY(0) rotate(-115deg);

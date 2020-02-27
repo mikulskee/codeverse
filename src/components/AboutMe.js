@@ -12,10 +12,6 @@ import grill from "../img/grill.png";
 
 const Wrapper = styled.section`
   padding: 60px 20px 20px;
-  background-image: url(${starsPattern});
-  background-repeat: no-repeat;
-  background-size: 95%;
-  background-position: 644% 4%;
   overflow: hidden;
 `;
 
@@ -50,6 +46,9 @@ const Poster = styled.div`
       @media only screen and (min-width: 375px) {
         width: 180px;
       }
+      @media only screen and (min-width: 1024px) {
+        width: 250px;
+      }
     }
     .sticker6 {
       position: absolute;
@@ -65,6 +64,11 @@ const Poster = styled.div`
         width: 290px;
         transform: translate(150px, -186px);
       }
+      @media only screen and (min-width: 1024px) {
+        height: 350px;
+        width: 350px;
+        transform: translate(220px, -227px);
+      }
     }
   }
 
@@ -76,6 +80,11 @@ const Poster = styled.div`
     z-index: 1;
     font-size: 18px;
     line-height: 1.5;
+    @media only screen and (min-width: 1024px) {
+      font-size: 26px;
+      width: 250px;
+      transform: translate(96px, 83px);
+    }
   }
 `;
 
@@ -87,6 +96,10 @@ const DescriptionContainer = styled.div`
   background-repeat: no-repeat;
   background-size: 95%;
   background-position: 640% 37%;
+  @media only screen and (min-width: 1024px) {
+    background-size: 46%;
+    background-position: 120% 37%;
+  }
 `;
 
 const Description = styled.p`
@@ -95,23 +108,33 @@ const Description = styled.p`
   font-family: "Montserrat", sans-serif;
   color: #f2f2f2;
   display: block;
-  font-size: 14px;
   line-height: 1.8;
   max-width: 320px;
   z-index: 1;
   pointer-events: none;
-  @media only screen and (min-width: 768px) {
-    font-size: 16px;
+  @media only screen and (min-width: 1024px) {
+    max-width: 410px;
+  }
+  @media only screen and (min-width: 1500px) {
+    padding: 40px 0;
   }
 
   a {
     font-family: "Montserrat", sans-serif;
     color: #f2f2f2;
-    font-size: 14px;
     pointer-events: auto !important;
   }
-  .icon {
-    font-size: 14px;
+  
+
+    &, a, .icon{
+      font-size: 14px;
+    @media only screen and (min-width: 768px) {
+      font-size: 16px;
+    }
+    @media only screen and (min-width: 1024px) {
+      font-size: 18px;
+    }
+    }
   }
 
   &.second {
@@ -168,6 +191,9 @@ const Photos = styled.div`
     @media only screen and (min-width: 768px) {
       height: 35vw;
     }
+    @media only screen and (min-width: 1280px) {
+      height: 30vw;
+    }
   }
   .photo:nth-child(2) {
     background-image: url(${aboutMe2});
@@ -201,6 +227,10 @@ const Grill = styled.div`
     width: calc(130% + 40px);
     height: 40vw;
   }
+  @media only screen and (min-width: 1280px) {
+    width: calc(100% + 40px);
+    height: 37vw;
+  }
 `;
 
 const Logo80s = styled.div`
@@ -213,6 +243,8 @@ const Logo80s = styled.div`
   background-image: url(${logo80s});
   background-size: contain;
   background-repeat: no-repeat;
+  /* min-width: 1028px \/ */
+  max-width: 730px;
   @media only screen and (orientation: landscape) {
     width: 70%;
   }
@@ -263,7 +295,6 @@ const AboutMe = () => {
           <br />
           <strong>I love it</strong> &#x2764;.
         </Description>
-        <div className="sticker-captain"></div>
       </DescriptionContainer>
       <Grill />
       <Description className="second">

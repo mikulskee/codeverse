@@ -19,7 +19,8 @@ const Wrapper = styled.header`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  max-width: 1700px;
+  max-width: 1920px;
+  max-height: 1300px;
   margin: 0 auto;
 
   .bg-gradient {
@@ -40,6 +41,16 @@ const Wrapper = styled.header`
       rgba(4, 5, 25, 1) 100%
     );
   }
+  .horizontal {
+    background: rgb(4, 5, 25);
+    background: linear-gradient(
+      90deg,
+      rgba(4, 5, 25, 1) 0%,
+      rgba(4, 5, 25, 0) 15%,
+      rgba(4, 5, 25, 0) 75%,
+      rgba(4, 5, 25, 1) 100%
+    );
+  }
 `;
 
 const MainDescription = styled.p`
@@ -49,11 +60,20 @@ const MainDescription = styled.p`
   font-size: 20px;
   width: 250px;
   line-height: 1.8;
+
   @media only screen and (orientation: landscape) {
     font-size: 16px;
   }
   @media only screen and (min-width: 768px) {
     font-size: 18px;
+  }
+  @media only screen and (min-width: 1024px) {
+    font-size: 24px;
+    width: 233px;
+  }
+  @media only screen and (min-width: 1500px) {
+    font-size: 27px;
+    width: 270px;
   }
 
   span {
@@ -79,7 +99,6 @@ const Triangles = styled.div`
   width: 320px;
   @media only screen and (orientation: landscape) {
     margin-top: 40px;
-
     width: 300px;
     height: 300px;
   }
@@ -87,6 +106,14 @@ const Triangles = styled.div`
     width: 300px;
     height: 300px;
     margin-top: 50px;
+  }
+  @media only screen and (min-width: 1024px) {
+    width: 400px;
+    height: 400px;
+  }
+  @media only screen and (min-width: 1500px) {
+    width: 500px;
+    height: 500px;
   }
 `;
 
@@ -98,6 +125,12 @@ const MandoQuote = styled.p`
   bottom: 10%;
   @media only screen and (orientation: landscape) {
     font-size: 6px;
+  }
+  @media only screen and (min-width: 1024px) {
+    font-size: 8px;
+  }
+  @media only screen and (min-height: 1300px) {
+    display: none;
   }
   span {
     font-size: 12px;
@@ -115,6 +148,7 @@ const Header = () => {
   return (
     <Wrapper className={"header"}>
       <div className="bg-gradient vertical" />
+      <div className="bg-gradient horizontal" />
       <Triangles>
         <MainDescription className="main-description">
           Hi, my name is <span>Mateusz Mikulski</span> <br />i design and

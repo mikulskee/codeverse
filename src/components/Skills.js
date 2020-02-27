@@ -1,40 +1,12 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import SectionTitle from "./SectionTitle";
-import skillsBg from "../img/skills-bg.jpg";
-import { spaceship, spaceship2 } from "../animations/patternsAnimation";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
 import { skillsSectionContentAnimation } from "../animations/contentAnimations";
 
 const Wrapper = styled.section`
   position: relative;
   overflow: hidden;
-  background-image: url(${skillsBg});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  .spaceship-2 {
-    top: auto;
-    bottom: 20%;
-    left: 80%;
-    transform: rotate(220deg);
-  }
-
-  .spaceship-3 {
-    top: auto;
-    bottom: 50%;
-    left: 90%;
-    transform: rotate(286deg);
-    height: 120px;
-  }
-  .spaceship-4 {
-    top: auto;
-    bottom: 27%;
-    left: 20%;
-    height: 80px;
-    transform: rotate(98deg);
-  }
 `;
 
 const SkillsGradient = styled.div`
@@ -44,14 +16,6 @@ const SkillsGradient = styled.div`
   height: 100%;
   width: 100%;
   background: rgb(4, 5, 25);
-  background: linear-gradient(
-    180deg,
-    rgba(4, 5, 25, 1) 0%,
-    rgba(4, 5, 25, 1) 10%,
-    rgba(4, 5, 25, 0.7) 30%,
-    rgba(4, 5, 25, 0.7) 75%,
-    rgba(4, 5, 25, 1) 100%
-  );
 `;
 
 const Content = styled.div`
@@ -63,47 +27,31 @@ const Content = styled.div`
   padding: 60px 20px 20px;
 `;
 
-const Spaceship = styled.div`
-  position: absolute;
-  top: 17px;
-  right: 80%;
-  opacity: 0.3;
-  content: "";
-  display: block;
-  width: 2px;
-  height: 230px;
-  transform: rotate(88deg);
-  background-color: #fff;
-  background: linear-gradient(-45deg, #d013de, rgba(0, 0, 255, 0));
-  filter: drop-shadow(0 0 6px #fff);
-  ::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 3px;
-    height: 6px;
-    background-color: #fff;
-    border-radius: 50%;
-  }
-`;
-
 const SkillsDescription = styled.ul`
   list-style: none;
   margin: 50px auto 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-bottom: 50px;
   @media only screen and (orientation: landscape) {
     width: 80vw;
   }
   @media only screen and (min-width: 768px) {
     width: 80vw;
   }
+  @media only screen and (min-width: 1024px) {
+    width: 70vw;
+  }
+  @media only screen and (min-width: 1280px) {
+    width: 820px;
+  }
 
   li {
     position: relative;
+    @media only screen and (min-width: 1024px) {
+      width: 65%;
+    }
 
     div.border-line {
       content: "";
@@ -147,46 +95,250 @@ const SkillsDescription = styled.ul`
       @media only screen and (min-width: 768px) {
         font-size: 20px;
       }
+      @media only screen and (min-width: 1024px) {
+        font-size: 24px;
+      }
     }
   }
 
   p.rwd {
     text-align: left;
+    @media only screen and (min-width: 1024px) {
+      text-align: right;
+    }
+  }
+`;
+
+const NeonSign = styled.div`
+  display: none;
+  position: absolute;
+  transform: skewY(-12deg) translate(0%, -50%);
+  top: 50%;
+  left: 5px;
+  @media only screen and (min-width: 1024px) {
+    display: block;
+  }
+
+  h4 {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    &.visible {
+      opacity: 1;
+    }
+  }
+  span {
+    height: 130px;
+  }
+  h4,
+  span {
+    font-weight: 400;
+    font-family: "Monoton";
+    color: #00f4ff;
+    font-size: 150px;
+  }
+
+  span {
+    @keyframes text-flicker-in-glow {
+      0% {
+        opacity: 0;
+      }
+      10% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      10.1% {
+        opacity: 1;
+        text-shadow: none;
+      }
+      10.2% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      20% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      20.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+      }
+      20.6% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      30% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      30.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45),
+          0 0 60px rgba(255, 255, 255, 0.25);
+      }
+      30.5% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45),
+          0 0 60px rgba(255, 255, 255, 0.25);
+      }
+      30.6% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      45% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      45.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45),
+          0 0 60px rgba(255, 255, 255, 0.25);
+      }
+      50% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45),
+          0 0 60px rgba(255, 255, 255, 0.25);
+      }
+      55% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.45),
+          0 0 60px rgba(255, 255, 255, 0.25);
+      }
+      55.1% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      57% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      57.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55),
+          0 0 60px rgba(255, 255, 255, 0.35);
+      }
+      60% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55),
+          0 0 60px rgba(255, 255, 255, 0.35);
+      }
+      60.1% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      65% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      65.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55),
+          0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+      }
+      75% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55),
+          0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+      }
+      75.1% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      77% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      77.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55),
+          0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2),
+          0 0 100px rgba(255, 255, 255, 0.1);
+      }
+      85% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.55),
+          0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2),
+          0 0 100px rgba(255, 255, 255, 0.1);
+      }
+      85.1% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      86% {
+        opacity: 0;
+        text-shadow: none;
+      }
+      86.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
+          0 0 60px rgba(255, 255, 255, 0.45),
+          0 0 110px rgba(255, 255, 255, 0.25),
+          0 0 100px rgba(255, 255, 255, 0.1);
+      }
+      100% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.6),
+          0 0 60px rgba(255, 255, 255, 0.45),
+          0 0 110px rgba(255, 255, 255, 0.25),
+          0 0 100px rgba(255, 255, 255, 0.1);
+      }
+    }
   }
 `;
 
 const Skills = () => {
-  useEffect(() => {
-    spaceship();
-    spaceship2();
-  });
+  const blinking = () => {
+    const target = document.querySelector("div.neon h4");
+
+    const flickerLetter = letter =>
+      `<span style="animation: text-flicker-in-glow ${Math.random() *
+        2}s linear both ">${letter}</span>`;
+
+    const flickerText = text =>
+      text
+        .split("")
+        .map(flickerLetter)
+        .join("");
+
+    const neonGlory = target => {
+      target.classList.add("visible");
+      target.innerHTML = flickerText(target.textContent);
+    };
+
+    neonGlory(target);
+  };
 
   useEffect(() => {
     const title = document.querySelector(".skills-section-title");
-
+    const neon = document.querySelector("div.neon");
     const timeline = skillsSectionContentAnimation();
-
     let executed = false;
+    let executedNeon = false;
 
     window.addEventListener("scroll", () => {
       const height = window.innerHeight;
       const bottom = title.getBoundingClientRect().bottom;
+      const topNeon = neon.getBoundingClientRect().top;
 
       if (!executed && height >= bottom) {
         executed = true;
         timeline.play();
         sectionTitleAnimation(title);
-      } else return;
+      }
+      if (!executedNeon && height >= topNeon) {
+        executedNeon = true;
+        blinking();
+      }
     });
   });
+
   return (
     <Wrapper className="skills">
       <SkillsGradient />
-      <Spaceship className="spaceship" />
-      <Spaceship className="spaceship-2" />
-      <Spaceship className="spaceship-3" />
-      <Spaceship className="spaceship-4" />
       <Content>
+        <NeonSign className="neon">
+          <h4>skills</h4>
+        </NeonSign>
         <SectionTitle className={"skills-section-title section-title"}>
           skills
         </SectionTitle>
