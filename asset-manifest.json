@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/codeverse/static/css/main.e3e92313.chunk.css",
-    "main.js": "/codeverse/static/js/main.53c0a396.chunk.js",
-    "main.js.map": "/codeverse/static/js/main.53c0a396.chunk.js.map",
+    "main.js": "/codeverse/static/js/main.283405bd.chunk.js",
+    "main.js.map": "/codeverse/static/js/main.283405bd.chunk.js.map",
     "runtime-main.js": "/codeverse/static/js/runtime-main.68d11c0a.js",
     "runtime-main.js.map": "/codeverse/static/js/runtime-main.68d11c0a.js.map",
     "static/js/2.ad807c9a.chunk.js": "/codeverse/static/js/2.ad807c9a.chunk.js",
     "static/js/2.ad807c9a.chunk.js.map": "/codeverse/static/js/2.ad807c9a.chunk.js.map",
     "index.html": "/codeverse/index.html",
-    "precache-manifest.50ed27e55c017b919569327695f4f787.js": "/codeverse/precache-manifest.50ed27e55c017b919569327695f4f787.js",
+    "precache-manifest.4de130723f6cb63edf9655b4f82cb133.js": "/codeverse/precache-manifest.4de130723f6cb63edf9655b4f82cb133.js",
     "service-worker.js": "/codeverse/service-worker.js",
     "static/css/main.e3e92313.chunk.css.map": "/codeverse/static/css/main.e3e92313.chunk.css.map",
     "static/media/about-me.jpg": "/codeverse/static/media/about-me.3cb71a1d.jpg",
@@ -17,11 +17,11 @@
     "static/media/grill.png": "/codeverse/static/media/grill.b9cb33da.png",
     "static/media/header-bg_1.jpg": "/codeverse/static/media/header-bg_1.b80689de.jpg",
     "static/media/logo.png": "/codeverse/static/media/logo.b7378ea3.png",
-    "static/media/logo80s.png": "/codeverse/static/media/logo80s.4da45983.png",
+    "static/media/logo80s_1.png": "/codeverse/static/media/logo80s_1.a5c72654.png",
     "static/media/me-and-ben.jpg": "/codeverse/static/media/me-and-ben.30b2fcba.jpg",
-    "static/media/proj1.png": "/codeverse/static/media/proj1.9d4fe1b3.png",
-    "static/media/proj2.png": "/codeverse/static/media/proj2.dfff0094.png",
-    "static/media/proj3.png": "/codeverse/static/media/proj3.f3d33109.png",
+    "static/media/project1_1.png": "/codeverse/static/media/project1_1.5de96e18.png",
+    "static/media/project2_1.png": "/codeverse/static/media/project2_1.278e3b4c.png",
+    "static/media/project3_1.png": "/codeverse/static/media/project3_1.747a0aa3.png",
     "static/media/sticker-6.png": "/codeverse/static/media/sticker-6.598673cb.png",
     "static/media/triangles_1.png": "/codeverse/static/media/triangles_1.9b00fbb1.png"
   },
@@ -29,6 +29,6 @@
     "static/js/runtime-main.68d11c0a.js",
     "static/js/2.ad807c9a.chunk.js",
     "static/css/main.e3e92313.chunk.css",
-    "static/js/main.53c0a396.chunk.js"
+    "static/js/main.283405bd.chunk.js"
   ]
 }

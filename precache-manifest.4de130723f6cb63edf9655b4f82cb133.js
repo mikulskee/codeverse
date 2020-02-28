@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2f03b25e7a00e79b9c41717b0109c18c",
+    "revision": "45bb7b9a1aec483fc429458fd68a4482",
     "url": "/codeverse/index.html"
   },
   {
-    "revision": "0937fd59e924fc61885f",
+    "revision": "f8fc2d06b5bce561709d",
     "url": "/codeverse/static/css/main.e3e92313.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/js/2.ad807c9a.chunk.js"
   },
   {
-    "revision": "0937fd59e924fc61885f",
-    "url": "/codeverse/static/js/main.53c0a396.chunk.js"
+    "revision": "f8fc2d06b5bce561709d",
+    "url": "/codeverse/static/js/main.283405bd.chunk.js"
   },
   {
     "revision": "756f4cf751f1532b79c7",
@@ -44,24 +44,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/media/logo.b7378ea3.png"
   },
   {
-    "revision": "4da45983dd5ee3ae1ea54b5f1813bbaa",
-    "url": "/codeverse/static/media/logo80s.4da45983.png"
+    "revision": "a5c72654a83448a9646e9d7536337cfe",
+    "url": "/codeverse/static/media/logo80s_1.a5c72654.png"
   },
   {
     "revision": "30b2fcbaa1ae0a70331915a5193531a9",
     "url": "/codeverse/static/media/me-and-ben.30b2fcba.jpg"
   },
   {
-    "revision": "9d4fe1b332853f7eba4eec3db5cc478a",
-    "url": "/codeverse/static/media/proj1.9d4fe1b3.png"
+    "revision": "5de96e1830ca2c55659ae540001cbff5",
+    "url": "/codeverse/static/media/project1_1.5de96e18.png"
   },
   {
-    "revision": "dfff00940780370db07bda0342967636",
-    "url": "/codeverse/static/media/proj2.dfff0094.png"
+    "revision": "278e3b4c5d413d0701d576e1a271c324",
+    "url": "/codeverse/static/media/project2_1.278e3b4c.png"
   },
   {
-    "revision": "f3d331094941d5ddd5a13e61e4bff4ba",
-    "url": "/codeverse/static/media/proj3.f3d33109.png"
+    "revision": "747a0aa353beda2461acecb882faeb65",
+    "url": "/codeverse/static/media/project3_1.747a0aa3.png"
   },
   {
     "revision": "598673cbe1203bfd7e9cba84e677e89a",
