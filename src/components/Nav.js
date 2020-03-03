@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Burger from "./Burger";
-import logo from "../img/logo.png";
+import logo from "../img/logo_1.png";
 import {
   openBurgerAnimation,
   closeBurgerAnimation
@@ -46,7 +46,6 @@ const TopBar = styled.div`
     left: inherit;
     transform: translate(0);
     background: rgba(4, 5, 25, 0.75);
-    box-shadow: 0px 5px 15px 10px rgba(4, 5, 25, 0.75);
   }
 
   img.logo {

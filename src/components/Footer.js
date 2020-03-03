@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import logo from "../img/logo.png";
+import logo from "../img/logo_1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -46,6 +46,9 @@ const Wrapper = styled.footer`
     border-radius: 10px;
     @media only screen and (min-width: 768px) {
       width: 103%;
+    }
+    @media only screen and (min-width: 1024px) {
+      width: 104%;
     }
   }
 `;

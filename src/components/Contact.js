@@ -38,6 +38,25 @@ const Gradient = styled.div`
     rgba(4, 5, 25, 0.7) 75%,
     rgba(4, 5, 25, 1) 100%
   );
+  ::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: none;
+    background: rgb(4, 5, 25);
+    background: linear-gradient(
+      90deg,
+      rgba(4, 5, 25, 1) 0%,
+      rgba(4, 5, 25, 0) 15%,
+      rgba(4, 5, 25, 0) 75%,
+      rgba(4, 5, 25, 1) 100%
+    );
+
+    @media only screen and (min-width: 1920px) {
+      display: block;
+    }
+  }
 `;
 
 const Content = styled.div`
@@ -55,9 +74,8 @@ const Description = styled.p`
   font-size: 18px;
   line-height: 1.8;
   font-weight: bold;
-  @media only screen and (orientation: landscape) {
-    text-align: center;
-  }
+  text-align: center;
+
   @media only screen and (min-width: 1024px) {
     font-size: 24px;
   }

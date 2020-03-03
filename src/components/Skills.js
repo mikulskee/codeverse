@@ -122,8 +122,8 @@ const NeonSign = styled.div`
   transform: skewY(-12deg) translate(0%, -50%);
   top: 50%;
   left: 5px;
-  @media only screen and (min-width: 1366px) {
-    left: 20px;
+  @media only screen and (min-width: 1024px) {
+    left: 3vw;
   }
 
   h4 {
@@ -317,7 +317,7 @@ const Skills = () => {
 
     const flickerLetter = letter =>
       `<span style="animation: text-flicker-in-glow ${Math.random() *
-        3}s linear both ">${letter}</span>`;
+        4}s linear both ">${letter}</span>`;
 
     const flickerText = text =>
       text

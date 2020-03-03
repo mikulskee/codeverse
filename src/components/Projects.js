@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { gsap, Power1 } from "gsap/all";
 import SectionTitle from "./SectionTitle";
 import styled from "styled-components";
-import fifaDraw from "../img/proj1.png";
-import hairstyleWebsite from "../img/proj2.png";
-import changingRoom from "../img/proj3.png";
+import fifaDraw from "../img/project1_1.png";
+import hairstyleWebsite from "../img/project2_1.png";
+import changingRoom from "../img/project3_1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
@@ -171,7 +171,7 @@ const Pillars = styled.div`
   left: 40px;
   justify-content: space-between;
   @media only screen and (min-width: 1024px) {
-    left: 50px;
+    left: 5vw;
   }
 
   .pillar {

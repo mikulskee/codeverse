@@ -2,24 +2,33 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import SectionTitle from "./SectionTitle";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
-import meAndBen from "../img/me-and-ben.jpg";
+import me1 from "../img/me-1111.jpg";
+import me2 from "../img/me-11.jpg";
+import me3 from "../img/me-3.jpg";
 import starsPattern from "../img/stars-pattern.png";
 import aboutMe from "../img/about-me.jpg";
 import aboutMe2 from "../img/about-me2.png";
-import logo80s from "../img/logo80s.png";
+import logo80s from "../img/logo80s.jpg";
 import sticker6 from "../img/sticker-6.png";
-import grill from "../img/grill.png";
+import grill from "../img/grill.jpg";
+import PhotoGallery from "./PhotoGallery";
 
 const Wrapper = styled.section`
   padding: 60px 20px 20px;
   overflow: hidden;
 `;
-
+const StyledSectionTitle = styled(SectionTitle)`
+  position: relative;
+  z-index: 2;
+`;
 const Poster = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  @media only screen and (min-width: 1024px) {
+    margin-top: 80px;
+  }
 
   div.poster-image {
     position: relative;
@@ -37,7 +46,7 @@ const Poster = styled.div`
       background: linear-gradient(
         -83deg,
         rgba(4, 5, 25, 1) 0%,
-        rgba(4, 5, 25, 0.4) 45%
+        rgba(4, 5, 25, 0.25) 45%
       );
     }
     img.ben {
@@ -46,8 +55,14 @@ const Poster = styled.div`
       @media only screen and (min-width: 375px) {
         width: 180px;
       }
+      @media only screen and (min-width: 768px) {
+        width: 230px;
+      }
       @media only screen and (min-width: 1024px) {
         width: 250px;
+      }
+      @media only screen and (min-width: 1366px) {
+        width: 290px;
       }
     }
     .sticker6 {
@@ -64,10 +79,20 @@ const Poster = styled.div`
         width: 290px;
         transform: translate(150px, -186px);
       }
+      @media only screen and (min-width: 768px) {
+        height: 320px;
+        width: 320px;
+        transform: translate(201px, -216px);
+      }
       @media only screen and (min-width: 1024px) {
         height: 350px;
         width: 350px;
         transform: translate(220px, -227px);
+      }
+      @media only screen and (min-width: 1366px) {
+        height: 400px;
+        width: 400px;
+        transform: translate(260px, -321px);
       }
     }
   }
@@ -76,14 +101,94 @@ const Poster = styled.div`
     position: absolute;
     width: 155px;
     font-weight: bold;
-    transform: translate(20%, 60%);
+    transform: translate(53px, 60px);
     z-index: 1;
     font-size: 18px;
     line-height: 1.5;
+    text-shadow: none;
+    @media only screen and (min-width: 375px) {
+      font-size: 21px;
+      width: 180px;
+      transform: translate(61px, 60px);
+    }
+    @media only screen and (min-width: 768px) {
+      font-size: 26px;
+      width: 223px;
+      transform: translate(82px, 94px);
+    }
     @media only screen and (min-width: 1024px) {
       font-size: 26px;
       width: 250px;
       transform: translate(96px, 83px);
+    }
+    @media only screen and (min-width: 1366px) {
+      font-size: 29px;
+    }
+  }
+`;
+const Photos = styled.div`
+  position: relative;
+  overflow: hidden;
+  margin-top: 60px;
+  margin-left: -20px;
+  margin: 100px 0 40px -20px;
+  width: calc(100% + 40px);
+  display: flex;
+  @media only screen and (min-width: 1024px) {
+    overflow: visible;
+    justify-content: center;
+  }
+
+  .photo {
+    position: relative;
+    width: 50vw;
+    height: 50vw;
+    background-image: url(${aboutMe});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 500px;
+    max-height: 500px;
+    ::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 103%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgb(4, 5, 25);
+      background: linear-gradient(
+        0deg,
+        rgba(4, 5, 25, 1) 0%,
+        rgba(4, 5, 25, 0.35) 15%,
+        rgba(4, 5, 25, 0.35) 85%,
+        rgba(4, 5, 25, 1) 100%
+      );
+    }
+    @media only screen and (min-width: 768px) {
+      height: 35vw;
+    }
+    @media only screen and (min-width: 1024px) {
+      height: 370px;
+      width: 370px;
+      transform: translate(41px, -100px);
+    }
+    @media only screen and (min-width: 1366px) {
+      height: 420px;
+      width: 420px;
+    }
+  }
+  .photo:nth-child(2) {
+    background-image: url(${aboutMe2});
+    @media only screen and (min-width: 768px) {
+      background-position: top;
+    }
+    @media only screen and (min-width: 1024px) {
+      transform: translate(28px, 0px);
+    }
+    @media only screen and (min-width: 1366px) {
+      transform: translate(28px, -25px);
     }
   }
 `;
@@ -96,9 +201,73 @@ const DescriptionContainer = styled.div`
   background-repeat: no-repeat;
   background-size: 95%;
   background-position: 640% 37%;
+  align-items: center;
   @media only screen and (min-width: 1024px) {
     background-size: 46%;
     background-position: 120% 37%;
+    margin: 50px 0;
+  }
+  @media only screen and (min-width: 1366px) {
+    margin-left: 13%;
+    justify-content: flex-start;
+  }
+  div.cover {
+    position: relative;
+    ::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: "";
+      width: 102%;
+      height: 102%;
+      background: rgb(4, 5, 25);
+      background: linear-gradient(
+        -83deg,
+        rgba(4, 5, 25, 1) 0%,
+        rgba(4, 5, 25, 0.25) 45%
+      );
+    }
+    img {
+      position: relative;
+      display: none;
+      width: 0;
+      @media only screen and (min-width: 1024px) {
+        display: block;
+        width: 345px;
+      }
+      @media only screen and (min-width: 1366px) {
+        width: 410px;
+      }
+    }
+  }
+
+  &.second {
+    @media only screen and (min-width: 1024px) {
+      background-position: -12% 37%;
+    }
+    @media only screen and (min-width: 1366px) {
+      justify-content: flex-end;
+    }
+    div.cover {
+      @media only screen and (min-width: 1366px) {
+        margin-right: 13%;
+      }
+      ::after {
+        background: linear-gradient(
+          -270deg,
+          rgba(4, 5, 25, 1) 0%,
+          rgba(4, 5, 25, 0.25) 45%
+        );
+      }
+    }
+    img {
+      width: 275px;
+    }
+  }
+  &.third {
+    margin-left: auto;
+    justify-content: center;
   }
 `;
 
@@ -109,11 +278,16 @@ const Description = styled.p`
   color: #f2f2f2;
   display: block;
   line-height: 1.8;
-  max-width: 320px;
+  width: 320px;
   z-index: 1;
   pointer-events: none;
   @media only screen and (min-width: 1024px) {
-    max-width: 410px;
+    width: 410px;
+    margin: 0;
+    margin-left: -20px;
+  }
+  @media only screen and (min-width: 1366px) {
+    font-size: 18px;
   }
   @media only screen and (min-width: 1500px) {
     padding: 40px 0;
@@ -124,21 +298,18 @@ const Description = styled.p`
     color: #f2f2f2;
     pointer-events: auto !important;
   }
-  
-
-    &, a, .icon{
-      font-size: 14px;
+  .icon {
+    font-size: 14px;
     @media only screen and (min-width: 768px) {
       font-size: 16px;
-    }
-    @media only screen and (min-width: 1024px) {
-      font-size: 18px;
-    }
     }
   }
 
   &.second {
-    margin-bottom: 40px;
+    @media only screen and (min-width: 1024px) {
+      margin-right: -70px;
+    }
+
     ::before {
       content: "";
       position: absolute;
@@ -146,66 +317,26 @@ const Description = styled.p`
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url(${starsPattern});
-      background-repeat: no-repeat;
-      background-size: 95%;
-      background-position: 640% 166%;
-    }
-  
-`;
-
-const Photos = styled.div`
-  position: relative;
-  overflow: hidden;
-  margin-top: 60px;
-  margin-left: -20px;
-  margin: 100px 0 40px -20px;
-  width: calc(100% + 40px);
-  display: flex;
-
-  ::after {
-    content: "";
-    position: absolute;
-    width: 103%;
-    height: 103%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgb(4, 5, 25);
-    background: linear-gradient(
-      0deg,
-      rgba(4, 5, 25, 1) 0%,
-      rgba(4, 5, 25, 0.4) 15%,
-      rgba(4, 5, 25, 0.4) 85%,
-      rgba(4, 5, 25, 1) 100%
-    );
-  }
-
-  .photo {
-    width: 50vw;
-    height: 50vw;
-    background-image: url(${aboutMe});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    @media only screen and (min-width: 768px) {
-      height: 35vw;
-    }
-    @media only screen and (min-width: 1280px) {
-      height: 30vw;
     }
   }
-  .photo:nth-child(2) {
-    background-image: url(${aboutMe2});
-    @media only screen and (min-width: 768px) {
-      background-position: top;
+  &.third {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 825px;
+
+    @media only screen and (min-width: 1024px) {
+      font-size: 20px;
+      .icon {
+        font-size: 26px;
+      }
+    }
+    @media only screen and (min-width: 1366px) {
+      font-size: 24px;
+      .icon {
+        font-size: 30px;
+      }
     }
   }
-`;
-
-const StyledSectionTitle = styled(SectionTitle)`
-  position: relative;
-  z-index: 2;
 `;
 
 const Grill = styled.div`
@@ -219,6 +350,7 @@ const Grill = styled.div`
   background-image: url(${grill});
   background-size: contain;
   background-repeat: no-repeat;
+  max-height: 700px;
   @media only screen and (orientation: landscape) {
     width: calc(100% + 40px);
     height: 35vw;
@@ -243,8 +375,9 @@ const Logo80s = styled.div`
   background-image: url(${logo80s});
   background-size: contain;
   background-repeat: no-repeat;
-  /* min-width: 1028px \/ */
+  max-height: 200px;
   max-width: 730px;
+  margin: 40px 0;
   @media only screen and (orientation: landscape) {
     width: 70%;
   }
@@ -275,7 +408,7 @@ const AboutMe = () => {
 
       <Poster className="poster">
         <div className="poster-image">
-          <img className="ben" src={meAndBen} alt="me with my dog" />
+          <img className="ben" src={me1} alt="me with my dog" />
           <div className="sticker6" />
         </div>
         <Description className="poster-description">
@@ -287,7 +420,11 @@ const AboutMe = () => {
         <div className="photo" />
         <div className="photo" />
       </Photos>
+
       <DescriptionContainer className="description-container">
+        <div className="cover">
+          <img src={me2} alt="me coding" />
+        </div>
         <Description>
           I started to learn <strong>programming</strong> a year and a half ago
           and got so involved that since then I spend <strong>every day</strong>{" "}
@@ -297,26 +434,47 @@ const AboutMe = () => {
         </Description>
       </DescriptionContainer>
       <Grill />
-      <Description className="second">
-        I have fiance <strong>Ania</strong>, and I am owner of French bulldog
-        named <strong>Benek</strong>.
-        <br />I love sports. I love running, in fact I ran a{" "}
-        <strong>half-marathon</strong> last year.
-        <br />
-        <br />I also love <strong>travelling</strong> with my friends. I make{" "}
-        <strong>movies</strong> from our adventures.
-        <br /> You can see them on my{" "}
-        <a href="https://www.youtube.com/user/MikulskeeTV">Youtube channel</a>
-        <span
-          role="img"
-          aria-label="backhand index pointing left"
-          className="icon"
-        >
-          &#x1F448;
-        </span>
-        .
-      </Description>
+
+      <DescriptionContainer className="description-container second">
+        <Description className="second">
+          I have fiance <strong>Ania</strong>, and I am owner of French bulldog
+          named <strong>Benek</strong>.
+          <br />
+          <br /> I love the <strong>Netflix</strong> series,{" "}
+          <strong>The Office</strong> series, Andrzej Sapkowski's books from the{" "}
+          <strong>Witcher</strong> universe, the <strong>Star Wars</strong>{" "}
+          saga, movies from the <strong>Marvel Cinematic Universe</strong> and
+          playing video games on my <strong>PlayStation</strong>.
+          <br />
+          <br />
+          I'm passionate about sports. I've recently become crazy about running,
+          in fact I ran a<strong> half-marathon</strong> last year.
+        </Description>
+        <div className="cover">
+          <img src={me3} alt="me coding" />
+        </div>
+      </DescriptionContainer>
       <Logo80s />
+      <DescriptionContainer className="description-container third">
+        <Description className="third">
+          Apart from coding, I enjoy <strong>taking photos</strong>, go on road
+          trips around my country and abroad, and <strong>travel</strong> with
+          my backpack and my friends.
+          <br />
+          <br />I also make <strong>movies</strong> from our adventures.
+          <br /> You can see them on my{" "}
+          <a href="https://www.youtube.com/user/MikulskeeTV">Youtube channel</a>
+          <span
+            role="img"
+            aria-label="backhand index pointing left"
+            className="icon"
+          >
+            &#x1F448;
+          </span>
+          .
+        </Description>
+      </DescriptionContainer>
+      <PhotoGallery />
     </Wrapper>
   );
 };
