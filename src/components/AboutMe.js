@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import SectionTitle from "./SectionTitle";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
-import me1 from "../img/me-1111.jpg";
-import me2 from "../img/me-11.jpg";
-import me3 from "../img/me-3.jpg";
+import me1 from "../img/me-1_1.jpg";
+import me2 from "../img/me-2_1.jpg";
+import me3 from "../img/me-3_1.jpg";
 import starsPattern from "../img/stars-pattern.png";
-import aboutMe from "../img/about-me.jpg";
-import aboutMe2 from "../img/about-me2.png";
+import aboutMe from "../img/about-me_1.jpg";
+import aboutMe2 from "../img/about-me2_1.jpg";
 import logo80s from "../img/logo80s.jpg";
-import sticker6 from "../img/sticker-6.png";
+import sticker6 from "../img/sticker-6_1.png";
 import grill from "../img/grill.jpg";
 import PhotoGallery from "./PhotoGallery";
 
@@ -49,7 +49,7 @@ const Poster = styled.div`
         rgba(4, 5, 25, 0.25) 45%
       );
     }
-    img.ben {
+    img.me-poster {
       width: 150px;
       display: block;
       @media only screen and (min-width: 375px) {
@@ -408,7 +408,7 @@ const AboutMe = () => {
 
       <Poster className="poster">
         <div className="poster-image">
-          <img className="ben" src={me1} alt="me with my dog" />
+          <img className="me-poster" src={me1} alt="me coding" />
           <div className="sticker6" />
         </div>
         <Description className="poster-description">

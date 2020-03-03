@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import contactBg from "../img/contact-bg.jpg";
+import contactBg from "../img/contact-bg_1.jpg";
 import SectionTitle from "./SectionTitle";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

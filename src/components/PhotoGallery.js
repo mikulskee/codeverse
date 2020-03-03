@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import gallery1 from "../img/gallery1.jpg";
-import gallery2 from "../img/gallery2.jpg";
-import gallery3 from "../img/gallery3.jpg";
-import gallery4 from "../img/gallery4.jpg";
-import gallery5 from "../img/gallery5.jpg";
-import gallery6 from "../img/gallery6.jpg";
-import gallery7 from "../img/gallery7.jpg";
-import gallery8 from "../img/gallery8.jpg";
-import gallery9 from "../img/gallery9.jpg";
+import gallery1 from "../img/gallery1_1.jpg";
+import gallery2 from "../img/gallery2_1.jpg";
+import gallery3 from "../img/gallery3_1.jpg";
+import gallery4 from "../img/gallery4_1.jpg";
+import gallery5 from "../img/gallery5_1.jpg";
+import gallery6 from "../img/gallery6_1.jpg";
+import gallery7 from "../img/gallery7_1.jpg";
+import gallery8 from "../img/gallery8_1.jpg";
+import gallery9 from "../img/gallery9_1.jpg";
 
 const Wrapper = styled.div`
   margin: 20px 0;
