@@ -15,69 +15,163 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-direction: row;
   flex-wrap: wrap;
   @media only screen and (min-width: 1024px) {
     margin: 40px 0 20px;
   }
-  img {
-    margin: 2% 3%;
-    width: 35%;
-    align-self: center;
+
+  div.container {
+    position: relative;
+    display: inline-block;
+    margin: 2% 2%;
     @media only screen and (min-width: 1024px) {
-      width: 22%;
+      margin: 2% 3%;
+    }
+    p {
+      position: absolute;
+      top: 10%;
+      left: -10%;
+      font-family: "Montserrat", sans-serif;
+      color: #f2f2f2;
+      font-size: 10px;
+      background-color: rgba(4, 5, 25, 0.9);
+      padding: 5px 10px;
+      @media only screen and (min-width: 736px) {
+        font-size: 12px;
+      }
+      @media only screen and (min-width: 1024px) {
+        font-size: 14px;
+      }
+      @media only screen and (min-width: 1366px) {
+        font-size: 16px;
+      }
+    }
+    img {
+      width: 35vw;
+      align-self: center;
+      max-width: 445px;
+      @media only screen and (min-width: 1024px) {
+        width: 24vw;
+      }
     }
   }
-  img:nth-child(2) {
-    width: 45%;
-    @media only screen and (min-width: 1024px) {
-      width: 26%;
+
+  div.container:nth-child(2) {
+    p {
+      top: auto;
+      left: auto;
+      bottom: 5%;
+      right: -5%;
+    }
+    img {
+      width: 43vw;
+      max-width: 485px;
+      @media only screen and (min-width: 1024px) {
+        width: 26vw;
+      }
     }
   }
-  img:nth-child(3) {
-    width: 35%;
-    align-self: center;
-    @media only screen and (min-width: 1024px) {
-      width: 22%;
+
+  div.container:nth-child(3) {
+    p {
+      left: auto;
+      right: -10%;
+    }
+    img {
+      width: 35vw;
+      align-self: center;
+      max-width: 465px;
+
+      @media only screen and (min-width: 1024px) {
+        width: 25vw;
+      }
     }
   }
-  img:nth-child(4) {
-    width: 40%;
-    @media only screen and (min-width: 1024px) {
-      width: 20%;
+
+  div.container:nth-child(4) {
+    p {
+      top: auto;
+      bottom: 5%;
+    }
+    img {
+      width: 40vw;
+      max-width: 410px;
+      @media only screen and (min-width: 1024px) {
+        width: 22vw;
+      }
     }
   }
-  img:nth-child(5) {
-    width: 40%;
-    @media only screen and (min-width: 1024px) {
-      width: 22%;
+  div.container:nth-child(5) {
+    p {
+      top: 80%;
+    }
+    img {
+      width: 40vw;
+      max-width: 485px;
+      @media only screen and (min-width: 1024px) {
+        width: 26vw;
+      }
     }
   }
-  img:nth-child(6) {
-    width: 35%;
-    align-self: flex-end;
-    @media only screen and (min-width: 1024px) {
-      width: 26%;
+  div.container:nth-child(6) {
+    p {
+      top: 45%;
+    }
+    img {
+      max-width: 485px;
+
+      width: 35vw;
+      align-self: flex-end;
+      @media only screen and (min-width: 1024px) {
+        width: 26vw;
+      }
     }
   }
-  img:nth-child(7) {
-    width: 35%;
-    align-self: flex-end;
-    @media only screen and (min-width: 1024px) {
-      width: 23%;
+
+  div.container:nth-child(7) {
+    img {
+      max-width: 430px;
+      width: 43vw;
+      align-self: flex-end;
+      @media only screen and (min-width: 1024px) {
+        width: 23vw;
+      }
     }
   }
-  img:nth-child(8) {
-    width: 35%;
-    align-self: flex-end;
-    @media only screen and (min-width: 1024px) {
-      width: 32%;
+
+  div.container:nth-child(8) {
+    p {
+      top: auto;
+      bottom: 5%;
+    }
+    img {
+      width: 32vw;
+      align-self: flex-end;
+      max-width: 425px;
+      @media only screen and (min-width: 1024px) {
+        width: 23vw;
+      }
     }
   }
-  img:nth-child(9) {
-    width: 35%;
-    align-self: flex-end;
-    @media only screen and (min-width: 1024px) {
-      width: 26%;
+
+  div.container:nth-child(9) {
+    margin: 2% 1%;
+    display: flex;
+    justify-content: center;
+    p {
+      top: auto;
+      left: auto;
+      right: -5%;
+      bottom: 5%;
+    }
+    img {
+      max-width: 595px;
+      width: 80%;
+      align-self: flex-end;
+      @media only screen and (min-width: 1024px) {
+        width: 32vw;
+      }
     }
   }
 `;
@@ -85,15 +179,42 @@ const Wrapper = styled.div`
 const PhotoGallery = () => {
   return (
     <Wrapper>
-      <img src={gallery4} alt="" />
-      <img src={gallery3} alt="" />
-      <img src={gallery5} alt="" />
-      <img src={gallery6} alt="" />
-      <img src={gallery7} alt="" />
-      <img src={gallery9} alt="" />
-      <img src={gallery1} alt="" />
-      <img src={gallery2} alt="" />
-      <img src={gallery8} alt="" />
+      <div className="container">
+        <p>Trapani, Sicily, ITA</p>
+        <img src={gallery4} alt="" />
+      </div>
+      <div className="container">
+        <p>Ho Chi Minh City, VNM</p>
+        <img src={gallery3} alt="" />
+      </div>
+      <div className="container">
+        <p>Poznań, POL</p>
+        <img src={gallery5} alt="" />
+      </div>
+      <div className="container">
+        <p>Katowice, POL</p>
+        <img src={gallery6} alt="" />
+      </div>
+      <div className="container">
+        <p>Koh Tao Island, THA</p>
+        <img src={gallery7} alt="" />
+      </div>
+      <div className="container">
+        <p>Dubai, UAE</p>
+        <img src={gallery9} alt="" />
+      </div>
+      <div className="container">
+        <p>Wetlina, Bieszczady, POL</p>
+        <img src={gallery1} alt="" />
+      </div>
+      <div className="container">
+        <p>Marina Bay, SGP</p>
+        <img src={gallery8} alt="" />
+      </div>
+      <div className="container">
+        <p>Tatranská Lomnica, SVK</p>
+        <img src={gallery2} alt="" />
+      </div>
     </Wrapper>
   );
 };
