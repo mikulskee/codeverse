@@ -135,7 +135,8 @@ export const headerAnimation = element => {
   tl.set(element, { visibility: "visible" }).from(element, 1.5, {
     y: 50,
     autoAlpha: 0,
-    ease: Power1.easeOut
+    ease: Power1.easeOut,
+    delay: 0.7
   });
 
   return tl;
