@@ -175,33 +175,23 @@ export const grillAnimation = () => {
   });
   return tl;
 };
-export const photoGalleryAnimation = () => {
-  const descriptions = document.querySelectorAll("a.container p");
-  const images = document.querySelectorAll("a.container img");
+export const photoGalleryAnimation = props => {
+  const description = props.querySelector("p");
+  const image = props.querySelector("img");
   const tl = gsap.timeline({ paused: true });
 
-  tl.set(descriptions, { visibility: "visible" })
-    .set(images, { visibility: "visible" })
-    .staggerFrom(
-      descriptions,
-      1.3,
-      {
-        y: -150,
-        autoAlpha: 0,
-        ease: Power1.easeOut
-      },
-      0.2
-    )
-    .staggerFrom(
-      images,
-      1.3,
-      {
-        y: 50,
-        autoAlpha: 0,
-        ease: Power1.easeOut,
-        delay: -2
-      },
-      0.2
-    );
+  tl.set(description, { visibility: "visible" })
+    .set(image, { visibility: "visible" })
+    .from(description, 1.3, {
+      y: -150,
+      autoAlpha: 0,
+      ease: Power1.easeOut
+    })
+    .from(image, 1.3, {
+      y: 50,
+      autoAlpha: 0,
+      ease: Power1.easeOut,
+      delay: -1
+    });
   return tl;
 };

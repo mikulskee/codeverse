@@ -478,17 +478,20 @@ const AboutMe = () => {
     });
   });
   useEffect(() => {
-    const gallery = document.querySelector(".photo-gallery");
-    let executed = false;
+    const imagesFromGallery = document.querySelectorAll(".photo-gallery a");
 
-    window.addEventListener("scroll", () => {
-      const height = window.innerHeight;
-      const top = gallery.getBoundingClientRect().top;
+    imagesFromGallery.forEach(img => {
+      let executed = false;
 
-      if (!executed && height >= top) {
-        executed = true;
-        photoGalleryAnimation().play();
-      } else return;
+      window.addEventListener("scroll", () => {
+        const height = window.innerHeight;
+        const top = img.getBoundingClientRect().bottom;
+
+        if (!executed && height >= top) {
+          executed = true;
+          photoGalleryAnimation(img).play();
+        } else return;
+      });
     });
   });
   return (
@@ -563,6 +566,18 @@ const AboutMe = () => {
             &#x1F448;
           </span>
           .
+          <br />
+          <br />
+          Below a few photos from our trips{" "}
+          <span
+            role="img"
+            aria-label="backhand index pointing down"
+            className="icon"
+          >
+            &#x1F447;
+          </span>
+          <br />
+          <span className="little">(click on them to see location...)</span>
         </Description>
       </DescriptionContainer>
       <PhotoGallery />
