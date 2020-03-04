@@ -110,3 +110,98 @@ export const showNav = () => {
   tl.to(nav, 0.35, { y: 0, ease: Power1.easeOut });
   return tl;
 };
+
+export const aboutSectionDescriptionAnimation = () => {
+  const description = document.querySelectorAll(
+    ".about-me div.poster .fade-in"
+  );
+  const sticker = document.querySelectorAll(".fade-in-sticker");
+  const tl = gsap.timeline({ paused: true });
+
+  tl.set(description, { visibility: "visible" })
+    .staggerFrom(
+      description,
+      1,
+      {
+        y: "50px",
+        autoAlpha: 0,
+        ease: Power1.easeOut
+      },
+      0.2
+    )
+    .from(sticker, 0.7, {
+      y: "50px",
+      autoAlpha: 0,
+      ease: "steps(10)",
+      delay: -0.4
+    });
+
+  return tl;
+};
+
+export const descriptionAnimation = props => {
+  const contents = props.querySelectorAll(".fade-in");
+  const tl = gsap.timeline({ paused: true });
+
+  tl.staggerFrom(
+    contents,
+    1,
+    {
+      y: 50,
+      autoAlpha: 0,
+      ease: Power1.easeOut
+    },
+    0.2
+  );
+  return tl;
+};
+export const logo80sAnimation = () => {
+  const logo = document.querySelector(".logo80s");
+  const tl = gsap.timeline({ paused: true });
+
+  tl.set(logo, { visibility: "visible" }).from(logo, 1, {
+    rotateX: "90deg",
+    ease: "steps(8)"
+  });
+  return tl;
+};
+export const grillAnimation = () => {
+  const logo = document.querySelector(".grill");
+  const tl = gsap.timeline({ paused: true });
+
+  tl.set(logo, { visibility: "visible" }).from(logo, 1, {
+    rotateX: "90deg",
+    ease: "steps(10)"
+  });
+  return tl;
+};
+export const photoGalleryAnimation = () => {
+  const descriptions = document.querySelectorAll("a.container p");
+  const images = document.querySelectorAll("a.container img");
+  const tl = gsap.timeline({ paused: true });
+
+  tl.set(descriptions, { visibility: "visible" })
+    .set(images, { visibility: "visible" })
+    .staggerFrom(
+      descriptions,
+      1.3,
+      {
+        y: -150,
+        autoAlpha: 0,
+        ease: Power1.easeOut
+      },
+      0.2
+    )
+    .staggerFrom(
+      images,
+      1.3,
+      {
+        y: 50,
+        autoAlpha: 0,
+        ease: Power1.easeOut,
+        delay: -2
+      },
+      0.2
+    );
+  return tl;
+};

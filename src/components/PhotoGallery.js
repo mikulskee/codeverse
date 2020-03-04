@@ -56,6 +56,8 @@ const Wrapper = styled.div`
       background-color: rgba(4, 5, 25, 0.9);
       padding: 5px 10px;
       z-index: 999999;
+      visibility: hidden;
+
       @media only screen and (min-width: 736px) {
         font-size: 12px;
       }
@@ -71,6 +73,7 @@ const Wrapper = styled.div`
       align-self: center;
       max-width: 445px;
       transition: opacity 0.2s linear;
+      visibility: hidden;
       @media only screen and (min-width: 1024px) {
         width: 24vw;
       }
@@ -198,7 +201,7 @@ const Wrapper = styled.div`
 
 const PhotoGallery = () => {
   return (
-    <Wrapper>
+    <Wrapper className="photo-gallery">
       <a
         className="container"
         href="https://www.google.com/maps/place/91100+Trapani,+Province+of+Trapani,+Italy/@38.0173813,12.4685625,12z/data=!3m1!4b1!4m5!3m4!1s0x1319622fd6a4905f:0x8bf1debcf9983482!8m2!3d38.0173505!4d12.5365171"

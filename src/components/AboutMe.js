@@ -2,6 +2,13 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import SectionTitle from "./SectionTitle";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
+import {
+  aboutSectionDescriptionAnimation,
+  descriptionAnimation,
+  logo80sAnimation,
+  grillAnimation,
+  photoGalleryAnimation
+} from "../animations/contentAnimations";
 import me1 from "../img/me-1_1.jpg";
 import me2 from "../img/me-2_1.jpg";
 import me3 from "../img/me-3_1.jpg";
@@ -34,6 +41,7 @@ const Poster = styled.div`
     position: relative;
     display: inline-block;
     transform: translateX(-50%);
+    visibility: hidden;
     ::before {
       position: absolute;
       top: 50%;
@@ -52,6 +60,7 @@ const Poster = styled.div`
     img.me-poster {
       width: 150px;
       display: block;
+
       @media only screen and (min-width: 375px) {
         width: 180px;
       }
@@ -106,6 +115,8 @@ const Poster = styled.div`
     font-size: 18px;
     line-height: 1.5;
     text-shadow: none;
+    overflow: hidden;
+    visibility: hidden;
     @media only screen and (min-width: 375px) {
       font-size: 21px;
       width: 180px;
@@ -213,6 +224,7 @@ const DescriptionContainer = styled.div`
   }
   div.cover {
     position: relative;
+    visibility: hidden;
     ::after {
       position: absolute;
       top: 50%;
@@ -281,6 +293,7 @@ const Description = styled.p`
   width: 320px;
   z-index: 1;
   pointer-events: none;
+  visibility: hidden;
   @media only screen and (min-width: 1024px) {
     width: 410px;
     margin: 0;
@@ -351,6 +364,7 @@ const Grill = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   max-height: 700px;
+  visibility: hidden;
   @media only screen and (orientation: landscape) {
     width: calc(100% + 40px);
     height: 35vw;
@@ -378,6 +392,7 @@ const Logo80s = styled.div`
   max-height: 200px;
   max-width: 730px;
   margin: 40px 0;
+  visibility: hidden;
   @media only screen and (orientation: landscape) {
     width: 70%;
   }
@@ -400,18 +415,94 @@ const AboutMe = () => {
       } else return;
     });
   });
+
+  useEffect(() => {
+    const description = document.querySelector(".poster-description");
+    let executed = false;
+
+    window.addEventListener("scroll", () => {
+      const height = window.innerHeight;
+      const top = description.getBoundingClientRect().top;
+
+      if (!executed && height >= top) {
+        executed = true;
+        aboutSectionDescriptionAnimation().play();
+      } else return;
+    });
+  });
+
+  useEffect(() => {
+    const des = document.querySelectorAll(".description-container");
+    des.forEach(d => {
+      let executed = false;
+      window.addEventListener("scroll", () => {
+        const height = window.innerHeight;
+        const top = d.getBoundingClientRect().top + 20;
+
+        if (!executed && height >= top) {
+          console.log("lecimy");
+
+          executed = true;
+          descriptionAnimation(d).play();
+        } else return;
+      });
+    });
+  });
+
+  useEffect(() => {
+    const logo = document.querySelector(".logo80s");
+    let executed = false;
+
+    window.addEventListener("scroll", () => {
+      const height = window.innerHeight;
+      const top = logo.getBoundingClientRect().bottom;
+
+      if (!executed && height >= top) {
+        executed = true;
+        logo80sAnimation().play();
+      } else return;
+    });
+  });
+  useEffect(() => {
+    const grill = document.querySelector(".grill");
+    let executed = false;
+
+    window.addEventListener("scroll", () => {
+      const height = window.innerHeight;
+      const top = grill.getBoundingClientRect().bottom;
+
+      if (!executed && height >= top) {
+        executed = true;
+        grillAnimation().play();
+      } else return;
+    });
+  });
+  useEffect(() => {
+    const gallery = document.querySelector(".photo-gallery");
+    let executed = false;
+
+    window.addEventListener("scroll", () => {
+      const height = window.innerHeight;
+      const top = gallery.getBoundingClientRect().top;
+
+      if (!executed && height >= top) {
+        executed = true;
+        photoGalleryAnimation().play();
+      } else return;
+    });
+  });
   return (
     <Wrapper className="about-me">
       <StyledSectionTitle className={"about-me-section-title section-title"}>
         about&nbsp;me
       </StyledSectionTitle>
 
-      <Poster className="poster">
-        <div className="poster-image">
+      <Poster className="poster ">
+        <div className="poster-image fade-in">
           <img className="me-poster" src={me1} alt="me coding" />
-          <div className="sticker6" />
+          <div className="sticker6 fade-in-sticker" />
         </div>
-        <Description className="poster-description">
+        <Description className="poster-description fade-in">
           Hi, My name is Mateusz Mikulski and I am Frontend Developer living in{" "}
           Katowice.
         </Description>
@@ -422,10 +513,10 @@ const AboutMe = () => {
       </Photos>
 
       <DescriptionContainer className="description-container">
-        <div className="cover">
+        <div className="cover fade-in">
           <img src={me2} alt="me coding" />
         </div>
-        <Description>
+        <Description className="fade-in">
           I started to learn <strong>programming</strong> a year and a half ago
           and got so involved that since then I spend <strong>every day</strong>{" "}
           learning. It definitely became my passion.
@@ -433,10 +524,10 @@ const AboutMe = () => {
           <strong>I love it</strong> &#x2764;.
         </Description>
       </DescriptionContainer>
-      <Grill />
+      <Grill className="grill" />
 
       <DescriptionContainer className="description-container second">
-        <Description className="second">
+        <Description className="second fade-in">
           I have fiance <strong>Ania</strong>, and I am owner of French bulldog
           named <strong>Benek</strong>.
           <br />
@@ -450,13 +541,13 @@ const AboutMe = () => {
           I'm passionate about sports. I've recently become crazy about running,
           in fact I ran a<strong> half-marathon</strong> last year.
         </Description>
-        <div className="cover">
+        <div className="cover fade-in">
           <img src={me3} alt="me coding" />
         </div>
       </DescriptionContainer>
-      <Logo80s />
+      <Logo80s className="logo80s" />
       <DescriptionContainer className="description-container third">
-        <Description className="third">
+        <Description className="third fade-in">
           Apart from coding, I enjoy <strong>taking photos</strong>, go on road
           trips around my country and abroad, and <strong>travel</strong> with
           my backpack and my friends.
