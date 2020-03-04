@@ -128,3 +128,33 @@ export const fadeInAnimation = props => {
     return tl;
   }
 };
+
+export const headerAnimation = element => {
+  const tl = gsap.timeline({ paused: true });
+
+  tl.set(element, { visibility: "visible" }).from(element, 1.5, {
+    y: 50,
+    autoAlpha: 0,
+    ease: Power1.easeOut
+  });
+
+  return tl;
+};
+export const trianglesAnimation = () => {
+  const triangles = document.querySelectorAll("#triangle");
+  const tl = gsap.timeline({ paused: true });
+  console.log(triangles);
+
+  tl.set(triangles, { visibility: "visible" }).staggerFrom(
+    triangles,
+    1.5,
+    {
+      rotate: "-10deg",
+      autoAlpha: 0,
+      ease: Power1.easeOut
+    },
+    0.2
+  );
+
+  return tl;
+};

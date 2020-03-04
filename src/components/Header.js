@@ -1,9 +1,15 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import headerBg from "../img/header-bg_1.jpg";
-import triangles from "../img/triangles_1.png";
+// import triangles from "../img/triangles_1.png";
 import IconScrollSlide from "./IconScrollSlide";
-import { mandoAnimation } from "../animations/patternsAnimation";
+// import { mandoAnimation } from "../animations/patternsAnimation";
+import {
+  headerAnimation,
+  trianglesAnimation
+} from "../animations/contentAnimations";
+import trianglesSVG from "../img/triangle.svg";
+import { ReactSVG } from "react-svg";
 
 const Wrapper = styled.header`
   position: relative;
@@ -65,7 +71,8 @@ const MainDescription = styled.p`
   font-size: 20px;
   width: 250px;
   line-height: 1.8;
-
+  z-index: 2;
+  visibility: hidden;
   @media only screen and (orientation: landscape) {
     font-size: 16px;
   }
@@ -95,10 +102,7 @@ const Triangles = styled.div`
   justify-content: center;
   align-items: center;
   transform: translateY(-50px);
-  background-image: url(${triangles});
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+
   padding: 60px;
   z-index: 3;
   width: 320px;
@@ -142,19 +146,43 @@ const MandoQuote = styled.p`
   }
 `;
 
+const StyledReactSVG = styled(ReactSVG)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.75;
+
+  svg {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 116%;
+    height: 116%;
+    #triangle {
+      visibility: hidden;
+    }
+  }
+`;
+
 const Header = () => {
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 20) {
-        mandoAnimation();
-      }
-    });
+    const desc = document.querySelector(".main-description");
+
+    headerAnimation(desc).play();
+    setTimeout(() => {
+      trianglesAnimation().play();
+    }, 800);
   }, []);
+
   return (
     <Wrapper className={"header"}>
       <div className="bg-gradient vertical" />
       <div className="bg-gradient horizontal" />
-      <Triangles>
+      <Triangles className="triangles">
+        <StyledReactSVG className="trianglesSVG" src={trianglesSVG} />
         <MainDescription className="main-description">
           Hi, my name is <span>Mateusz Mikulski</span> <br />i design and
           develop websites

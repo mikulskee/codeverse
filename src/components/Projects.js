@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap, Power1 } from "gsap/all";
 import SectionTitle from "./SectionTitle";
 import styled from "styled-components";
@@ -10,6 +10,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 import starsPattern from "../img/stars-pattern.png";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
+import VanillaTilt from "vanilla-tilt";
 
 const Wrapper = styled.section`
   position: relative;
@@ -89,12 +90,15 @@ const ProjectsList = styled.ul`
     div {
       position: relative;
       pointer-events: auto !important;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
 
       h3 {
         position: absolute;
         top: 50%;
         right: -22%;
-        transform: translateY(-50%);
+        transform: translateY(-50%) translateZ(20px);
         color: #f2f2f2;
         font-family: "Montserrat", sans-serif;
         font-weight: 600;
@@ -141,7 +145,11 @@ const ProjectsList = styled.ul`
         top: 50%;
         left: 50%;
         font-size: 42px;
-        transform: translate(-140%, -50%);
+        transform: translate(-140%, -50%) translateZ(20px);
+        transition: color 0.15s linear;
+        &:hover {
+          color: #333333;
+        }
         @media only screen and (min-width: 1024px) {
           font-size: 52px;
         }
@@ -151,7 +159,7 @@ const ProjectsList = styled.ul`
       }
 
       a:nth-of-type(2) {
-        transform: translate(40%, -50%);
+        transform: translate(40%, -50%) translateZ(20px);
       }
     }
   }
@@ -224,6 +232,17 @@ const projects = [
   }
 ];
 
+const Tilt = props => {
+  const { options, ...rest } = props;
+  const tilt = useRef(null);
+
+  useEffect(() => {
+    VanillaTilt.init(tilt.current, options);
+  }, [options]);
+
+  return <div ref={tilt} {...rest} />;
+};
+
 const Projects = () => {
   const handleClick = e => {
     const tl = gsap.timeline();
@@ -250,30 +269,38 @@ const Projects = () => {
       });
   };
 
+  const options = {
+    scale: 1.1,
+    speed: 500,
+    max: 30
+  };
+
   const newProjects = projects.map(item => (
     <li key={item.key}>
-      <div
-        onClick={handleClick}
-        className={`project ${item.key} fade-in-container`}
-      >
-        <h3 className="project-title first-element-fade-in">{`${item.key}. ${item.title}`}</h3>
-        <img
-          className="second-element-fade-in"
-          src={item.img}
-          alt={item.title}
-        />
-      </div>
-      <div className={`project links ${item.key}`}>
-        <img src={item.img} alt={item.title} />
-        <a href={item.github}>
-          {" "}
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
-        <a href={item.live}>
-          {" "}
-          <FontAwesomeIcon icon={faCode} />
-        </a>
-      </div>
+      <Tilt options={options}>
+        <div
+          onClick={handleClick}
+          className={`project ${item.key} fade-in-container`}
+        >
+          <h3 className="project-title first-element-fade-in">{`${item.key}. ${item.title}`}</h3>
+          <img
+            className="second-element-fade-in"
+            src={item.img}
+            alt={item.title}
+          />
+        </div>
+        <div className={`project links ${item.key}`}>
+          <img src={item.img} alt={item.title} />
+          <a href={item.github}>
+            {" "}
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+          <a href={item.live}>
+            {" "}
+            <FontAwesomeIcon icon={faCode} />
+          </a>
+        </div>
+      </Tilt>
     </li>
   ));
 
