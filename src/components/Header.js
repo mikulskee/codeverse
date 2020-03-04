@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import headerBg from "../img/header-bg_1.jpg";
-// import triangles from "../img/triangles_1.png";
 import IconScrollSlide from "./IconScrollSlide";
-// import { mandoAnimation } from "../animations/patternsAnimation";
+import { mandoAnimation } from "../animations/patternsAnimation";
 import {
   headerAnimation,
   trianglesAnimation
@@ -170,13 +169,18 @@ const StyledReactSVG = styled(ReactSVG)`
 const Header = () => {
   useEffect(() => {
     const desc = document.querySelector(".main-description");
-
     headerAnimation(desc).play();
     setTimeout(() => {
       trianglesAnimation().play();
     }, 800);
+  });
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        mandoAnimation();
+      }
+    });
   }, []);
-
   return (
     <Wrapper className={"header"}>
       <div className="bg-gradient vertical" />

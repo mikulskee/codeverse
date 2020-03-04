@@ -144,7 +144,6 @@ export const headerAnimation = element => {
 export const trianglesAnimation = () => {
   const triangles = document.querySelectorAll("#triangle");
   const tl = gsap.timeline({ paused: true });
-  console.log(triangles);
 
   tl.set(triangles, { visibility: "visible" }).staggerFrom(
     triangles,
