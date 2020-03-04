@@ -75,6 +75,7 @@ const Description = styled.p`
   line-height: 1.8;
   font-weight: bold;
   text-align: center;
+  visibility: hidden;
 
   @media only screen and (min-width: 1024px) {
     font-size: 24px;
@@ -317,10 +318,14 @@ const Contact = () => {
       <Gradient />
       <SectionTitle className="contact-section-title">contact</SectionTitle>
       <Content>
-        <Description>You can find me online in many places...</Description>
+        <div className="fade-in-container">
+          <Description className="second-element-fade-in">
+            You can find me online in many places...
+          </Description>
+        </div>
 
         <Socials>
-          <li>
+          <li className="steps">
             <a href="https://github.com/mikulskee">
               <span className="icon">
                 <FontAwesomeIcon icon={faGithub} />
@@ -328,7 +333,7 @@ const Contact = () => {
               <span className="name">mikulskee</span>
             </a>
           </li>
-          <li>
+          <li className="steps">
             <a href="https://www.instagram.com/miikulskee/">
               <span className="icon">
                 <FontAwesomeIcon icon={faInstagram} />
@@ -336,7 +341,7 @@ const Contact = () => {
               <span className="name">miikulskee</span>
             </a>
           </li>
-          <li>
+          <li className="steps">
             <a href="https://www.youtube.com/user/MikulskeeTV/">
               <span className="icon">
                 <FontAwesomeIcon icon={faYoutube} />
@@ -344,7 +349,7 @@ const Contact = () => {
               <span className="name">Mateusz Mikulski</span>
             </a>
           </li>
-          <li>
+          <li className="steps">
             <a href="www.linkedin.com/in/mikulski-mateusz">
               <span className="icon">
                 <FontAwesomeIcon icon={faLinkedin} />
@@ -353,7 +358,11 @@ const Contact = () => {
             </a>
           </li>
         </Socials>
-        <Description>don't hesitate to write me a message!</Description>
+        <div className="fade-in-container">
+          <Description className="second-element-fade-in">
+            don't hesitate to write me a message!
+          </Description>
+        </div>
 
         <Form
           id="gform"

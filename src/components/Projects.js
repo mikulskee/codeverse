@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 import starsPattern from "../img/stars-pattern.png";
-import { projectsSectionContentAnimation } from "../animations/contentAnimations";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
 
 const Wrapper = styled.section`
@@ -90,7 +89,6 @@ const ProjectsList = styled.ul`
     div {
       position: relative;
       pointer-events: auto !important;
-      visibility: hidden;
 
       h3 {
         position: absolute;
@@ -104,6 +102,7 @@ const ProjectsList = styled.ul`
         font-style: italic;
         pointer-events: none;
         visibility: hidden;
+        z-index: 1;
 
         @media only screen and (min-width: 736px) {
           font-size: 16px;
@@ -116,6 +115,7 @@ const ProjectsList = styled.ul`
       img {
         pointer-events: none;
         width: 230px;
+        visibility: hidden;
 
         @media only screen and (min-width: 736px) {
           width: 280px;
@@ -246,9 +246,16 @@ const Projects = () => {
 
   const newProjects = projects.map(item => (
     <li key={item.key}>
-      <div onClick={handleClick} className={`project ${item.key}`}>
-        <h3 className="project-title">{`${item.key}. ${item.title}`}</h3>
-        <img src={item.img} alt={item.title} />
+      <div
+        onClick={handleClick}
+        className={`project ${item.key} fade-in-container`}
+      >
+        <h3 className="project-title first-element-fade-in">{`${item.key}. ${item.title}`}</h3>
+        <img
+          className="second-element-fade-in"
+          src={item.img}
+          alt={item.title}
+        />
       </div>
       <div className={`project links ${item.key}`}>
         <img src={item.img} alt={item.title} />
@@ -266,17 +273,12 @@ const Projects = () => {
 
   useEffect(() => {
     const title = document.querySelector(".projects-section-title");
-    const timeline = projectsSectionContentAnimation();
-
     let executed = false;
-
     window.addEventListener("scroll", () => {
       const height = window.innerHeight;
       const bottom = title.getBoundingClientRect().bottom;
-
       if (!executed && height >= bottom) {
         executed = true;
-        timeline.play();
         sectionTitleAnimation(title);
       } else return;
     });

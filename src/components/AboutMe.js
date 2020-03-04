@@ -4,10 +4,7 @@ import SectionTitle from "./SectionTitle";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
 import {
   aboutSectionDescriptionAnimation,
-  descriptionAnimation,
-  logo80sAnimation,
-  grillAnimation,
-  photoGalleryAnimation
+  stepsAnimation
 } from "../animations/contentAnimations";
 import me1 from "../img/me-1_1.jpg";
 import me2 from "../img/me-2_1.jpg";
@@ -317,6 +314,9 @@ const Description = styled.p`
       font-size: 16px;
     }
   }
+  span.little {
+    font-family: "Montserrat", sans-serif;
+  }
 
   &.second {
     @media only screen and (min-width: 1024px) {
@@ -422,7 +422,7 @@ const AboutMe = () => {
 
     window.addEventListener("scroll", () => {
       const height = window.innerHeight;
-      const top = description.getBoundingClientRect().top;
+      const top = description.getBoundingClientRect().bottom;
 
       if (!executed && height >= top) {
         executed = true;
@@ -432,68 +432,23 @@ const AboutMe = () => {
   });
 
   useEffect(() => {
-    const des = document.querySelectorAll(".description-container");
-    des.forEach(d => {
+    const stepsElements = document.querySelectorAll(".steps");
+
+    stepsElements.forEach(el => {
       let executed = false;
+
       window.addEventListener("scroll", () => {
         const height = window.innerHeight;
-        const top = d.getBoundingClientRect().top + 20;
+        const top = el.getBoundingClientRect().bottom;
 
         if (!executed && height >= top) {
-          console.log("lecimy");
-
           executed = true;
-          descriptionAnimation(d).play();
+          stepsAnimation(el).play();
         } else return;
       });
     });
   });
 
-  useEffect(() => {
-    const logo = document.querySelector(".logo80s");
-    let executed = false;
-
-    window.addEventListener("scroll", () => {
-      const height = window.innerHeight;
-      const top = logo.getBoundingClientRect().bottom;
-
-      if (!executed && height >= top) {
-        executed = true;
-        logo80sAnimation().play();
-      } else return;
-    });
-  });
-  useEffect(() => {
-    const grill = document.querySelector(".grill");
-    let executed = false;
-
-    window.addEventListener("scroll", () => {
-      const height = window.innerHeight;
-      const top = grill.getBoundingClientRect().bottom;
-
-      if (!executed && height >= top) {
-        executed = true;
-        grillAnimation().play();
-      } else return;
-    });
-  });
-  useEffect(() => {
-    const imagesFromGallery = document.querySelectorAll(".photo-gallery a");
-
-    imagesFromGallery.forEach(img => {
-      let executed = false;
-
-      window.addEventListener("scroll", () => {
-        const height = window.innerHeight;
-        const top = img.getBoundingClientRect().bottom;
-
-        if (!executed && height >= top) {
-          executed = true;
-          photoGalleryAnimation(img).play();
-        } else return;
-      });
-    });
-  });
   return (
     <Wrapper className="about-me">
       <StyledSectionTitle className={"about-me-section-title section-title"}>
@@ -515,11 +470,11 @@ const AboutMe = () => {
         <div className="photo" />
       </Photos>
 
-      <DescriptionContainer className="description-container">
-        <div className="cover fade-in">
+      <DescriptionContainer className="description-container fade-in-container">
+        <div className="cover first-element-fade-in">
           <img src={me2} alt="me coding" />
         </div>
-        <Description className="fade-in">
+        <Description className="second-element-fade-in">
           I started to learn <strong>programming</strong> a year and a half ago
           and got so involved that since then I spend <strong>every day</strong>{" "}
           learning. It definitely became my passion.
@@ -527,10 +482,10 @@ const AboutMe = () => {
           <strong>I love it</strong> &#x2764;.
         </Description>
       </DescriptionContainer>
-      <Grill className="grill" />
+      <Grill className="steps" />
 
-      <DescriptionContainer className="description-container second">
-        <Description className="second fade-in">
+      <DescriptionContainer className="description-container second fade-in-container">
+        <Description className="second second-element-fade-in">
           I have fiance <strong>Ania</strong>, and I am owner of French bulldog
           named <strong>Benek</strong>.
           <br />
@@ -544,13 +499,13 @@ const AboutMe = () => {
           I'm passionate about sports. I've recently become crazy about running,
           in fact I ran a<strong> half-marathon</strong> last year.
         </Description>
-        <div className="cover fade-in">
+        <div className="cover first-element-fade-in">
           <img src={me3} alt="me coding" />
         </div>
       </DescriptionContainer>
-      <Logo80s className="logo80s" />
-      <DescriptionContainer className="description-container third">
-        <Description className="third fade-in">
+      <Logo80s className="steps" />
+      <DescriptionContainer className="description-container third fade-in-container">
+        <Description className="third second-element-fade-in">
           Apart from coding, I enjoy <strong>taking photos</strong>, go on road
           trips around my country and abroad, and <strong>travel</strong> with
           my backpack and my friends.

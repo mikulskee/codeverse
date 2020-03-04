@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import SectionTitle from "./SectionTitle";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
-import { skillsSectionContentAnimation } from "../animations/contentAnimations";
 
 const Wrapper = styled.section`
   position: relative;
@@ -63,24 +62,13 @@ const SkillsDescription = styled.ul`
       bottom: 10%;
       left: 0;
       background-color: #fff;
-      opacity: 0.6;
       background: linear-gradient(-45deg, #da42ab, rgba(0, 0, 255, 0));
       filter: drop-shadow(0 0 6px #fff);
       transform: translateX(-100px);
       opacity: 0;
+      visibility: hidden;
     }
   }
-
-  li:nth-child(even) {
-    align-self: flex-end;
-    text-align: right;
-    div.border-line {
-      background: linear-gradient(45deg, #da42ab, rgba(0, 0, 255, 0));
-      filter: drop-shadow(0 0 6px #fff);
-      transform: translateX(100px);
-    }
-  }
-
   p {
     color: #f2f2f2;
     font-family: "Montserrat", sans-serif;
@@ -88,6 +76,7 @@ const SkillsDescription = styled.ul`
     font-size: 12px;
     margin: 20px;
     line-height: 1.4;
+    visibility: hidden;
     @media only screen and (min-width: 375px) {
       font-size: 14px;
     }
@@ -113,6 +102,16 @@ const SkillsDescription = styled.ul`
     text-align: left;
     @media only screen and (min-width: 1024px) {
       text-align: right;
+    }
+  }
+
+  li:nth-child(even) {
+    align-self: flex-end;
+    text-align: right;
+    div.border-line {
+      background: linear-gradient(45deg, #da42ab, rgba(0, 0, 255, 0));
+      filter: drop-shadow(0 0 6px #fff);
+      transform: translateX(100px);
     }
   }
 `;
@@ -336,7 +335,7 @@ const Skills = () => {
   useEffect(() => {
     const title = document.querySelector(".skills-section-title");
     const neon = document.querySelector("div.neon");
-    const timeline = skillsSectionContentAnimation();
+
     let executed = false;
     let executedNeon = false;
 
@@ -347,7 +346,7 @@ const Skills = () => {
 
       if (!executed && height >= bottom) {
         executed = true;
-        timeline.play();
+
         sectionTitleAnimation(title);
       }
       if (!executedNeon && height >= topNeon) {
@@ -369,29 +368,29 @@ const Skills = () => {
         </SectionTitle>
 
         <SkillsDescription>
-          <li>
-            <p className="react skill">
+          <li className="fade-left fade-in-container">
+            <p className="react skill first-element-fade-in">
               main technology - <strong>React</strong>{" "}
               <span role="img" aria-label="atom">
                 &#x269B;
               </span>
               <br /> (including hooks){" "}
             </p>
-            <div className="border-line" />
+            <div className="border-line second-element-fade-in" />
           </li>
-          <li>
-            <p className="styled-components skill">
+          <li className="fade-left fade-in-container">
+            <p className="styled-components skill first-element-fade-in">
               writing styles in <br />
               <strong>styled-components</strong>{" "}
               <span role="img" aria-label="nail polish">
                 &#x1F485;
               </span>
             </p>
-            <div className="border-line" />
+            <div className="border-line second-element-fade-in" />
           </li>
 
-          <li>
-            <p className="design skill">
+          <li className="fade-left fade-in-container">
+            <p className="design skill first-element-fade-in">
               designing layouts in <br />
               <strong>Adobe XD,</strong> <strong>Adobe Illustrator</strong>
               <br /> and <strong>Figma </strong>
@@ -399,49 +398,49 @@ const Skills = () => {
                 &#x1F3A8;
               </span>
             </p>
-            <div className="border-line" />
+            <div className="border-line second-element-fade-in" />
           </li>
-          <li>
-            <p className="gsap skill">
+          <li className="fade-left fade-in-container">
+            <p className="gsap skill first-element-fade-in">
               animations in <br />
               <strong>gsap </strong>
               <span role="img" aria-label="nail polish">
                 &#x1F939;
               </span>
             </p>
-            <div className="border-line" />
+            <div className="border-line second-element-fade-in" />
           </li>
-          <li>
-            <p className="redux skill">
+          <li className="fade-left fade-in-container">
+            <p className="redux skill first-element-fade-in">
               basics of <strong>Redux </strong>
               <span role="img" aria-label="nail polish">
                 &#x1F44A;
               </span>
             </p>
-            <div className="border-line" />
+            <div className="border-line second-element-fade-in" />
           </li>
-          <li>
-            <p className="hooks skill">
+          <li className="fade-left fade-in-container">
+            <p className="hooks skill first-element-fade-in">
               prefer keeping state with help of <br />
               <strong>createContext</strong> and <strong>useState </strong>
               <span role="img" aria-label="nail polish">
                 &#x1F91D;
               </span>
             </p>
-            <div className="border-line" />
+            <div className="border-line second-element-fade-in" />
           </li>
-          <li>
-            <p className="html skill">
+          <li className="fade-left fade-in-container">
+            <p className="html skill first-element-fade-in">
               writing semantic <br />
               <strong>html </strong>
               <span role="img" aria-label="keyboard">
                 &#x2328;
               </span>
             </p>
-            <div className="border-line" />
+            <div className="border-line second-element-fade-in" />
           </li>
-          <li>
-            <p className="rwd skill">
+          <li className="fade-left fade-in-container">
+            <p className="rwd skill first-element-fade-in">
               <strong>R</strong>esponsive{" "}
               <span role="img" aria-label="desktop computer">
                 &#x1F5A5;
@@ -458,27 +457,27 @@ const Skills = () => {
                 &#x1F4F1;
               </span>
             </p>
-            <div className="border-line" />
+            <div className="border-line second-element-fade-in" />
           </li>
-          <li>
-            <p className="react-native skill">
+          <li className="fade-left fade-in-container">
+            <p className="react-native skill first-element-fade-in">
               basics of <br />
               <strong>react native </strong>
               <span role="img" aria-label="selfie">
                 &#x1F933;
               </span>
             </p>
-            <div className="border-line" />
+            <div className="border-line second-element-fade-in" />
           </li>
-          <li>
-            <p className="git skill">
+          <li className="fade-left fade-in-container">
+            <p className="git skill first-element-fade-in">
               tracking changes in code with
               <br /> <strong>GIT </strong>
               <span role="img" aria-label="card file box">
                 &#x1F5C3;
               </span>
             </p>
-            <div className="border-line" />
+            <div className="border-line second-element-fade-in" />
           </li>
         </SkillsDescription>
       </Content>

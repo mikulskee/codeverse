@@ -1,69 +1,5 @@
 import { gsap, Power1 } from "gsap/all";
 
-export const projectsSectionContentAnimation = () => {
-  const projectsImages = document.querySelectorAll("ul .project");
-  const projectsTitles = document.querySelectorAll("ul .project-title");
-  const tl = gsap.timeline({ paused: true });
-
-  tl.set(projectsImages, { visibility: "visible" })
-    .set(projectsTitles, { visibility: "visible" })
-    .staggerFrom(
-      projectsImages,
-      1,
-      {
-        y: 50,
-        autoAlpha: 0,
-        ease: Power1.easeOut
-      },
-      0.2
-    )
-    .staggerFrom(
-      projectsTitles,
-      0.7,
-      {
-        y: 50,
-        autoAlpha: 0,
-        ease: Power1.easeOut,
-        delay: -1.5
-      },
-      0.2
-    );
-
-  return tl;
-};
-
-export const skillsSectionContentAnimation = () => {
-  const skillsDescriptions = document.querySelectorAll("ul .skill");
-  const borders = document.querySelectorAll("ul .border-line");
-  const tl = gsap.timeline({ paused: true });
-
-  tl.set(skillsDescriptions, { visibility: "visible" })
-    .set(borders, { visibility: "visible" })
-    .staggerFrom(
-      skillsDescriptions,
-      1,
-      {
-        y: 50,
-        autoAlpha: 0,
-        ease: Power1.easeOut
-      },
-      0.2
-    )
-    .staggerTo(
-      borders,
-      0.7,
-      {
-        x: 0,
-        autoAlpha: 1,
-        ease: Power1.easeOut,
-        delay: -2
-      },
-      0.2
-    );
-
-  return tl;
-};
-
 export const footerContentAnimation = () => {
   const bgFooter = document.querySelectorAll("footer .bg");
   const tl = gsap.timeline({ paused: true });
@@ -139,59 +75,56 @@ export const aboutSectionDescriptionAnimation = () => {
   return tl;
 };
 
-export const descriptionAnimation = props => {
-  const contents = props.querySelectorAll(".fade-in");
+export const stepsAnimation = element => {
   const tl = gsap.timeline({ paused: true });
 
-  tl.staggerFrom(
-    contents,
-    1,
-    {
-      y: 50,
-      autoAlpha: 0,
-      ease: Power1.easeOut
-    },
-    0.2
-  );
-  return tl;
-};
-export const logo80sAnimation = () => {
-  const logo = document.querySelector(".logo80s");
-  const tl = gsap.timeline({ paused: true });
-
-  tl.set(logo, { visibility: "visible" }).from(logo, 1, {
+  tl.set(element, { visibility: "visible" }).from(element, 1, {
     rotateX: "90deg",
     ease: "steps(8)"
   });
   return tl;
 };
-export const grillAnimation = () => {
-  const logo = document.querySelector(".grill");
-  const tl = gsap.timeline({ paused: true });
 
-  tl.set(logo, { visibility: "visible" }).from(logo, 1, {
-    rotateX: "90deg",
-    ease: "steps(10)"
-  });
-  return tl;
-};
-export const photoGalleryAnimation = props => {
-  const description = props.querySelector("p");
-  const image = props.querySelector("img");
+export const fadeInAnimation = props => {
+  const firstElement = props.querySelector(".first-element-fade-in");
+  const secondElement = props.querySelector(".second-element-fade-in");
   const tl = gsap.timeline({ paused: true });
-
-  tl.set(description, { visibility: "visible" })
-    .set(image, { visibility: "visible" })
-    .from(description, 1.3, {
-      y: -150,
-      autoAlpha: 0,
-      ease: Power1.easeOut
-    })
-    .from(image, 1.3, {
+  if (props.classList.contains("fade-left")) {
+    tl.set(firstElement, { visibility: "visible" })
+      .set(secondElement, { visibility: "visible" })
+      .from(firstElement, 1, {
+        y: 50,
+        autoAlpha: 0,
+        ease: Power1.easeOut
+      })
+      .to(secondElement, 0.7, {
+        x: 0,
+        autoAlpha: 1,
+        ease: Power1.easeOut,
+        delay: -0.5
+      });
+    return tl;
+  } else if (!firstElement) {
+    tl.set(secondElement, { visibility: "visible" }).from(secondElement, 1.3, {
       y: 50,
       autoAlpha: 0,
-      ease: Power1.easeOut,
-      delay: -1
+      ease: Power1.easeOut
     });
-  return tl;
+    return tl;
+  } else {
+    tl.set(firstElement, { visibility: "visible" })
+      .set(secondElement, { visibility: "visible" })
+      .from(firstElement, 1.3, {
+        y: -150,
+        autoAlpha: 0,
+        ease: Power1.easeOut
+      })
+      .from(secondElement, 1.3, {
+        y: 50,
+        autoAlpha: 0,
+        ease: Power1.easeOut,
+        delay: -1
+      });
+    return tl;
+  }
 };

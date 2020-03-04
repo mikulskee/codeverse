@@ -8,7 +8,8 @@ import Nav from "../components/Nav";
 import {
   hideNav,
   showNav,
-  closeBurgerAnimation
+  closeBurgerAnimation,
+  fadeInAnimation
 } from "../animations/contentAnimations";
 
 const MainTemplate = () => {
@@ -51,6 +52,23 @@ const MainTemplate = () => {
       showNav().play();
     });
   }, []);
+
+  useEffect(() => {
+    const fadeInContainers = document.querySelectorAll(".fade-in-container");
+    fadeInContainers.forEach(container => {
+      let executed = false;
+
+      window.addEventListener("scroll", () => {
+        const height = window.innerHeight;
+        const top = container.getBoundingClientRect().bottom;
+
+        if (!executed && height >= top) {
+          executed = true;
+          fadeInAnimation(container).play();
+        } else return;
+      });
+    });
+  });
 
   return (
     <>
