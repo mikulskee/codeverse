@@ -57,7 +57,7 @@ const Wrapper = styled.ul`
         font-size: 10px;
         background-color: rgba(4, 5, 25, 0.9);
         padding: 5px 10px;
-        z-index: 999999;
+        z-index: 1;
         visibility: hidden;
 
         @media only screen and (min-width: 736px) {
@@ -83,7 +83,7 @@ const Wrapper = styled.ul`
     }
   }
 
-  a.container:nth-child(2) {
+  li:nth-child(2) a.container {
     p {
       top: auto;
       left: auto;
@@ -99,7 +99,7 @@ const Wrapper = styled.ul`
     }
   }
 
-  a.container:nth-child(3) {
+  li:nth-child(3) a.container {
     p {
       left: auto;
       right: -10%;
@@ -115,7 +115,7 @@ const Wrapper = styled.ul`
     }
   }
 
-  a.container:nth-child(4) {
+  li:nth-child(4) a.container {
     p {
       top: auto;
       bottom: 5%;
@@ -128,7 +128,7 @@ const Wrapper = styled.ul`
       }
     }
   }
-  a.container:nth-child(5) {
+  li:nth-child(5) a.container {
     p {
       top: 80%;
     }
@@ -140,7 +140,7 @@ const Wrapper = styled.ul`
       }
     }
   }
-  a.container:nth-child(6) {
+  li:nth-child(6) a.container {
     p {
       top: 45%;
     }
@@ -155,7 +155,7 @@ const Wrapper = styled.ul`
     }
   }
 
-  a.container:nth-child(7) {
+  li:nth-child(7) a.container {
     img {
       max-width: 430px;
       width: 43vw;
@@ -166,7 +166,7 @@ const Wrapper = styled.ul`
     }
   }
 
-  a.container:nth-child(8) {
+  li:nth-child(8) a.container {
     p {
       top: auto;
       bottom: 5%;
@@ -181,7 +181,7 @@ const Wrapper = styled.ul`
     }
   }
 
-  a.container:nth-child(9) {
+  li:nth-child(9) a.container {
     margin: 2% 1%;
     display: flex;
     justify-content: center;
@@ -273,20 +273,7 @@ const PhotoGallery = () => {
       </a>
     </li>
   ));
-  return (
-    <Wrapper className="photo-gallery">
-      {/* <a
-        className="container"
-        href="https://www.google.com/maps/place/Ho+Chi+Minh+City,+Vietnam/@10.7546664,106.415032,10z/data=!3m1!4b1!4m5!3m4!1s0x317529292e8d3dd1:0xf15f5aad773c112b!8m2!3d10.8230989!4d106.6296638"
-      >
-        <p>Ho Chi Minh City, VNM</p>
-        <img src={gallery3} alt="" />
-        <FontAwesomeIcon icon={faRoute} />
-      </a> */}
-
-      {content}
-    </Wrapper>
-  );
+  return <Wrapper className="photo-gallery">{content}</Wrapper>;
 };
 
 export default PhotoGallery;
