@@ -142,6 +142,12 @@ const ProjectsList = styled.ul`
         left: 50%;
         font-size: 42px;
         transform: translate(-140%, -50%);
+        @media only screen and (min-width: 1024px) {
+          font-size: 52px;
+        }
+      }
+      img {
+        visibility: visible;
       }
 
       a:nth-of-type(2) {

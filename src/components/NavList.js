@@ -38,7 +38,7 @@ const Wrapper = styled.ul`
       margin: 5px 0;
     }
     @media only screen and (min-width: 1024px) {
-      margin: 0;
+      margin: 0 10px;
     }
     button {
       font-family: "Montserrat", sans-serif;
@@ -50,15 +50,23 @@ const Wrapper = styled.ul`
       border: none;
       color: #f2f2f2;
       padding: 10px 15px;
+      cursor: pointer;
+      transition: opacity 0.25s linear;
+      &:hover {
+        opacity: 0.6;
+      }
       @media only screen and (orientation: landscape) {
         font-size: 16px;
-        padding: 7px 20px;
+        padding: 7px 10px;
       }
       @media only screen and (min-width: 1920px) {
         font-size: 18px;
       }
       &.active {
         color: #e916f2;
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
