@@ -29,15 +29,20 @@ const Wrapper = styled.ul`
     position: relative;
     @media only screen and (min-width: 1024px) {
       margin: 2% 3%;
-      &:hover a.container img {
-        opacity: 0.5 !important;
-      }
-      &:hover a.container svg {
-        opacity: 1;
-      }
     }
 
     a.container {
+      display: flex;
+      /* visibility: hidden; */
+      @media only screen and (min-width: 1024px) {
+        &:hover img {
+          opacity: 0.5 !important;
+        }
+        &:hover svg {
+          opacity: 1;
+        }
+      }
+
       svg {
         position: absolute;
         top: 50%;
@@ -183,7 +188,6 @@ const Wrapper = styled.ul`
 
   li:nth-child(9) a.container {
     margin: 2% 1%;
-    display: flex;
     justify-content: center;
     p {
       top: auto;

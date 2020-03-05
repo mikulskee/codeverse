@@ -55,12 +55,13 @@ const MainTemplate = () => {
 
   useEffect(() => {
     const fadeInContainers = document.querySelectorAll(".fade-in-container");
+
     fadeInContainers.forEach(container => {
       let executed = false;
-
       window.addEventListener("scroll", () => {
         const height = window.innerHeight;
-        const top = container.getBoundingClientRect().bottom;
+        const middle = container.getBoundingClientRect().height / 2;
+        const top = container.getBoundingClientRect().top + middle;
 
         if (!executed && height >= top) {
           executed = true;

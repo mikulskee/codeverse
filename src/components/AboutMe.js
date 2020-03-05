@@ -422,7 +422,8 @@ const AboutMe = () => {
 
     window.addEventListener("scroll", () => {
       const height = window.innerHeight;
-      const top = description.getBoundingClientRect().bottom;
+      const middle = description.getBoundingClientRect().height / 2;
+      const top = description.getBoundingClientRect().top + middle;
 
       if (!executed && height >= top) {
         executed = true;
@@ -439,7 +440,8 @@ const AboutMe = () => {
 
       window.addEventListener("scroll", () => {
         const height = window.innerHeight;
-        const top = el.getBoundingClientRect().bottom;
+        const middle = el.getBoundingClientRect().height / 2;
+        const top = el.getBoundingClientRect().top + middle;
 
         if (!executed && height >= top) {
           executed = true;

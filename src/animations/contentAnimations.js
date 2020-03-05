@@ -132,12 +132,20 @@ export const fadeInAnimation = props => {
 export const headerAnimation = element => {
   const tl = gsap.timeline({ paused: true });
 
-  tl.set(element, { visibility: "visible" }).from(element, 1.5, {
-    y: 50,
-    autoAlpha: 0,
-    ease: Power1.easeOut,
-    delay: 0.7
-  });
+  tl.set(element, { visibility: "visible" }).fromTo(
+    element,
+    {
+      y: 50,
+      autoAlpha: 0
+    },
+    {
+      y: 0,
+      autoAlpha: 1,
+      ease: Power1.easeOut,
+      delay: 0.7,
+      duration: 1.5
+    }
+  );
 
   return tl;
 };

@@ -74,6 +74,7 @@ const MainDescription = styled.p`
   line-height: 1.8;
   z-index: 2;
   visibility: hidden;
+  transform: rotateX(6deg);
   @media only screen and (orientation: landscape) {
     font-size: 16px;
   }
@@ -159,15 +160,15 @@ const StyledReactSVG = styled(ReactSVG)`
   visibility: hidden;
 
   &:nth-child(1) {
-    transform: translate(-55%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
     transform-origin: bottom center;
   }
   &:nth-child(2) {
-    transform: translate(-55%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
     transform-origin: bottom center;
   }
   &:nth-child(3) {
-    transform: translate(-55%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
     transform-origin: bottom center;
   }
 
