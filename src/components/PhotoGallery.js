@@ -25,7 +25,7 @@ const Wrapper = styled.ul`
   }
 
   li {
-    margin: 2% 2%;
+    margin: 3% 2%;
     position: relative;
     @media only screen and (min-width: 1024px) {
       margin: 2% 3%;

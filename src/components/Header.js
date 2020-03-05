@@ -75,6 +75,7 @@ const MainDescription = styled.p`
   z-index: 2;
   visibility: hidden;
   transform: rotateX(6deg);
+  text-align: center;
   @media only screen and (orientation: landscape) {
     font-size: 16px;
   }
@@ -206,7 +207,7 @@ const Header = () => {
         <StyledReactSVG className="trianglesSVG" src={triangle2} />
         <StyledReactSVG className="trianglesSVG" src={triangle3} />
         <MainDescription className="main-description">
-          Hi, my name is <span>Mateusz Mikulski</span> <br />i design and
+          Hi, my name is <span>Mateusz Mikulski</span> <br />I design and
           develop websites
           <br />
           <br />

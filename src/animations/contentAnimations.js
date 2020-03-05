@@ -21,8 +21,8 @@ export const openBurgerAnimation = () => {
     .to(burgerBars[0], { y: 9, duration: 0.2 }, "-=0.35")
     .to(burgerBars[2], { y: -9, duration: 0.2 }, "-=0.35")
     .set(burgerBars[1], { visibility: "hidden" })
-    .to(burgerBars[0], { rotate: 45, duration: 0.2 })
-    .to(burgerBars[2], { rotate: -45, duration: 0.2 }, "-=0.2");
+    .to(burgerBars[0], { rotate: 135, duration: 0.4 })
+    .to(burgerBars[2], { rotate: 225, duration: 0.4 }, "-=0.4");
   return tl;
 };
 export const closeBurgerAnimation = () => {
