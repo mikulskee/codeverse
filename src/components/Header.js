@@ -7,7 +7,9 @@ import {
   headerAnimation,
   trianglesAnimation
 } from "../animations/contentAnimations";
-import trianglesSVG from "../img/triangle.svg";
+import triangle1 from "../img/triangle-1.svg";
+import triangle2 from "../img/triangle-2.svg";
+import triangle3 from "../img/triangle-3.svg";
 import { ReactSVG } from "react-svg";
 
 const Wrapper = styled.header`
@@ -147,11 +149,27 @@ const MandoQuote = styled.p`
 
 const StyledReactSVG = styled(ReactSVG)`
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
   opacity: 0.75;
+  width: 85%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  visibility: hidden;
+
+  &:nth-child(1) {
+    transform: translate(-55%, -50%) rotate(0deg);
+    transform-origin: bottom center;
+  }
+  &:nth-child(2) {
+    transform: translate(-55%, -50%) rotate(0deg);
+    transform-origin: bottom center;
+  }
+  &:nth-child(3) {
+    transform: translate(-55%, -50%) rotate(0deg);
+    transform-origin: bottom center;
+  }
 
   svg {
     position: relative;
@@ -160,9 +178,6 @@ const StyledReactSVG = styled(ReactSVG)`
     transform: translateX(-50%);
     width: 116%;
     height: 116%;
-    #triangle {
-      visibility: hidden;
-    }
   }
 `;
 
@@ -186,7 +201,9 @@ const Header = () => {
       <div className="bg-gradient vertical" />
       <div className="bg-gradient horizontal" />
       <Triangles className="triangles">
-        <StyledReactSVG className="trianglesSVG" src={trianglesSVG} />
+        <StyledReactSVG className="trianglesSVG" src={triangle1} />
+        <StyledReactSVG className="trianglesSVG" src={triangle2} />
+        <StyledReactSVG className="trianglesSVG" src={triangle3} />
         <MainDescription className="main-description">
           Hi, my name is <span>Mateusz Mikulski</span> <br />i design and
           develop websites

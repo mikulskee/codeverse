@@ -142,19 +142,51 @@ export const headerAnimation = element => {
   return tl;
 };
 export const trianglesAnimation = () => {
-  const triangles = document.querySelectorAll("#triangle");
+  const triangles = document.querySelectorAll(".trianglesSVG");
   const tl = gsap.timeline({ paused: true });
 
-  tl.set(triangles, { visibility: "visible" }).staggerFrom(
-    triangles,
-    1.5,
-    {
-      rotate: "-10deg",
-      autoAlpha: 0,
-      ease: Power1.easeOut
-    },
-    0.2
-  );
+  tl.set(triangles, { visibility: "visible" })
+    .fromTo(
+      triangles[0],
+      1,
+      {
+        rotation: -20,
+        autoAlpha: 0
+      },
+      {
+        rotation: 5,
+        autoAlpha: 1,
+        ease: Power1.easeOut
+      }
+    )
+    .fromTo(
+      triangles[1],
+      1,
+      {
+        rotation: -20,
+        autoAlpha: 0
+      },
+      {
+        rotation: 0,
+        autoAlpha: 1,
+        ease: Power1.easeOut
+      },
+      "-=0.8"
+    )
+    .fromTo(
+      triangles[2],
+      1,
+      {
+        rotation: -20,
+        autoAlpha: 0
+      },
+      {
+        rotation: -5,
+        autoAlpha: 1,
+        ease: Power1.easeOut
+      },
+      "-=0.8"
+    );
 
   return tl;
 };
