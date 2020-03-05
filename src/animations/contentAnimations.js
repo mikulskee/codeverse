@@ -18,10 +18,10 @@ export const openBurgerAnimation = () => {
   const tl = gsap.timeline({ paused: true });
   tl.set(nav, { height: "auto" })
     .to(ul, 0.35, { translateY: 0 })
+    .to(burgerBars[1], { duration: 0.2, autoAlpha: 0 }, "-=0.35")
     .to(burgerBars[0], { y: 9, duration: 0.2 }, "-=0.35")
     .to(burgerBars[2], { y: -9, duration: 0.2 }, "-=0.35")
-    .set(burgerBars[1], { visibility: "hidden" })
-    .to(burgerBars[0], { rotate: 135, duration: 0.4 })
+    .to(burgerBars[0], { rotate: 135, duration: 0.4 }, "-=0.3")
     .to(burgerBars[2], { rotate: 225, duration: 0.4 }, "-=0.4");
   return tl;
 };
@@ -37,9 +37,10 @@ export const closeBurgerAnimation = () => {
     .to(ul, 0.35, { translateY: "-120%" })
     .to(burgerBars[0], { rotate: 0, duration: 0.2 }, "-=0.35")
     .to(burgerBars[2], { rotate: -0, duration: 0.2 }, "-=0.35")
-    .set(burgerBars[1], { visibility: "visible" })
     .to(burgerBars[0], { y: 0, duration: 0.2 })
-    .to(burgerBars[2], { y: 0, duration: 0.2 }, "-=0.2");
+    .to(burgerBars[2], { y: 0, duration: 0.2 }, "-=0.2")
+    .to(burgerBars[1], { duration: 0.1, autoAlpha: 1 }, "-=0.2");
+
   return tl;
 };
 
