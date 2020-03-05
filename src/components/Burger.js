@@ -22,7 +22,7 @@ const Wrapper = styled.button`
 
 const Burger = props => {
   return (
-    <Wrapper onClick={props.handleClick}>
+    <Wrapper className="burger" onClick={props.handleClick}>
       <div className="bar" />
       <div className="bar" />
       <div className="bar" />
