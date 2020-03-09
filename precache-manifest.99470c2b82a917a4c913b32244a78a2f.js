@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fd05e8f5931a99ed1045047d7d7033cf",
+    "revision": "0544cbc38fe1ad3ca03798d0a6022cc9",
     "url": "/codeverse/index.html"
   },
   {
-    "revision": "194321e656a783e21f17",
+    "revision": "9f6c54549a4f006a9d06",
     "url": "/codeverse/static/css/main.e3e92313.chunk.css"
   },
   {
-    "revision": "ab62662ad234e17325da",
-    "url": "/codeverse/static/js/2.34393a97.chunk.js"
+    "revision": "62da9748032f6be76a36",
+    "url": "/codeverse/static/js/2.f351c6eb.chunk.js"
   },
   {
-    "revision": "194321e656a783e21f17",
-    "url": "/codeverse/static/js/main.43b1c265.chunk.js"
+    "revision": "9f6c54549a4f006a9d06",
+    "url": "/codeverse/static/js/main.228a7f38.chunk.js"
   },
   {
     "revision": "756f4cf751f1532b79c7",
@@ -104,7 +104,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codeverse/static/media/sticker-6_1.d9e10fab.png"
   },
   {
-    "revision": "63e7aab4ea136e89b03b631a189bf010",
-    "url": "/codeverse/static/media/triangles.63e7aab4.svg"
+    "revision": "d9b61b9f2e5529a5f7df754ae73d2ff9",
+    "url": "/codeverse/static/media/triangle-1.d9b61b9f.svg"
+  },
+  {
+    "revision": "fc673fe523730ef9ab1aace2914ab19a",
+    "url": "/codeverse/static/media/triangle-2.fc673fe5.svg"
+  },
+  {
+    "revision": "997fdaf1a68ef71542c0c60b92d68a25",
+    "url": "/codeverse/static/media/triangle-3.997fdaf1.svg"
   }
 ]);
