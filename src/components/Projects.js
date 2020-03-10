@@ -184,6 +184,7 @@ const Pillars = styled.div`
   top: 0;
   left: 40px;
   justify-content: space-between;
+  z-index: -12;
   @media only screen and (min-width: 1024px) {
     left: 5vw;
   }

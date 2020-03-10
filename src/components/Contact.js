@@ -107,9 +107,13 @@ const Socials = styled.ul`
     text-decoration: none;
     cursor: pointer;
     transition: 0.15s color linear;
-    &:hover {
-      color: #bf2ac8;
+
+    @media only screen and (min-width: 1024px) {
+      &:hover {
+        color: #bf2ac8;
+      }
     }
+
     @media only screen and (min-width: 1024px) {
       font-size: 18px;
     }
@@ -212,9 +216,11 @@ const Form = styled.form`
     align-self: center;
     cursor: pointer;
     transition: all 0.15s linear;
-    &:hover {
-      color: #bf2ac8;
-      background: #f2f2f2;
+    @media only screen and (min-width: 1024px) {
+      &:hover {
+        color: #bf2ac8;
+        background: #f2f2f2;
+      }
     }
     @media only screen and (min-width: 1024px) {
       font-size: 16px;

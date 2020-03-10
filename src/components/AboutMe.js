@@ -479,8 +479,8 @@ const AboutMe = () => {
           named <strong>Benek</strong>.
           <br />
           <br /> I love the <strong>Netflix</strong> series,{" "}
-          <strong>The Office</strong> series, Andrzej Sapkowski's books from the{" "}
-          <strong>Witcher</strong> universe, the <strong>Star Wars</strong>{" "}
+          <strong>The Office</strong> TV series, Andrzej Sapkowski's books from
+          the <strong>Witcher</strong> universe, the <strong>Star Wars</strong>{" "}
           saga, movies from the <strong>Marvel Cinematic Universe</strong> and
           playing video games on my <strong>PlayStation</strong>.
           <br />
