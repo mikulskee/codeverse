@@ -33,7 +33,6 @@ const Wrapper = styled.ul`
 
     a.container {
       display: flex;
-      /* visibility: hidden; */
       @media only screen and (min-width: 1024px) {
         &:hover img {
           opacity: 0.5 !important;
@@ -216,7 +215,7 @@ const photos = [
   {
     name: "Ho Chi Minh City, VNM",
     link:
-      "https://www.google.com/maps/place/Ho+Chi+Minh+City,+Vietnam/@10.7546664,106.415032,10z/data=!3m1!4b1!4m5!3m4!1s0x317529292e8d3dd1:0xf15f5aad773c112b!8m2!3d10.8230989!4d106.6296638",
+      "https://www.google.com/maps/place/Ho+Chi+Minh,+Ho+Chi+Minh+City,+Wietnam/@10.8490934,106.6773306,10z/data=!3m1!4b1!4m5!3m4!1s0x317529292e8d3dd1:0xf15f5aad773c112b!8m2!3d10.8230989!4d106.6296638",
     image: gallery3
   },
   {

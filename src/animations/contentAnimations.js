@@ -1,4 +1,5 @@
 import { gsap, Power1 } from "gsap/all";
+import { Power4 } from "gsap/all";
 
 export const footerContentAnimation = () => {
   const bgFooter = document.querySelectorAll("footer .bg");
@@ -146,9 +147,11 @@ export const fadeInAnimation = props => {
 };
 
 export const headerAnimation = element => {
-  const tl = gsap.timeline({ paused: true });
+  const tl = gsap.timeline({ paused: true, ease: Power4.easeOut });
+  const triangles = document.querySelectorAll(".trianglesSVG");
 
-  tl.set(element, { visibility: "visible" }).fromTo(
+  gsap.set([triangles, element], { visibility: "visible" });
+  tl.fromTo(
     element,
     {
       y: 50,
@@ -157,19 +160,11 @@ export const headerAnimation = element => {
     {
       y: 0,
       autoAlpha: 1,
-      ease: Power1.easeOut,
+
       delay: 0.7,
       duration: 1.5
     }
-  );
-
-  return tl;
-};
-export const trianglesAnimation = () => {
-  const triangles = document.querySelectorAll(".trianglesSVG");
-  const tl = gsap.timeline({ paused: true });
-
-  tl.set(triangles, { visibility: "visible" })
+  )
     .fromTo(
       triangles[0],
       1,
@@ -179,9 +174,9 @@ export const trianglesAnimation = () => {
       },
       {
         rotation: 5,
-        autoAlpha: 1,
-        ease: Power1.easeOut
-      }
+        autoAlpha: 1
+      },
+      "-=1"
     )
     .fromTo(
       triangles[1],
@@ -192,8 +187,7 @@ export const trianglesAnimation = () => {
       },
       {
         rotation: 0,
-        autoAlpha: 1,
-        ease: Power1.easeOut
+        autoAlpha: 1
       },
       "-=0.8"
     )
@@ -206,8 +200,7 @@ export const trianglesAnimation = () => {
       },
       {
         rotation: -5,
-        autoAlpha: 1,
-        ease: Power1.easeOut
+        autoAlpha: 1
       },
       "-=0.8"
     );

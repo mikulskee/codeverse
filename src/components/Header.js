@@ -3,14 +3,10 @@ import styled from "styled-components";
 import headerBg from "../img/header-bg_1.jpg";
 import IconScrollSlide from "./IconScrollSlide";
 import { mandoAnimation } from "../animations/patternsAnimation";
-import {
-  headerAnimation,
-  trianglesAnimation
-} from "../animations/contentAnimations";
-import triangle1 from "../img/triangle-1.svg";
-import triangle2 from "../img/triangle-2.svg";
-import triangle3 from "../img/triangle-3.svg";
-import { ReactSVG } from "react-svg";
+import { headerAnimation } from "../animations/contentAnimations";
+import { ReactComponent as Traingle1 } from "../img/triangle-1.svg";
+import { ReactComponent as Traingle2 } from "../img/triangle-2.svg";
+import { ReactComponent as Traingle3 } from "../img/triangle-3.svg";
 
 const Wrapper = styled.header`
   position: relative;
@@ -20,6 +16,7 @@ const Wrapper = styled.header`
   padding: 20px;
   transform: translate(0);
   height: 110vh;
+  min-height: 360px;
   height: calc(var(--vh, 1vh) * 110);
   overflow: hidden;
   background-image: url(${headerBg});
@@ -100,7 +97,6 @@ const MainDescription = styled.p`
 
 const Triangles = styled.div`
   margin-top: 50px;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -149,7 +145,7 @@ const MandoQuote = styled.p`
   }
 `;
 
-const StyledReactSVG = styled(ReactSVG)`
+const SVGWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -187,9 +183,6 @@ const Header = () => {
   useEffect(() => {
     const desc = document.querySelector(".main-description");
     headerAnimation(desc).play();
-    setTimeout(() => {
-      trianglesAnimation().play();
-    }, 800);
   });
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -203,9 +196,16 @@ const Header = () => {
       <div className="bg-gradient vertical" />
       <div className="bg-gradient horizontal" />
       <Triangles className="triangles">
-        <StyledReactSVG className="trianglesSVG" src={triangle1} />
-        <StyledReactSVG className="trianglesSVG" src={triangle2} />
-        <StyledReactSVG className="trianglesSVG" src={triangle3} />
+        <SVGWrapper className="trianglesSVG">
+          <Traingle1 />
+        </SVGWrapper>
+        <SVGWrapper className="trianglesSVG">
+          <Traingle2 />
+        </SVGWrapper>
+        <SVGWrapper className="trianglesSVG">
+          <Traingle3 />
+        </SVGWrapper>
+
         <MainDescription className="main-description">
           Hi, my name is <span>Mateusz Mikulski</span> <br />I design and
           develop websites

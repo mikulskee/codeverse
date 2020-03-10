@@ -316,7 +316,7 @@ const Skills = () => {
 
     const flickerLetter = letter =>
       `<span style="animation: text-flicker-in-glow ${Math.random() *
-        5}s linear both ">${letter}</span>`;
+        4}s linear both ">${letter}</span>`;
 
     const flickerText = text =>
       text
