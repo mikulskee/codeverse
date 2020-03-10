@@ -336,19 +336,6 @@ const Description = styled.p`
     margin: 0 auto;
     width: 80%;
     max-width: 825px;
-
-    @media only screen and (min-width: 1024px) {
-      font-size: 20px;
-      .icon {
-        font-size: 26px;
-      }
-    }
-    @media only screen and (min-width: 1366px) {
-      font-size: 24px;
-      .icon {
-        font-size: 30px;
-      }
-    }
   }
 `;
 

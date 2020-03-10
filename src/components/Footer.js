@@ -113,6 +113,11 @@ const Socials = styled.ul`
       font-size: 14px;
       color: #f2f2f2;
       text-decoration: none;
+      cursor: pointer;
+      transition: 0.15s color linear;
+      &:hover {
+        color: #bf2ac8;
+      }
       span.icon {
         font-size: 22px;
         width: 50px;

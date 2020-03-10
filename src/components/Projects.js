@@ -7,7 +7,7 @@ import hairstyleWebsite from "../img/project2_1.png";
 import changingRoom from "../img/project3_1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import starsPattern from "../img/stars-pattern.png";
 import { sectionTitleAnimation } from "../animations/sectionTitleAnimation";
 import VanillaTilt from "vanilla-tilt";
@@ -148,7 +148,7 @@ const ProjectsList = styled.ul`
         transform: translate(-140%, -50%) translateZ(20px);
         transition: color 0.15s linear;
         &:hover {
-          color: #333333;
+          color: #bf2ac8;
         }
         @media only screen and (min-width: 1024px) {
           font-size: 52px;
@@ -258,15 +258,29 @@ const Projects = () => {
       })
       .set(description, { display: "none" })
       .set(links, { display: "block" })
-      .to(links, { duration: 0.1, rotationX: 0 })
-      .to(links, { duration: 0.1, rotationX: -90, delay: 2.5 })
-      .set(links, { display: "none" })
-      .set(description, { display: "block" })
-      .to(description, {
-        duration: 0.1,
-        rotationX: 0,
-        ease: Power1.easeOut
+      .to(links, { duration: 0.1, rotationX: 0 });
+
+    if (window.innerWidth < 1024) {
+      tl.to(links, { duration: 0.1, rotationX: -90, delay: 2.5 })
+        .set(links, { display: "none" })
+        .set(description, { display: "block" })
+        .to(description, {
+          duration: 0.1,
+          rotationX: 0,
+          ease: Power1.easeOut
+        });
+    } else {
+      e.target.parentNode.addEventListener("mouseleave", () => {
+        tl.to(links, { duration: 0.1, rotationX: -90 })
+          .set(links, { display: "none" })
+          .set(description, { display: "block" })
+          .to(description, {
+            duration: 0.1,
+            rotationX: 0,
+            ease: Power1.easeOut
+          });
       });
+    }
   };
 
   const options = {
@@ -297,7 +311,7 @@ const Projects = () => {
           </a>
           <a href={item.live}>
             {" "}
-            <FontAwesomeIcon icon={faCode} />
+            <FontAwesomeIcon icon={faGlobe} />
           </a>
         </div>
       </Tilt>

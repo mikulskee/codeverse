@@ -10,7 +10,9 @@ import {
   faYoutube,
   faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Loader } from "./Loader";
+import gsap from "gsap";
 
 const Wrapper = styled.section`
   position: relative;
@@ -85,23 +87,29 @@ const Description = styled.p`
 const Socials = styled.ul`
   margin: 40px auto;
   list-style: none;
-  max-width: 180px;
+  max-width: 221px;
   padding: 5px 0;
   @media only screen and (min-width: 1024px) {
-    max-width: 202px;
+    max-width: 264px;
   }
   li {
     @media only screen and (min-width: 1024px) {
       padding: 5px 0;
     }
   }
-  a {
+  a,
+  p {
     display: flex;
     align-items: center;
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     color: #f2f2f2;
     text-decoration: none;
+    cursor: pointer;
+    transition: 0.15s color linear;
+    &:hover {
+      color: #bf2ac8;
+    }
     @media only screen and (min-width: 1024px) {
       font-size: 18px;
     }
@@ -202,6 +210,12 @@ const Form = styled.form`
     margin: 5px 0;
     width: 100px;
     align-self: center;
+    cursor: pointer;
+    transition: all 0.15s linear;
+    &:hover {
+      color: #bf2ac8;
+      background: #f2f2f2;
+    }
     @media only screen and (min-width: 1024px) {
       font-size: 16px;
       padding: 10px 15px;
@@ -313,6 +327,20 @@ const Contact = () => {
       } else setMailErrorMessage("");
     } else setMailErrorMessage("");
   };
+
+  const handleMailClick = () => {
+    const formTitle = document.querySelector(".form-title");
+
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo(formTitle, { x: 0 }, { x: -10, duration: 0.05 }).fromTo(
+      formTitle,
+      { x: -10 },
+      { x: 10, duration: 0.05 }
+    );
+    tl.play()
+      .yoyo(true)
+      .repeat(3);
+  };
   return (
     <Wrapper className="contact">
       <Gradient />
@@ -357,9 +385,17 @@ const Contact = () => {
               <span className="name">Mateusz Mikulski</span>
             </a>
           </li>
+          <li className="steps" onClick={handleMailClick}>
+            <p>
+              <span className="icon">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </span>
+              <span className="name">m.mikulski@codeverse.pl</span>
+            </p>
+          </li>
         </Socials>
         <div className="fade-in-container">
-          <Description className="second-element-fade-in">
+          <Description className="second-element-fade-in form-title">
             don't hesitate to write me a message!
           </Description>
         </div>
