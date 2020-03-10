@@ -70,9 +70,9 @@ const MainDescription = styled.p`
   width: 250px;
   line-height: 1.8;
   z-index: 2;
-  visibility: hidden;
   transform: rotateX(6deg);
   text-align: center;
+  will-change: transform;
   @media only screen and (orientation: landscape) {
     font-size: 16px;
   }
@@ -154,7 +154,7 @@ const SVGWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  visibility: hidden;
+  will-change: transfrom, opacity;
 
   &:nth-child(1) {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -181,8 +181,7 @@ const SVGWrapper = styled.div`
 
 const Header = () => {
   useEffect(() => {
-    const desc = document.querySelector(".main-description");
-    headerAnimation(desc).play();
+    headerAnimation().play();
   });
   useEffect(() => {
     window.addEventListener("scroll", () => {

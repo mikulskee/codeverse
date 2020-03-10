@@ -146,63 +146,59 @@ export const fadeInAnimation = props => {
   }
 };
 
-export const headerAnimation = element => {
-  const tl = gsap.timeline({ paused: true, ease: Power4.easeOut });
+export const headerAnimation = () => {
+  const desc = document.querySelector(".main-description");
   const triangles = document.querySelectorAll(".trianglesSVG");
 
-  gsap.set([triangles, element], { visibility: "visible" });
+  const tl = gsap.timeline({ paused: true, ease: Power4.easeOut });
+
+  gsap.set([triangles, desc], { autoAlpha: 0 });
   tl.fromTo(
-    element,
+    desc,
     {
-      y: 50,
-      autoAlpha: 0
+      y: 50
     },
     {
       y: 0,
       autoAlpha: 1,
-
       delay: 0.7,
-      duration: 1.5
+      duration: 0.7
     }
   )
     .fromTo(
       triangles[0],
-      1,
       {
-        rotation: -20,
-        autoAlpha: 0
+        rotation: 0
       },
       {
         rotation: 5,
-        autoAlpha: 1
-      },
-      "-=1"
+        autoAlpha: 1,
+        duration: 0.5
+      }
     )
     .fromTo(
       triangles[1],
-      1,
       {
-        rotation: -20,
-        autoAlpha: 0
+        rotation: 0
       },
       {
         rotation: 0,
-        autoAlpha: 1
+        autoAlpha: 1,
+        duration: 0.5
       },
-      "-=0.8"
+      "-=0.5"
     )
     .fromTo(
       triangles[2],
-      1,
       {
-        rotation: -20,
-        autoAlpha: 0
+        rotation: 0
       },
       {
         rotation: -5,
-        autoAlpha: 1
+        autoAlpha: 1,
+        duration: 0.5
       },
-      "-=0.8"
+      "-=0.5"
     );
 
   return tl;
