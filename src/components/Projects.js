@@ -212,7 +212,7 @@ const Pillars = styled.div`
 const projects = [
   {
     key: "01",
-    title: "fifa draw app",
+    title: "FIFA Draw application",
     img: fifaDraw,
     github: "https://github.com/mikulskee/fifa-draw",
     live: "https://mikulskee.github.io/fifa-draw/"
