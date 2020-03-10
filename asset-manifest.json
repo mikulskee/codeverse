@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/codeverse/static/css/main.e3e92313.chunk.css",
-    "main.js": "/codeverse/static/js/main.38688640.chunk.js",
-    "main.js.map": "/codeverse/static/js/main.38688640.chunk.js.map",
+    "main.js": "/codeverse/static/js/main.a2ec7f11.chunk.js",
+    "main.js.map": "/codeverse/static/js/main.a2ec7f11.chunk.js.map",
     "runtime-main.js": "/codeverse/static/js/runtime-main.68d11c0a.js",
     "runtime-main.js.map": "/codeverse/static/js/runtime-main.68d11c0a.js.map",
-    "static/js/2.f351c6eb.chunk.js": "/codeverse/static/js/2.f351c6eb.chunk.js",
-    "static/js/2.f351c6eb.chunk.js.map": "/codeverse/static/js/2.f351c6eb.chunk.js.map",
+    "static/js/2.3fe5c427.chunk.js": "/codeverse/static/js/2.3fe5c427.chunk.js",
+    "static/js/2.3fe5c427.chunk.js.map": "/codeverse/static/js/2.3fe5c427.chunk.js.map",
     "index.html": "/codeverse/index.html",
-    "precache-manifest.46678e7591320d36b1d3325978234ab1.js": "/codeverse/precache-manifest.46678e7591320d36b1d3325978234ab1.js",
+    "precache-manifest.537323acd40eec5dd1060db061b17d2a.js": "/codeverse/precache-manifest.537323acd40eec5dd1060db061b17d2a.js",
     "service-worker.js": "/codeverse/service-worker.js",
     "static/css/main.e3e92313.chunk.css.map": "/codeverse/static/css/main.e3e92313.chunk.css.map",
     "static/media/about-me2_1.jpg": "/codeverse/static/media/about-me2_1.a3b46352.jpg",
@@ -32,14 +32,14 @@
     "static/media/project2_1.png": "/codeverse/static/media/project2_1.278e3b4c.png",
     "static/media/project3_1.png": "/codeverse/static/media/project3_1.747a0aa3.png",
     "static/media/sticker-6_1.png": "/codeverse/static/media/sticker-6_1.d9e10fab.png",
-    "static/media/triangle-1.svg": "/codeverse/static/media/triangle-1.d9b61b9f.svg",
-    "static/media/triangle-2.svg": "/codeverse/static/media/triangle-2.fc673fe5.svg",
-    "static/media/triangle-3.svg": "/codeverse/static/media/triangle-3.997fdaf1.svg"
+    "static/media/triangle-1.d9b61b9f.svg": "/codeverse/static/media/triangle-1.d9b61b9f.svg",
+    "static/media/triangle-2.fc673fe5.svg": "/codeverse/static/media/triangle-2.fc673fe5.svg",
+    "static/media/triangle-3.997fdaf1.svg": "/codeverse/static/media/triangle-3.997fdaf1.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.68d11c0a.js",
-    "static/js/2.f351c6eb.chunk.js",
+    "static/js/2.3fe5c427.chunk.js",
     "static/css/main.e3e92313.chunk.css",
-    "static/js/main.38688640.chunk.js"
+    "static/js/main.a2ec7f11.chunk.js"
   ]
 }
