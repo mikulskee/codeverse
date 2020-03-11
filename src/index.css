@@ -12,3 +12,9 @@
 body {
   background-color: #040519;
 }
+
+body.loader {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}

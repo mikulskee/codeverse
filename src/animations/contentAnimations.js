@@ -152,7 +152,7 @@ export const headerAnimation = () => {
 
   const tl = gsap.timeline({ paused: true, ease: Power4.easeOut });
 
-  gsap.set([triangles, desc], { autoAlpha: 0 });
+  gsap.set([triangles, desc], { autoAlpha: 0, visibility: "visible" });
   tl.fromTo(
     desc,
     {

@@ -16,7 +16,6 @@ const Wrapper = styled.header`
   padding: 20px;
   transform: translate(0);
   height: 110vh;
-  min-height: 360px;
   height: calc(var(--vh, 1vh) * 110);
   overflow: hidden;
   background-image: url(${headerBg});
@@ -26,6 +25,9 @@ const Wrapper = styled.header`
   max-width: 1920px;
   max-height: 1300px;
   margin: 0 auto;
+  /* @media only screen and (orientation: portrait) {
+    min-height: 560px;
+  } */
 
   .bg-gradient {
     position: absolute;
@@ -72,6 +74,7 @@ const MainDescription = styled.p`
   z-index: 2;
   transform: rotateX(6deg);
   text-align: center;
+  visibility: hidden;
   will-change: transform;
   @media only screen and (orientation: landscape) {
     font-size: 16px;
@@ -101,7 +104,6 @@ const Triangles = styled.div`
   justify-content: center;
   align-items: center;
   transform: translateY(-50px);
-
   padding: 60px;
   z-index: 3;
   width: 320px;
@@ -155,6 +157,7 @@ const SVGWrapper = styled.div`
   align-items: flex-end;
   justify-content: center;
   will-change: transfrom, opacity;
+  visibility: hidden;
 
   &:nth-child(1) {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -181,7 +184,12 @@ const SVGWrapper = styled.div`
 
 const Header = () => {
   useEffect(() => {
-    headerAnimation().play();
+    window.loadPromise.then(() =>
+      requestAnimationFrame(() => {
+        document.body.classList.remove("loader");
+        headerAnimation().play();
+      })
+    );
   });
   useEffect(() => {
     window.addEventListener("scroll", () => {

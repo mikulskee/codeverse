@@ -89,6 +89,7 @@ const Socials = styled.ul`
   list-style: none;
   max-width: 221px;
   padding: 5px 0;
+  visibility: hidden;
   @media only screen and (min-width: 1024px) {
     max-width: 264px;
   }
