@@ -13,6 +13,7 @@ import {
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { Loader } from "./Loader";
 import gsap from "gsap";
+import smoothscroll from "smoothscroll-polyfill";
 
 const Wrapper = styled.section`
   position: relative;
@@ -87,13 +88,14 @@ const Description = styled.p`
 const Socials = styled.ul`
   margin: 40px auto;
   list-style: none;
-  max-width: 221px;
+  max-width: 225px;
   padding: 5px 0;
   visibility: hidden;
   @media only screen and (min-width: 1024px) {
     max-width: 264px;
   }
   li {
+    margin: 10px 0;
     @media only screen and (min-width: 1024px) {
       padding: 5px 0;
     }
@@ -336,17 +338,23 @@ const Contact = () => {
   };
 
   const handleMailClick = () => {
+    smoothscroll.polyfill();
+    const form = document.querySelector("form");
     const formTitle = document.querySelector(".form-title");
+    formTitle.scrollIntoView({ behavior: "smooth" });
 
-    const tl = gsap.timeline({ paused: true });
-    tl.fromTo(formTitle, { x: 0 }, { x: -10, duration: 0.05 }).fromTo(
-      formTitle,
-      { x: -10 },
-      { x: 10, duration: 0.05 }
-    );
-    tl.play()
-      .yoyo(true)
-      .repeat(3);
+    setTimeout(() => {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(form, { x: 0 }, { x: -10, duration: 0.05 }).fromTo(
+        form,
+        { x: -10 },
+        { x: 10, duration: 0.05 }
+      );
+
+      tl.play()
+        .yoyo(true)
+        .repeat(3);
+    }, 500);
   };
   return (
     <Wrapper className="contact">
@@ -385,7 +393,7 @@ const Contact = () => {
             </a>
           </li>
           <li className="steps">
-            <a href="www.linkedin.com/in/mikulski-mateusz">
+            <a href="https://www.linkedin.com/in/mikulski-mateusz/">
               <span className="icon">
                 <FontAwesomeIcon icon={faLinkedin} />
               </span>

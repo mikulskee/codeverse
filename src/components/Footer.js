@@ -178,7 +178,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="www.linkedin.com/in/mikulski-mateusz">
+            <a href="https://www.linkedin.com/in/mikulski-mateusz">
               <span className="icon">
                 <FontAwesomeIcon icon={faLinkedin} />
               </span>
